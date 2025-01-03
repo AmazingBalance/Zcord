@@ -1,12 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/app/store/user/user";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import classNames from "classnames";
 
-export default function Auth() {
+function AuthContent() {
     const [authMode, setAuthMode] = useState("login");
     const [formData, setFormData] = useState({
         name: "",
@@ -177,5 +177,13 @@ export default function Auth() {
                 </p>
             </div>
         </div>
+    );
+}
+
+export default function Auth() {
+    return (
+        <Suspense fallback={<div>Загрузка...</div>}>
+            <AuthContent />
+        </Suspense>
     );
 }
