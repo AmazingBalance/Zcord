@@ -1,0 +1,81 @@
+.SystemMessage {
+    align-self: center;
+
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.UserMessage {
+    background-color: lightslategray;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;
+
+    position: relative;
+
+    min-width: 200px;
+    max-width: 40%;
+}
+
+.UserMessageCurrent {
+    align-self: self-end;
+    border-radius: 12px;
+    border-bottom-right-radius: 0;
+}
+
+.UserMessage::before {
+    position: absolute;
+    bottom: 0;
+    left: -24px;
+    width: 24px;
+    height: 24px;
+    content: "";
+    display: block;
+
+    background-color: lightslategray;
+}
+
+.UserMessageCurrent::before {
+    left: unset;
+    right: -24px;
+}
+
+.UserMessage::after {
+    position: absolute;
+    bottom: 0;
+    left: -24px;
+    width: 24px;
+    height: 24px;
+    content: "";
+    display: block;
+
+    background-color: #161616;
+    border-bottom-right-radius: 12px;
+}
+
+.UserMessageCurrent::after {
+    left: unset;
+    right: -24px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 12px;
+}
+
+.UserMessage_UserName {
+    font-size: 16px;
+    font-weight: bold;
+
+    margin: 10px 6px;
+}
+
+.UserMessage_Image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.UserMessage_Text {
+    font-size: 14px;
+    display: block;
+
+    margin: 10px;
+}

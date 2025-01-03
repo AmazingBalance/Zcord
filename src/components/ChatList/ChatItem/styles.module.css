@@ -1,0 +1,64 @@
+.ChatItem {
+    background-color: #242424;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 20px;
+
+    gap: 20px;
+
+    cursor: pointer;
+}
+
+.activeChatItem {
+    background-color: rgb(75, 73, 54);
+}
+
+.ChatItem:hover {
+    background-color: #3a3a3a;
+}
+
+.activeChatItem:hover {
+    background-color: rgb(75, 73, 54);
+}
+
+.ChatItem_Image {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.ChatItem_TextZone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.ChatItem_TextZone_ChatName {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.ChatItem_TextZone_LastMessage {
+    font-size: 14px;
+    color: white;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    margin-right: 10px;
+}
+
+.ChatItem_TextZone_LastUserName {
+    color: #a85400;
+}

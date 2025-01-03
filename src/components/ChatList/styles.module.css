@@ -1,0 +1,6 @@
+.ChatList {
+    display: flex;
+    flex-direction: column;
+
+    border-right: 2px solid black;
+}
