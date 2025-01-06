@@ -27,8 +27,8 @@ function AuthContent() {
     const handleSubmit = async () => {
         const url =
             authMode === "login"
-                ? "http://localhost:8000/api/login"
-                : "http://localhost:8000/api/register";
+                ? "http://89.169.172.0:8000/api/login"
+                : "http://89.169.172.0:8000/api/register";
         const body =
             authMode === "login"
                 ? { email: formData.email, password: formData.password }

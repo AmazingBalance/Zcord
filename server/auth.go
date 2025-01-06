@@ -85,8 +85,8 @@ func Register(w http.ResponseWriter, r *http.Request) {
 
 	var id int
 	err = db.QueryRow(
-		"INSERT INTO users (tag, email, password, name) VALUES ($1, $2, $3, $4) RETURNING id",
-		input.Tag, input.Email, hashedPassword, input.Name,
+		"INSERT INTO users (tag, email, password, name) VALUES ($3, $1, $2, $3) RETURNING id",
+		input.Email, hashedPassword, input.Name,
 	).Scan(&id)
 	if err != nil {
 		log.Printf("Error inserting user into database: %v", err)

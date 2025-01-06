@@ -11,7 +11,7 @@ import (
 // enableCORS добавляет необходимые заголовки для CORS
 func enableCORS(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000") // Указываем, что разрешаем доступ с фронтенда
+		w.Header().Set("Access-Control-Allow-Origin", "http://89.169.172.0:3000") // Указываем, что разрешаем доступ с фронтенда
 		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS, POST")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization") // Разрешаем заголовок Authorization
 		w.Header().Set("Access-Control-Allow-Credentials", "true") // Позволяет куки
@@ -52,6 +52,7 @@ func authenticate(next http.HandlerFunc) http.HandlerFunc {
 			return jwtKey, nil
 		})
 		if err != nil || !token.Valid {
+			log.Println("Токен не прошёл проверку")
 			http.Error(w, "Invalid token", http.StatusUnauthorized)
 			return
 		}

@@ -1,0 +1,1538 @@
+nohup: ignoring input
+2025/01/05 18:24:25 Сервер запущен на порту 8000...
+2025/01/05 18:25:16 Received request: OPTIONS /api/validate-token
+2025/01/05 18:25:16 Received request: POST /api/validate-token
+2025/01/05 18:25:16 Token validated successfully for user ID=2
+2025/01/05 18:25:16 Received request: OPTIONS /chats
+2025/01/05 18:25:16 Received request: GET /chats
+2025/01/05 18:25:16 Successfully retrieved 3 chats for userID: 2
+2025/01/05 18:25:21 Received request: OPTIONS /chat
+2025/01/05 18:25:21 Received request: GET /chat
+2025/01/05 18:25:21 Fetching messages for chatID: 1
+2025/01/05 18:25:21 Fetching message with ID: 1
+2025/01/05 18:25:21 Message chain completed for starting message ID: 1
+2025/01/05 18:25:21 Successfully fetched 1 messages for chatID: 1
+2025/01/05 18:25:21 Fetching users for chatID: 1
+2025/01/05 18:25:21 Successfully retrieved 1 users for chatID: 1
+2025/01/05 18:25:21 Successfully retrieved details for chatID: 1
+2025/01/05 18:25:22 Received request: OPTIONS /chat
+2025/01/05 18:25:22 Received request: GET /chat
+2025/01/05 18:25:22 Fetching messages for chatID: 2
+2025/01/05 18:25:22 Fetching message with ID: 2
+2025/01/05 18:25:22 Message chain completed for starting message ID: 2
+2025/01/05 18:25:22 Successfully fetched 1 messages for chatID: 2
+2025/01/05 18:25:22 Fetching users for chatID: 2
+2025/01/05 18:25:22 Successfully retrieved 1 users for chatID: 2
+2025/01/05 18:25:22 Successfully retrieved details for chatID: 2
+2025/01/05 18:25:23 Received request: OPTIONS /chat
+2025/01/05 18:25:23 Received request: GET /chat
+2025/01/05 18:25:23 Fetching messages for chatID: 3
+2025/01/05 18:25:23 Fetching message with ID: 3
+2025/01/05 18:25:23 Message chain completed for starting message ID: 3
+2025/01/05 18:25:23 Successfully fetched 1 messages for chatID: 3
+2025/01/05 18:25:23 Fetching users for chatID: 3
+2025/01/05 18:25:23 Successfully retrieved 1 users for chatID: 3
+2025/01/05 18:25:23 Successfully retrieved details for chatID: 3
+2025/01/05 18:25:30 Received request: OPTIONS /api/send
+2025/01/05 18:25:30 Received request: POST /api/send
+2025/01/05 18:25:30 Received request to add a message
+2025/01/05 18:25:30 Message added successfully to chatID: 3 by userID: 2
+2025/01/05 18:25:30 Received request: OPTIONS /chat
+2025/01/05 18:25:30 Received request: GET /chat
+2025/01/05 18:25:31 Fetching messages for chatID: 3
+2025/01/05 18:25:31 Fetching message with ID: 4
+2025/01/05 18:25:31 Fetching message with ID: 3
+2025/01/05 18:25:31 Message chain completed for starting message ID: 3
+2025/01/05 18:25:31 Successfully fetched 2 messages for chatID: 3
+2025/01/05 18:25:31 Fetching users for chatID: 3
+2025/01/05 18:25:31 Successfully retrieved 1 users for chatID: 3
+2025/01/05 18:25:31 Successfully retrieved details for chatID: 3
+2025/01/05 18:25:37 Received request: OPTIONS /api/validate-token
+2025/01/05 18:25:37 Received request: POST /api/validate-token
+2025/01/05 18:25:37 Token validated successfully for user ID=2
+2025/01/05 18:25:37 Received request: OPTIONS /chats
+2025/01/05 18:25:37 Received request: GET /chats
+2025/01/05 18:25:37 Successfully retrieved 3 chats for userID: 2
+2025/01/05 18:25:53 Received request: OPTIONS /api/validate-token
+2025/01/05 18:25:53 Received request: POST /api/validate-token
+2025/01/05 18:25:53 Token validated successfully for user ID=2
+2025/01/05 18:25:53 Received request: OPTIONS /chats
+2025/01/05 18:25:53 Received request: OPTIONS /chat
+2025/01/05 18:25:53 Received request: GET /chats
+2025/01/05 18:25:53 Received request: GET /chat
+2025/01/05 18:25:53 Successfully retrieved 3 chats for userID: 2
+2025/01/05 18:25:53 Fetching messages for chatID: 3
+2025/01/05 18:25:53 Fetching message with ID: 4
+2025/01/05 18:25:53 Fetching message with ID: 3
+2025/01/05 18:25:53 Message chain completed for starting message ID: 3
+2025/01/05 18:25:53 Successfully fetched 2 messages for chatID: 3
+2025/01/05 18:25:53 Fetching users for chatID: 3
+2025/01/05 18:25:53 Successfully retrieved 1 users for chatID: 3
+2025/01/05 18:25:53 Successfully retrieved details for chatID: 3
+2025/01/05 18:31:57 Received request: GET /
+2025/01/05 19:41:59 Received request: GET /
+2025/01/05 19:42:00 Received request: GET /favicon.ico
+2025/01/05 21:08:30 Received request: OPTIONS /api/validate-token
+2025/01/05 21:08:30 Received request: POST /api/validate-token
+2025/01/05 21:08:30 Token validated successfully for user ID=2
+2025/01/05 21:08:30 Received request: OPTIONS /chats
+2025/01/05 21:08:30 Received request: OPTIONS /chat
+2025/01/05 21:08:30 Received request: GET /chats
+2025/01/05 21:08:30 Successfully retrieved 3 chats for userID: 2
+2025/01/05 21:08:30 Received request: GET /chat
+2025/01/05 21:08:30 Fetching messages for chatID: 3
+2025/01/05 21:08:30 Fetching message with ID: 4
+2025/01/05 21:08:30 Fetching message with ID: 3
+2025/01/05 21:08:30 Message chain completed for starting message ID: 3
+2025/01/05 21:08:30 Successfully fetched 2 messages for chatID: 3
+2025/01/05 21:08:30 Fetching users for chatID: 3
+2025/01/05 21:08:30 Successfully retrieved 1 users for chatID: 3
+2025/01/05 21:08:30 Successfully retrieved details for chatID: 3
+2025/01/05 21:08:33 Received request: OPTIONS /chat
+2025/01/05 21:08:33 Received request: GET /chat
+2025/01/05 21:08:33 Fetching messages for chatID: 2
+2025/01/05 21:08:33 Fetching message with ID: 2
+2025/01/05 21:08:33 Message chain completed for starting message ID: 2
+2025/01/05 21:08:33 Successfully fetched 1 messages for chatID: 2
+2025/01/05 21:08:33 Fetching users for chatID: 2
+2025/01/05 21:08:33 Successfully retrieved 1 users for chatID: 2
+2025/01/05 21:08:33 Successfully retrieved details for chatID: 2
+2025/01/05 21:08:34 Received request: OPTIONS /chat
+2025/01/05 21:08:34 Received request: GET /chat
+2025/01/05 21:08:34 Fetching messages for chatID: 1
+2025/01/05 21:08:34 Fetching message with ID: 1
+2025/01/05 21:08:34 Message chain completed for starting message ID: 1
+2025/01/05 21:08:34 Successfully fetched 1 messages for chatID: 1
+2025/01/05 21:08:34 Fetching users for chatID: 1
+2025/01/05 21:08:34 Successfully retrieved 1 users for chatID: 1
+2025/01/05 21:08:34 Successfully retrieved details for chatID: 1
+2025/01/05 21:13:13 Received request: OPTIONS /chat
+2025/01/05 21:13:13 Received request: GET /chat
+2025/01/05 21:13:13 Fetching messages for chatID: 2
+2025/01/05 21:13:13 Fetching message with ID: 2
+2025/01/05 21:13:13 Message chain completed for starting message ID: 2
+2025/01/05 21:13:13 Successfully fetched 1 messages for chatID: 2
+2025/01/05 21:13:13 Fetching users for chatID: 2
+2025/01/05 21:13:13 Successfully retrieved 1 users for chatID: 2
+2025/01/05 21:13:13 Successfully retrieved details for chatID: 2
+2025/01/05 21:13:13 Received request: OPTIONS /chat
+2025/01/05 21:13:13 Received request: GET /chat
+2025/01/05 21:13:14 Fetching messages for chatID: 1
+2025/01/05 21:13:14 Fetching message with ID: 1
+2025/01/05 21:13:14 Message chain completed for starting message ID: 1
+2025/01/05 21:13:14 Successfully fetched 1 messages for chatID: 1
+2025/01/05 21:13:14 Fetching users for chatID: 1
+2025/01/05 21:13:14 Successfully retrieved 1 users for chatID: 1
+2025/01/05 21:13:14 Successfully retrieved details for chatID: 1
+2025/01/05 21:49:48 Received request: OPTIONS /api/register
+2025/01/05 21:49:48 Received request: POST /api/register
+2025/01/05 21:49:49 User registered successfully: ID=3, Tag=, Email=22aklart@gmail.com
+2025/01/05 21:49:52 Received request: OPTIONS /chats
+2025/01/05 21:49:52 Received request: GET /chats
+2025/01/05 21:49:52 Токен не прошёл проверку
+2025/01/05 21:54:40 Received request: OPTIONS /api/validate-token
+2025/01/05 21:54:40 Received request: POST /api/validate-token
+2025/01/05 21:54:40 No token provided: http: named cookie not present
+2025/01/05 21:54:44 Received request: OPTIONS /api/login
+2025/01/05 21:54:44 Received request: POST /api/login
+2025/01/05 21:54:46 User logged in successfully: ID=3, Name=@Tralka22, Tag=@Tralka22
+2025/01/05 21:54:47 Received request: OPTIONS /chats
+2025/01/05 21:54:47 Received request: GET /chats
+2025/01/05 21:54:47 Successfully retrieved 3 chats for userID: 3
+2025/01/05 21:54:50 Received request: OPTIONS /chat
+2025/01/05 21:54:50 Received request: GET /chat
+2025/01/05 21:54:50 Fetching messages for chatID: 1
+2025/01/05 21:54:50 Fetching message with ID: 1
+2025/01/05 21:54:50 Message chain completed for starting message ID: 1
+2025/01/05 21:54:50 Successfully fetched 1 messages for chatID: 1
+2025/01/05 21:54:50 Fetching users for chatID: 1
+2025/01/05 21:54:50 Successfully retrieved 2 users for chatID: 1
+2025/01/05 21:54:50 Successfully retrieved details for chatID: 1
+2025/01/05 21:54:52 Received request: OPTIONS /chat
+2025/01/05 21:54:52 Received request: GET /chat
+2025/01/05 21:54:52 Fetching messages for chatID: 2
+2025/01/05 21:54:52 Fetching message with ID: 2
+2025/01/05 21:54:52 Message chain completed for starting message ID: 2
+2025/01/05 21:54:52 Successfully fetched 1 messages for chatID: 2
+2025/01/05 21:54:52 Fetching users for chatID: 2
+2025/01/05 21:54:52 Successfully retrieved 2 users for chatID: 2
+2025/01/05 21:54:52 Successfully retrieved details for chatID: 2
+2025/01/05 21:54:54 Received request: OPTIONS /chat
+2025/01/05 21:54:54 Received request: GET /chat
+2025/01/05 21:54:54 Fetching messages for chatID: 3
+2025/01/05 21:54:54 Fetching message with ID: 4
+2025/01/05 21:54:54 Fetching message with ID: 3
+2025/01/05 21:54:54 Message chain completed for starting message ID: 3
+2025/01/05 21:54:54 Successfully fetched 2 messages for chatID: 3
+2025/01/05 21:54:54 Fetching users for chatID: 3
+2025/01/05 21:54:54 Successfully retrieved 2 users for chatID: 3
+2025/01/05 21:54:54 Successfully retrieved details for chatID: 3
+2025/01/05 21:54:57 Received request: OPTIONS /api/send
+2025/01/05 21:54:57 Received request: POST /api/send
+2025/01/05 21:54:57 Received request to add a message
+2025/01/05 21:54:57 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 21:54:57 Received request: GET /chat
+2025/01/05 21:54:57 Fetching messages for chatID: 3
+2025/01/05 21:54:57 Fetching message with ID: 5
+2025/01/05 21:54:57 Fetching message with ID: 4
+2025/01/05 21:54:57 Fetching message with ID: 3
+2025/01/05 21:54:57 Message chain completed for starting message ID: 3
+2025/01/05 21:54:57 Successfully fetched 3 messages for chatID: 3
+2025/01/05 21:54:57 Fetching users for chatID: 3
+2025/01/05 21:54:57 Successfully retrieved 2 users for chatID: 3
+2025/01/05 21:54:57 Successfully retrieved details for chatID: 3
+2025/01/05 21:56:23 Received request: OPTIONS /chat
+2025/01/05 21:56:23 Received request: GET /chat
+2025/01/05 21:56:23 Fetching messages for chatID: 3
+2025/01/05 21:56:23 Fetching message with ID: 5
+2025/01/05 21:56:23 Fetching message with ID: 4
+2025/01/05 21:56:23 Fetching message with ID: 3
+2025/01/05 21:56:23 Message chain completed for starting message ID: 3
+2025/01/05 21:56:23 Successfully fetched 3 messages for chatID: 3
+2025/01/05 21:56:23 Fetching users for chatID: 3
+2025/01/05 21:56:23 Successfully retrieved 2 users for chatID: 3
+2025/01/05 21:56:23 Successfully retrieved details for chatID: 3
+2025/01/05 21:56:47 Received request: OPTIONS /api/send
+2025/01/05 21:56:47 Received request: POST /api/send
+2025/01/05 21:56:47 Received request to add a message
+2025/01/05 21:56:47 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 21:56:47 Received request: OPTIONS /chat
+2025/01/05 21:56:47 Received request: GET /chat
+2025/01/05 21:56:47 Fetching messages for chatID: 3
+2025/01/05 21:56:47 Fetching message with ID: 6
+2025/01/05 21:56:47 Fetching message with ID: 5
+2025/01/05 21:56:47 Fetching message with ID: 4
+2025/01/05 21:56:47 Fetching message with ID: 3
+2025/01/05 21:56:47 Message chain completed for starting message ID: 3
+2025/01/05 21:56:47 Successfully fetched 4 messages for chatID: 3
+2025/01/05 21:56:47 Fetching users for chatID: 3
+2025/01/05 21:56:47 Successfully retrieved 2 users for chatID: 3
+2025/01/05 21:56:47 Successfully retrieved details for chatID: 3
+2025/01/05 21:57:09 Received request: OPTIONS /chat
+2025/01/05 21:57:09 Received request: GET /chat
+2025/01/05 21:57:09 Fetching messages for chatID: 1
+2025/01/05 21:57:09 Fetching message with ID: 1
+2025/01/05 21:57:09 Message chain completed for starting message ID: 1
+2025/01/05 21:57:09 Successfully fetched 1 messages for chatID: 1
+2025/01/05 21:57:09 Fetching users for chatID: 1
+2025/01/05 21:57:09 Successfully retrieved 2 users for chatID: 1
+2025/01/05 21:57:09 Successfully retrieved details for chatID: 1
+2025/01/05 21:57:30 Received request: OPTIONS /api/send
+2025/01/05 21:57:30 Received request: POST /api/send
+2025/01/05 21:57:30 Received request to add a message
+2025/01/05 21:57:30 Message added successfully to chatID: 1 by userID: 3
+2025/01/05 21:57:30 Received request: OPTIONS /chat
+2025/01/05 21:57:30 Received request: GET /chat
+2025/01/05 21:57:30 Fetching messages for chatID: 1
+2025/01/05 21:57:30 Fetching message with ID: 7
+2025/01/05 21:57:30 Fetching message with ID: 1
+2025/01/05 21:57:30 Message chain completed for starting message ID: 1
+2025/01/05 21:57:30 Successfully fetched 2 messages for chatID: 1
+2025/01/05 21:57:30 Fetching users for chatID: 1
+2025/01/05 21:57:30 Successfully retrieved 2 users for chatID: 1
+2025/01/05 21:57:30 Successfully retrieved details for chatID: 1
+2025/01/05 21:58:58 Received request: OPTIONS /chat
+2025/01/05 21:58:58 Received request: GET /chat
+2025/01/05 21:58:58 Fetching messages for chatID: 1
+2025/01/05 21:58:58 Fetching message with ID: 7
+2025/01/05 21:58:58 Fetching message with ID: 1
+2025/01/05 21:58:58 Message chain completed for starting message ID: 1
+2025/01/05 21:58:58 Successfully fetched 2 messages for chatID: 1
+2025/01/05 21:58:58 Fetching users for chatID: 1
+2025/01/05 21:58:58 Successfully retrieved 2 users for chatID: 1
+2025/01/05 21:58:58 Successfully retrieved details for chatID: 1
+2025/01/05 21:59:50 Received request: OPTIONS /api/validate-token
+2025/01/05 21:59:50 Received request: POST /api/validate-token
+2025/01/05 21:59:50 Token validated successfully for user ID=3
+2025/01/05 21:59:50 Received request: OPTIONS /chats
+2025/01/05 21:59:50 Received request: OPTIONS /chat
+2025/01/05 21:59:50 Received request: GET /chat
+2025/01/05 21:59:50 Received request: GET /chats
+2025/01/05 21:59:50 Successfully retrieved 3 chats for userID: 3
+2025/01/05 21:59:50 Fetching messages for chatID: 3
+2025/01/05 21:59:50 Fetching message with ID: 6
+2025/01/05 21:59:50 Fetching message with ID: 5
+2025/01/05 21:59:50 Fetching message with ID: 4
+2025/01/05 21:59:50 Fetching message with ID: 3
+2025/01/05 21:59:50 Message chain completed for starting message ID: 3
+2025/01/05 21:59:50 Successfully fetched 4 messages for chatID: 3
+2025/01/05 21:59:50 Fetching users for chatID: 3
+2025/01/05 21:59:50 Successfully retrieved 2 users for chatID: 3
+2025/01/05 21:59:50 Successfully retrieved details for chatID: 3
+2025/01/05 22:00:21 Received request: OPTIONS /chat
+2025/01/05 22:00:21 Received request: GET /chat
+2025/01/05 22:00:21 Fetching messages for chatID: 1
+2025/01/05 22:00:21 Fetching message with ID: 7
+2025/01/05 22:00:21 Fetching message with ID: 1
+2025/01/05 22:00:21 Message chain completed for starting message ID: 1
+2025/01/05 22:00:21 Successfully fetched 2 messages for chatID: 1
+2025/01/05 22:00:21 Fetching users for chatID: 1
+2025/01/05 22:00:21 Successfully retrieved 2 users for chatID: 1
+2025/01/05 22:00:21 Successfully retrieved details for chatID: 1
+2025/01/05 22:00:27 Received request: OPTIONS /chat
+2025/01/05 22:00:27 Received request: GET /chat
+2025/01/05 22:00:27 Fetching messages for chatID: 2
+2025/01/05 22:00:27 Fetching message with ID: 2
+2025/01/05 22:00:27 Message chain completed for starting message ID: 2
+2025/01/05 22:00:27 Successfully fetched 1 messages for chatID: 2
+2025/01/05 22:00:27 Fetching users for chatID: 2
+2025/01/05 22:00:27 Successfully retrieved 2 users for chatID: 2
+2025/01/05 22:00:27 Successfully retrieved details for chatID: 2
+2025/01/05 22:00:51 Received request: OPTIONS /api/send
+2025/01/05 22:00:51 Received request: POST /api/send
+2025/01/05 22:00:51 Received request to add a message
+2025/01/05 22:00:51 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:00:51 Received request: OPTIONS /chat
+2025/01/05 22:00:51 Received request: GET /chat
+2025/01/05 22:00:51 Fetching messages for chatID: 3
+2025/01/05 22:00:51 Fetching message with ID: 8
+2025/01/05 22:00:51 Fetching message with ID: 6
+2025/01/05 22:00:51 Fetching message with ID: 5
+2025/01/05 22:00:51 Fetching message with ID: 4
+2025/01/05 22:00:51 Fetching message with ID: 3
+2025/01/05 22:00:51 Message chain completed for starting message ID: 3
+2025/01/05 22:00:51 Successfully fetched 5 messages for chatID: 3
+2025/01/05 22:00:51 Fetching users for chatID: 3
+2025/01/05 22:00:51 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:00:51 Successfully retrieved details for chatID: 3
+2025/01/05 22:00:56 Received request: OPTIONS /api/validate-token
+2025/01/05 22:00:56 Received request: POST /api/validate-token
+2025/01/05 22:00:56 Token validated successfully for user ID=3
+2025/01/05 22:00:56 Received request: OPTIONS /chats
+2025/01/05 22:00:57 Received request: OPTIONS /chat
+2025/01/05 22:00:57 Received request: GET /chat
+2025/01/05 22:00:57 Received request: GET /chats
+2025/01/05 22:00:57 Fetching messages for chatID: 2
+2025/01/05 22:00:57 Fetching message with ID: 2
+2025/01/05 22:00:57 Message chain completed for starting message ID: 2
+2025/01/05 22:00:57 Successfully fetched 1 messages for chatID: 2
+2025/01/05 22:00:57 Fetching users for chatID: 2
+2025/01/05 22:00:57 Successfully retrieved 3 chats for userID: 3
+2025/01/05 22:00:57 Successfully retrieved 2 users for chatID: 2
+2025/01/05 22:00:57 Successfully retrieved details for chatID: 2
+2025/01/05 22:01:00 Received request: OPTIONS /chat
+2025/01/05 22:01:00 Received request: GET /chat
+2025/01/05 22:01:00 Fetching messages for chatID: 3
+2025/01/05 22:01:00 Fetching message with ID: 8
+2025/01/05 22:01:00 Fetching message with ID: 6
+2025/01/05 22:01:00 Fetching message with ID: 5
+2025/01/05 22:01:00 Fetching message with ID: 4
+2025/01/05 22:01:00 Fetching message with ID: 3
+2025/01/05 22:01:00 Message chain completed for starting message ID: 3
+2025/01/05 22:01:00 Successfully fetched 5 messages for chatID: 3
+2025/01/05 22:01:00 Fetching users for chatID: 3
+2025/01/05 22:01:00 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:01:00 Successfully retrieved details for chatID: 3
+2025/01/05 22:01:05 Received request: OPTIONS /api/send
+2025/01/05 22:01:05 Received request: POST /api/send
+2025/01/05 22:01:05 Received request to add a message
+2025/01/05 22:01:05 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:01:06 Received request: OPTIONS /chat
+2025/01/05 22:01:06 Received request: GET /chat
+2025/01/05 22:01:06 Fetching messages for chatID: 3
+2025/01/05 22:01:06 Fetching message with ID: 9
+2025/01/05 22:01:06 Fetching message with ID: 8
+2025/01/05 22:01:06 Fetching message with ID: 6
+2025/01/05 22:01:06 Fetching message with ID: 5
+2025/01/05 22:01:06 Fetching message with ID: 4
+2025/01/05 22:01:06 Fetching message with ID: 3
+2025/01/05 22:01:06 Message chain completed for starting message ID: 3
+2025/01/05 22:01:06 Successfully fetched 6 messages for chatID: 3
+2025/01/05 22:01:06 Fetching users for chatID: 3
+2025/01/05 22:01:06 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:01:06 Successfully retrieved details for chatID: 3
+2025/01/05 22:01:08 Received request: OPTIONS /api/validate-token
+2025/01/05 22:01:08 Received request: POST /api/validate-token
+2025/01/05 22:01:08 Token validated successfully for user ID=3
+2025/01/05 22:01:08 Received request: GET /chat
+2025/01/05 22:01:08 Received request: OPTIONS /chats
+2025/01/05 22:01:08 Fetching messages for chatID: 3
+2025/01/05 22:01:08 Fetching message with ID: 9
+2025/01/05 22:01:08 Fetching message with ID: 8
+2025/01/05 22:01:08 Fetching message with ID: 6
+2025/01/05 22:01:08 Fetching message with ID: 5
+2025/01/05 22:01:08 Fetching message with ID: 4
+2025/01/05 22:01:08 Fetching message with ID: 3
+2025/01/05 22:01:08 Message chain completed for starting message ID: 3
+2025/01/05 22:01:08 Successfully fetched 6 messages for chatID: 3
+2025/01/05 22:01:08 Fetching users for chatID: 3
+2025/01/05 22:01:08 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:01:08 Successfully retrieved details for chatID: 3
+2025/01/05 22:01:08 Received request: GET /chats
+2025/01/05 22:01:08 Successfully retrieved 3 chats for userID: 3
+2025/01/05 22:01:49 Received request: OPTIONS /api/send
+2025/01/05 22:01:49 Received request: POST /api/send
+2025/01/05 22:01:49 Received request to add a message
+2025/01/05 22:01:49 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:01:49 Received request: OPTIONS /chat
+2025/01/05 22:01:49 Received request: GET /chat
+2025/01/05 22:01:49 Fetching messages for chatID: 3
+2025/01/05 22:01:49 Fetching message with ID: 10
+2025/01/05 22:01:49 Fetching message with ID: 9
+2025/01/05 22:01:49 Fetching message with ID: 8
+2025/01/05 22:01:49 Fetching message with ID: 6
+2025/01/05 22:01:49 Fetching message with ID: 5
+2025/01/05 22:01:49 Fetching message with ID: 4
+2025/01/05 22:01:49 Fetching message with ID: 3
+2025/01/05 22:01:49 Message chain completed for starting message ID: 3
+2025/01/05 22:01:49 Successfully fetched 7 messages for chatID: 3
+2025/01/05 22:01:49 Fetching users for chatID: 3
+2025/01/05 22:01:49 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:01:49 Successfully retrieved details for chatID: 3
+2025/01/05 22:01:58 Received request: OPTIONS /api/send
+2025/01/05 22:01:58 Received request: POST /api/send
+2025/01/05 22:01:58 Received request to add a message
+2025/01/05 22:01:58 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:01:58 Received request: OPTIONS /chat
+2025/01/05 22:01:58 Received request: GET /chat
+2025/01/05 22:01:58 Fetching messages for chatID: 3
+2025/01/05 22:01:58 Fetching message with ID: 11
+2025/01/05 22:01:58 Fetching message with ID: 10
+2025/01/05 22:01:58 Fetching message with ID: 9
+2025/01/05 22:01:58 Fetching message with ID: 8
+2025/01/05 22:01:58 Fetching message with ID: 6
+2025/01/05 22:01:58 Fetching message with ID: 5
+2025/01/05 22:01:58 Fetching message with ID: 4
+2025/01/05 22:01:58 Fetching message with ID: 3
+2025/01/05 22:01:58 Message chain completed for starting message ID: 3
+2025/01/05 22:01:58 Successfully fetched 8 messages for chatID: 3
+2025/01/05 22:01:58 Fetching users for chatID: 3
+2025/01/05 22:01:58 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:01:58 Successfully retrieved details for chatID: 3
+2025/01/05 22:02:06 Received request: OPTIONS /api/send
+2025/01/05 22:02:06 Received request: POST /api/send
+2025/01/05 22:02:06 Received request to add a message
+2025/01/05 22:02:06 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:02:06 Received request: OPTIONS /chat
+2025/01/05 22:02:06 Received request: GET /chat
+2025/01/05 22:02:07 Fetching messages for chatID: 3
+2025/01/05 22:02:07 Fetching message with ID: 12
+2025/01/05 22:02:07 Fetching message with ID: 11
+2025/01/05 22:02:07 Fetching message with ID: 10
+2025/01/05 22:02:07 Fetching message with ID: 9
+2025/01/05 22:02:07 Fetching message with ID: 8
+2025/01/05 22:02:07 Fetching message with ID: 6
+2025/01/05 22:02:07 Fetching message with ID: 5
+2025/01/05 22:02:07 Fetching message with ID: 4
+2025/01/05 22:02:07 Fetching message with ID: 3
+2025/01/05 22:02:07 Message chain completed for starting message ID: 3
+2025/01/05 22:02:07 Successfully fetched 9 messages for chatID: 3
+2025/01/05 22:02:07 Fetching users for chatID: 3
+2025/01/05 22:02:07 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:02:07 Successfully retrieved details for chatID: 3
+2025/01/05 22:02:12 Received request: OPTIONS /api/send
+2025/01/05 22:02:12 Received request: POST /api/send
+2025/01/05 22:02:12 Received request to add a message
+2025/01/05 22:02:12 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:02:12 Received request: OPTIONS /chat
+2025/01/05 22:02:12 Received request: GET /chat
+2025/01/05 22:02:12 Fetching messages for chatID: 3
+2025/01/05 22:02:12 Fetching message with ID: 13
+2025/01/05 22:02:12 Fetching message with ID: 12
+2025/01/05 22:02:12 Fetching message with ID: 11
+2025/01/05 22:02:12 Fetching message with ID: 10
+2025/01/05 22:02:12 Fetching message with ID: 9
+2025/01/05 22:02:12 Fetching message with ID: 8
+2025/01/05 22:02:12 Fetching message with ID: 6
+2025/01/05 22:02:12 Fetching message with ID: 5
+2025/01/05 22:02:12 Fetching message with ID: 4
+2025/01/05 22:02:12 Fetching message with ID: 3
+2025/01/05 22:02:12 Message chain completed for starting message ID: 3
+2025/01/05 22:02:12 Successfully fetched 10 messages for chatID: 3
+2025/01/05 22:02:12 Fetching users for chatID: 3
+2025/01/05 22:02:12 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:02:12 Successfully retrieved details for chatID: 3
+2025/01/05 22:02:28 Received request: OPTIONS /api/send
+2025/01/05 22:02:28 Received request: POST /api/send
+2025/01/05 22:02:28 Received request to add a message
+2025/01/05 22:02:28 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:02:28 Received request: OPTIONS /chat
+2025/01/05 22:02:28 Received request: GET /chat
+2025/01/05 22:02:28 Fetching messages for chatID: 3
+2025/01/05 22:02:28 Fetching message with ID: 14
+2025/01/05 22:02:28 Fetching message with ID: 13
+2025/01/05 22:02:28 Fetching message with ID: 12
+2025/01/05 22:02:28 Fetching message with ID: 11
+2025/01/05 22:02:28 Fetching message with ID: 10
+2025/01/05 22:02:28 Fetching message with ID: 9
+2025/01/05 22:02:28 Fetching message with ID: 8
+2025/01/05 22:02:28 Fetching message with ID: 6
+2025/01/05 22:02:28 Fetching message with ID: 5
+2025/01/05 22:02:28 Fetching message with ID: 4
+2025/01/05 22:02:28 Fetching message with ID: 3
+2025/01/05 22:02:28 Message chain completed for starting message ID: 3
+2025/01/05 22:02:28 Successfully fetched 11 messages for chatID: 3
+2025/01/05 22:02:28 Fetching users for chatID: 3
+2025/01/05 22:02:28 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:02:28 Successfully retrieved details for chatID: 3
+2025/01/05 22:02:53 Received request: OPTIONS /api/send
+2025/01/05 22:02:53 Received request: POST /api/send
+2025/01/05 22:02:53 Received request to add a message
+2025/01/05 22:02:53 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:02:53 Received request: OPTIONS /chat
+2025/01/05 22:02:53 Received request: GET /chat
+2025/01/05 22:02:53 Fetching messages for chatID: 3
+2025/01/05 22:02:53 Fetching message with ID: 15
+2025/01/05 22:02:53 Fetching message with ID: 14
+2025/01/05 22:02:53 Fetching message with ID: 13
+2025/01/05 22:02:53 Fetching message with ID: 12
+2025/01/05 22:02:53 Fetching message with ID: 11
+2025/01/05 22:02:53 Fetching message with ID: 10
+2025/01/05 22:02:53 Fetching message with ID: 9
+2025/01/05 22:02:53 Fetching message with ID: 8
+2025/01/05 22:02:53 Fetching message with ID: 6
+2025/01/05 22:02:53 Fetching message with ID: 5
+2025/01/05 22:02:53 Fetching message with ID: 4
+2025/01/05 22:02:53 Fetching message with ID: 3
+2025/01/05 22:02:53 Message chain completed for starting message ID: 3
+2025/01/05 22:02:53 Successfully fetched 12 messages for chatID: 3
+2025/01/05 22:02:53 Fetching users for chatID: 3
+2025/01/05 22:02:53 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:02:53 Successfully retrieved details for chatID: 3
+2025/01/05 22:03:07 Received request: OPTIONS /api/send
+2025/01/05 22:03:07 Received request: POST /api/send
+2025/01/05 22:03:07 Received request to add a message
+2025/01/05 22:03:07 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:03:07 Received request: OPTIONS /chat
+2025/01/05 22:03:07 Received request: GET /chat
+2025/01/05 22:03:07 Fetching messages for chatID: 3
+2025/01/05 22:03:07 Fetching message with ID: 16
+2025/01/05 22:03:07 Fetching message with ID: 15
+2025/01/05 22:03:07 Fetching message with ID: 14
+2025/01/05 22:03:07 Fetching message with ID: 13
+2025/01/05 22:03:07 Fetching message with ID: 12
+2025/01/05 22:03:07 Fetching message with ID: 11
+2025/01/05 22:03:07 Fetching message with ID: 10
+2025/01/05 22:03:07 Fetching message with ID: 9
+2025/01/05 22:03:07 Fetching message with ID: 8
+2025/01/05 22:03:07 Fetching message with ID: 6
+2025/01/05 22:03:07 Fetching message with ID: 5
+2025/01/05 22:03:07 Fetching message with ID: 4
+2025/01/05 22:03:07 Fetching message with ID: 3
+2025/01/05 22:03:07 Message chain completed for starting message ID: 3
+2025/01/05 22:03:07 Successfully fetched 13 messages for chatID: 3
+2025/01/05 22:03:07 Fetching users for chatID: 3
+2025/01/05 22:03:07 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:03:07 Successfully retrieved details for chatID: 3
+2025/01/05 22:03:22 Received request: OPTIONS /chat
+2025/01/05 22:03:22 Received request: GET /chat
+2025/01/05 22:03:22 Fetching messages for chatID: 1
+2025/01/05 22:03:22 Fetching message with ID: 7
+2025/01/05 22:03:22 Fetching message with ID: 1
+2025/01/05 22:03:22 Message chain completed for starting message ID: 1
+2025/01/05 22:03:22 Successfully fetched 2 messages for chatID: 1
+2025/01/05 22:03:22 Fetching users for chatID: 1
+2025/01/05 22:03:22 Successfully retrieved 2 users for chatID: 1
+2025/01/05 22:03:22 Successfully retrieved details for chatID: 1
+2025/01/05 22:03:24 Received request: OPTIONS /chat
+2025/01/05 22:03:24 Received request: GET /chat
+2025/01/05 22:03:24 Fetching messages for chatID: 2
+2025/01/05 22:03:24 Fetching message with ID: 2
+2025/01/05 22:03:24 Message chain completed for starting message ID: 2
+2025/01/05 22:03:24 Successfully fetched 1 messages for chatID: 2
+2025/01/05 22:03:24 Fetching users for chatID: 2
+2025/01/05 22:03:24 Successfully retrieved 2 users for chatID: 2
+2025/01/05 22:03:24 Successfully retrieved details for chatID: 2
+2025/01/05 22:03:50 Received request: GET /
+2025/01/05 22:06:20 Received request: OPTIONS /api/send
+2025/01/05 22:06:20 Received request: POST /api/send
+2025/01/05 22:06:20 Received request to add a message
+2025/01/05 22:06:20 Message added successfully to chatID: 3 by userID: 3
+2025/01/05 22:06:20 Received request: OPTIONS /chat
+2025/01/05 22:06:20 Received request: GET /chat
+2025/01/05 22:06:20 Fetching messages for chatID: 3
+2025/01/05 22:06:20 Fetching message with ID: 17
+2025/01/05 22:06:20 Fetching message with ID: 16
+2025/01/05 22:06:20 Fetching message with ID: 15
+2025/01/05 22:06:20 Fetching message with ID: 14
+2025/01/05 22:06:20 Fetching message with ID: 13
+2025/01/05 22:06:20 Fetching message with ID: 12
+2025/01/05 22:06:20 Fetching message with ID: 11
+2025/01/05 22:06:20 Fetching message with ID: 10
+2025/01/05 22:06:20 Fetching message with ID: 9
+2025/01/05 22:06:20 Fetching message with ID: 8
+2025/01/05 22:06:20 Fetching message with ID: 6
+2025/01/05 22:06:20 Fetching message with ID: 5
+2025/01/05 22:06:20 Fetching message with ID: 4
+2025/01/05 22:06:20 Fetching message with ID: 3
+2025/01/05 22:06:20 Message chain completed for starting message ID: 3
+2025/01/05 22:06:20 Successfully fetched 14 messages for chatID: 3
+2025/01/05 22:06:20 Fetching users for chatID: 3
+2025/01/05 22:06:20 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:06:20 Successfully retrieved details for chatID: 3
+2025/01/05 22:11:55 Received request: OPTIONS /chat
+2025/01/05 22:11:55 Received request: GET /chat
+2025/01/05 22:11:55 Fetching messages for chatID: 2
+2025/01/05 22:11:55 Fetching message with ID: 2
+2025/01/05 22:11:55 Message chain completed for starting message ID: 2
+2025/01/05 22:11:55 Successfully fetched 1 messages for chatID: 2
+2025/01/05 22:11:55 Fetching users for chatID: 2
+2025/01/05 22:11:55 Successfully retrieved 2 users for chatID: 2
+2025/01/05 22:11:55 Successfully retrieved details for chatID: 2
+2025/01/05 22:11:55 Received request: OPTIONS /chat
+2025/01/05 22:11:55 Received request: GET /chat
+2025/01/05 22:11:55 Fetching messages for chatID: 1
+2025/01/05 22:11:55 Fetching message with ID: 7
+2025/01/05 22:11:55 Fetching message with ID: 1
+2025/01/05 22:11:55 Message chain completed for starting message ID: 1
+2025/01/05 22:11:55 Successfully fetched 2 messages for chatID: 1
+2025/01/05 22:11:55 Fetching users for chatID: 1
+2025/01/05 22:11:55 Successfully retrieved 2 users for chatID: 1
+2025/01/05 22:11:55 Successfully retrieved details for chatID: 1
+2025/01/05 22:19:33 Received request: GET /
+2025/01/05 22:21:18 Received request: OPTIONS /chat
+2025/01/05 22:21:18 Received request: GET /chat
+2025/01/05 22:21:18 Fetching messages for chatID: 1
+2025/01/05 22:21:18 Fetching message with ID: 7
+2025/01/05 22:21:18 Fetching message with ID: 1
+2025/01/05 22:21:18 Message chain completed for starting message ID: 1
+2025/01/05 22:21:18 Successfully fetched 2 messages for chatID: 1
+2025/01/05 22:21:18 Fetching users for chatID: 1
+2025/01/05 22:21:18 Successfully retrieved 2 users for chatID: 1
+2025/01/05 22:21:18 Successfully retrieved details for chatID: 1
+2025/01/05 22:24:37 Received request: OPTIONS /chat
+2025/01/05 22:24:37 Received request: GET /chat
+2025/01/05 22:24:37 Fetching messages for chatID: 2
+2025/01/05 22:24:37 Fetching message with ID: 2
+2025/01/05 22:24:37 Message chain completed for starting message ID: 2
+2025/01/05 22:24:37 Successfully fetched 1 messages for chatID: 2
+2025/01/05 22:24:37 Fetching users for chatID: 2
+2025/01/05 22:24:37 Successfully retrieved 2 users for chatID: 2
+2025/01/05 22:24:37 Successfully retrieved details for chatID: 2
+2025/01/05 22:24:38 Received request: OPTIONS /chat
+2025/01/05 22:24:38 Received request: GET /chat
+2025/01/05 22:24:38 Fetching messages for chatID: 1
+2025/01/05 22:24:38 Fetching message with ID: 7
+2025/01/05 22:24:38 Fetching message with ID: 1
+2025/01/05 22:24:38 Message chain completed for starting message ID: 1
+2025/01/05 22:24:38 Successfully fetched 2 messages for chatID: 1
+2025/01/05 22:24:38 Fetching users for chatID: 1
+2025/01/05 22:24:38 Successfully retrieved 2 users for chatID: 1
+2025/01/05 22:24:38 Successfully retrieved details for chatID: 1
+2025/01/05 22:29:33 Received request: OPTIONS /api/validate-token
+2025/01/05 22:29:33 Received request: POST /api/validate-token
+2025/01/05 22:29:33 Token validated successfully for user ID=3
+2025/01/05 22:29:33 Received request: OPTIONS /chats
+2025/01/05 22:29:33 Received request: OPTIONS /chat
+2025/01/05 22:29:33 Received request: GET /chats
+2025/01/05 22:29:33 Received request: GET /chat
+2025/01/05 22:29:33 Successfully retrieved 3 chats for userID: 3
+2025/01/05 22:29:33 Fetching messages for chatID: 3
+2025/01/05 22:29:33 Fetching message with ID: 17
+2025/01/05 22:29:33 Fetching message with ID: 16
+2025/01/05 22:29:33 Fetching message with ID: 15
+2025/01/05 22:29:33 Fetching message with ID: 14
+2025/01/05 22:29:33 Fetching message with ID: 13
+2025/01/05 22:29:33 Fetching message with ID: 12
+2025/01/05 22:29:33 Fetching message with ID: 11
+2025/01/05 22:29:33 Fetching message with ID: 10
+2025/01/05 22:29:33 Fetching message with ID: 9
+2025/01/05 22:29:33 Fetching message with ID: 8
+2025/01/05 22:29:33 Fetching message with ID: 6
+2025/01/05 22:29:33 Fetching message with ID: 5
+2025/01/05 22:29:33 Fetching message with ID: 4
+2025/01/05 22:29:33 Fetching message with ID: 3
+2025/01/05 22:29:33 Message chain completed for starting message ID: 3
+2025/01/05 22:29:33 Successfully fetched 14 messages for chatID: 3
+2025/01/05 22:29:33 Fetching users for chatID: 3
+2025/01/05 22:29:33 Successfully retrieved 2 users for chatID: 3
+2025/01/05 22:29:33 Successfully retrieved details for chatID: 3
+2025/01/05 22:45:31 Received request: GET /
+2025/01/05 23:54:06 Received request: GET /
+2025/01/06 00:06:52 Received request: GET /
+2025/01/06 00:16:22 Received request: GET /
+2025/01/06 00:36:52 Received request: GET /
+2025/01/06 01:24:33 Received request: GET /.env
+2025/01/06 01:42:02 Received request: GET /
+2025/01/06 02:39:57 Received request: GET /
+2025/01/06 03:39:27 Received request: GET /
+2025/01/06 04:35:26 Received request: GET /
+2025/01/06 05:05:07 Received request: GET /
+2025/01/06 07:10:10 Received request: GET /
+2025/01/06 07:41:29 Received request: GET /
+2025/01/06 07:42:14 Received request: GET /
+2025/01/06 07:42:29 Received request: GET /favicon.ico
+2025/01/06 07:42:32 Received request: GET /
+2025/01/06 07:42:35 Received request: CONNECT 
+2025/01/06 08:03:33 Received request: GET /
+2025/01/06 08:27:55 Received request: GET /
+2025/01/06 10:03:51 Received request: GET /
+2025/01/06 10:15:05 Received request: GET /
+2025/01/06 12:13:47 Received request: OPTIONS /api/login
+2025/01/06 12:13:47 Received request: POST /api/login
+2025/01/06 12:13:48 User logged in successfully: ID=3, Name=@Tralka22, Tag=@Tralka22
+2025/01/06 12:13:49 Received request: OPTIONS /chats
+2025/01/06 12:13:50 Received request: GET /chats
+2025/01/06 12:13:50 Successfully retrieved 3 chats for userID: 3
+2025/01/06 12:13:53 Received request: OPTIONS /chat
+2025/01/06 12:13:53 Received request: GET /chat
+2025/01/06 12:13:53 Fetching messages for chatID: 3
+2025/01/06 12:13:53 Fetching message with ID: 17
+2025/01/06 12:13:53 Fetching message with ID: 16
+2025/01/06 12:13:53 Fetching message with ID: 15
+2025/01/06 12:13:53 Fetching message with ID: 14
+2025/01/06 12:13:53 Fetching message with ID: 13
+2025/01/06 12:13:53 Fetching message with ID: 12
+2025/01/06 12:13:53 Fetching message with ID: 11
+2025/01/06 12:13:53 Fetching message with ID: 10
+2025/01/06 12:13:53 Fetching message with ID: 9
+2025/01/06 12:13:53 Fetching message with ID: 8
+2025/01/06 12:13:53 Fetching message with ID: 6
+2025/01/06 12:13:53 Fetching message with ID: 5
+2025/01/06 12:13:53 Fetching message with ID: 4
+2025/01/06 12:13:53 Fetching message with ID: 3
+2025/01/06 12:13:53 Message chain completed for starting message ID: 3
+2025/01/06 12:13:53 Successfully fetched 14 messages for chatID: 3
+2025/01/06 12:13:53 Fetching users for chatID: 3
+2025/01/06 12:13:53 Successfully retrieved 2 users for chatID: 3
+2025/01/06 12:13:53 Successfully retrieved details for chatID: 3
+2025/01/06 12:14:04 Received request: OPTIONS /chat
+2025/01/06 12:14:04 Received request: GET /chat
+2025/01/06 12:14:04 Fetching messages for chatID: 1
+2025/01/06 12:14:04 Fetching message with ID: 7
+2025/01/06 12:14:04 Fetching message with ID: 1
+2025/01/06 12:14:04 Message chain completed for starting message ID: 1
+2025/01/06 12:14:04 Successfully fetched 2 messages for chatID: 1
+2025/01/06 12:14:04 Fetching users for chatID: 1
+2025/01/06 12:14:04 Successfully retrieved 2 users for chatID: 1
+2025/01/06 12:14:04 Successfully retrieved details for chatID: 1
+2025/01/06 12:14:06 Received request: OPTIONS /api/validate-token
+2025/01/06 12:14:06 Received request: POST /api/validate-token
+2025/01/06 12:14:06 Token validated successfully for user ID=3
+2025/01/06 12:14:07 Received request: OPTIONS /chats
+2025/01/06 12:14:07 Received request: GET /chat
+2025/01/06 12:14:07 Received request: GET /chats
+2025/01/06 12:14:07 Successfully retrieved 3 chats for userID: 3
+2025/01/06 12:14:07 Fetching messages for chatID: 1
+2025/01/06 12:14:07 Fetching message with ID: 7
+2025/01/06 12:14:07 Fetching message with ID: 1
+2025/01/06 12:14:07 Message chain completed for starting message ID: 1
+2025/01/06 12:14:07 Successfully fetched 2 messages for chatID: 1
+2025/01/06 12:14:07 Fetching users for chatID: 1
+2025/01/06 12:14:07 Successfully retrieved 2 users for chatID: 1
+2025/01/06 12:14:07 Successfully retrieved details for chatID: 1
+2025/01/06 13:05:13 Received request: OPTIONS /api/validate-token
+2025/01/06 13:05:14 Received request: POST /api/validate-token
+2025/01/06 13:05:14 Token validated successfully for user ID=3
+2025/01/06 13:05:14 Received request: OPTIONS /chats
+2025/01/06 13:05:14 Received request: OPTIONS /chat
+2025/01/06 13:05:14 Received request: GET /chats
+2025/01/06 13:05:14 Successfully retrieved 3 chats for userID: 3
+2025/01/06 13:05:14 Received request: GET /chat
+2025/01/06 13:05:14 Fetching messages for chatID: 3
+2025/01/06 13:05:14 Fetching message with ID: 17
+2025/01/06 13:05:14 Fetching message with ID: 16
+2025/01/06 13:05:14 Fetching message with ID: 15
+2025/01/06 13:05:14 Fetching message with ID: 14
+2025/01/06 13:05:14 Fetching message with ID: 13
+2025/01/06 13:05:14 Fetching message with ID: 12
+2025/01/06 13:05:14 Fetching message with ID: 11
+2025/01/06 13:05:14 Fetching message with ID: 10
+2025/01/06 13:05:14 Fetching message with ID: 9
+2025/01/06 13:05:14 Fetching message with ID: 8
+2025/01/06 13:05:14 Fetching message with ID: 6
+2025/01/06 13:05:14 Fetching message with ID: 5
+2025/01/06 13:05:14 Fetching message with ID: 4
+2025/01/06 13:05:14 Fetching message with ID: 3
+2025/01/06 13:05:14 Message chain completed for starting message ID: 3
+2025/01/06 13:05:14 Successfully fetched 14 messages for chatID: 3
+2025/01/06 13:05:14 Fetching users for chatID: 3
+2025/01/06 13:05:14 Successfully retrieved 2 users for chatID: 3
+2025/01/06 13:05:14 Successfully retrieved details for chatID: 3
+2025/01/06 13:05:19 Received request: OPTIONS /chat
+2025/01/06 13:05:19 Received request: GET /chat
+2025/01/06 13:05:19 Fetching messages for chatID: 2
+2025/01/06 13:05:19 Fetching message with ID: 2
+2025/01/06 13:05:19 Message chain completed for starting message ID: 2
+2025/01/06 13:05:19 Successfully fetched 1 messages for chatID: 2
+2025/01/06 13:05:19 Fetching users for chatID: 2
+2025/01/06 13:05:19 Successfully retrieved 2 users for chatID: 2
+2025/01/06 13:05:19 Successfully retrieved details for chatID: 2
+2025/01/06 13:05:20 Received request: OPTIONS /chat
+2025/01/06 13:05:20 Received request: GET /chat
+2025/01/06 13:05:20 Fetching messages for chatID: 1
+2025/01/06 13:05:20 Fetching message with ID: 7
+2025/01/06 13:05:20 Fetching message with ID: 1
+2025/01/06 13:05:20 Message chain completed for starting message ID: 1
+2025/01/06 13:05:20 Successfully fetched 2 messages for chatID: 1
+2025/01/06 13:05:20 Fetching users for chatID: 1
+2025/01/06 13:05:20 Successfully retrieved 2 users for chatID: 1
+2025/01/06 13:05:20 Successfully retrieved details for chatID: 1
+2025/01/06 13:06:48 Received request: OPTIONS /api/validate-token
+2025/01/06 13:06:48 Received request: POST /api/validate-token
+2025/01/06 13:06:48 Token validated successfully for user ID=3
+2025/01/06 13:06:48 Received request: OPTIONS /chats
+2025/01/06 13:06:48 Received request: OPTIONS /chat
+2025/01/06 13:06:48 Received request: GET /chats
+2025/01/06 13:06:48 Successfully retrieved 3 chats for userID: 3
+2025/01/06 13:06:48 Received request: GET /chat
+2025/01/06 13:06:48 Fetching messages for chatID: 3
+2025/01/06 13:06:48 Fetching message with ID: 17
+2025/01/06 13:06:48 Fetching message with ID: 16
+2025/01/06 13:06:48 Fetching message with ID: 15
+2025/01/06 13:06:48 Fetching message with ID: 14
+2025/01/06 13:06:48 Fetching message with ID: 13
+2025/01/06 13:06:48 Fetching message with ID: 12
+2025/01/06 13:06:48 Fetching message with ID: 11
+2025/01/06 13:06:48 Fetching message with ID: 10
+2025/01/06 13:06:48 Fetching message with ID: 9
+2025/01/06 13:06:48 Fetching message with ID: 8
+2025/01/06 13:06:48 Fetching message with ID: 6
+2025/01/06 13:06:48 Fetching message with ID: 5
+2025/01/06 13:06:48 Fetching message with ID: 4
+2025/01/06 13:06:48 Fetching message with ID: 3
+2025/01/06 13:06:48 Message chain completed for starting message ID: 3
+2025/01/06 13:06:48 Successfully fetched 14 messages for chatID: 3
+2025/01/06 13:06:48 Fetching users for chatID: 3
+2025/01/06 13:06:48 Successfully retrieved 2 users for chatID: 3
+2025/01/06 13:06:48 Successfully retrieved details for chatID: 3
+2025/01/06 13:07:37 Received request: OPTIONS /api/register
+2025/01/06 13:07:37 Received request: POST /api/register
+2025/01/06 13:07:39 User registered successfully: ID=4, Tag=, Email=diskord2566@mail.ru
+2025/01/06 13:07:41 Received request: OPTIONS /chats
+2025/01/06 13:07:41 Received request: OPTIONS /chat
+2025/01/06 13:07:42 Received request: GET /chats
+2025/01/06 13:07:42 Токен не прошёл проверку
+2025/01/06 13:07:42 Received request: GET /chat
+2025/01/06 13:07:42 Токен не прошёл проверку
+2025/01/06 13:08:32 Received request: OPTIONS /api/validate-token
+2025/01/06 13:08:33 Received request: POST /api/validate-token
+2025/01/06 13:08:33 No token provided: http: named cookie not present
+2025/01/06 13:08:39 Received request: OPTIONS /api/login
+2025/01/06 13:08:39 Received request: POST /api/login
+2025/01/06 13:08:40 User logged in successfully: ID=4, Name=SOSAL?, Tag=SOSAL?
+2025/01/06 13:08:42 Received request: OPTIONS /chats
+2025/01/06 13:08:42 Received request: OPTIONS /chat
+2025/01/06 13:08:42 Received request: GET /chats
+2025/01/06 13:08:42 Successfully retrieved 3 chats for userID: 4
+2025/01/06 13:08:42 Received request: GET /chat
+2025/01/06 13:08:42 Fetching messages for chatID: 3
+2025/01/06 13:08:42 Fetching message with ID: 17
+2025/01/06 13:08:42 Fetching message with ID: 16
+2025/01/06 13:08:42 Fetching message with ID: 15
+2025/01/06 13:08:42 Fetching message with ID: 14
+2025/01/06 13:08:42 Fetching message with ID: 13
+2025/01/06 13:08:42 Fetching message with ID: 12
+2025/01/06 13:08:42 Fetching message with ID: 11
+2025/01/06 13:08:42 Fetching message with ID: 10
+2025/01/06 13:08:42 Fetching message with ID: 9
+2025/01/06 13:08:42 Fetching message with ID: 8
+2025/01/06 13:08:42 Fetching message with ID: 6
+2025/01/06 13:08:42 Fetching message with ID: 5
+2025/01/06 13:08:42 Fetching message with ID: 4
+2025/01/06 13:08:42 Fetching message with ID: 3
+2025/01/06 13:08:42 Message chain completed for starting message ID: 3
+2025/01/06 13:08:42 Successfully fetched 14 messages for chatID: 3
+2025/01/06 13:08:42 Fetching users for chatID: 3
+2025/01/06 13:08:42 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:08:42 Successfully retrieved details for chatID: 3
+2025/01/06 13:09:07 Received request: OPTIONS /chat
+2025/01/06 13:09:07 Received request: GET /chat
+2025/01/06 13:09:07 Fetching messages for chatID: 1
+2025/01/06 13:09:07 Fetching message with ID: 7
+2025/01/06 13:09:07 Fetching message with ID: 1
+2025/01/06 13:09:07 Message chain completed for starting message ID: 1
+2025/01/06 13:09:07 Successfully fetched 2 messages for chatID: 1
+2025/01/06 13:09:07 Fetching users for chatID: 1
+2025/01/06 13:09:07 Successfully retrieved 3 users for chatID: 1
+2025/01/06 13:09:07 Successfully retrieved details for chatID: 1
+2025/01/06 13:09:09 Received request: OPTIONS /chat
+2025/01/06 13:09:09 Received request: GET /chat
+2025/01/06 13:09:09 Fetching messages for chatID: 2
+2025/01/06 13:09:09 Fetching message with ID: 2
+2025/01/06 13:09:09 Message chain completed for starting message ID: 2
+2025/01/06 13:09:09 Successfully fetched 1 messages for chatID: 2
+2025/01/06 13:09:09 Fetching users for chatID: 2
+2025/01/06 13:09:09 Successfully retrieved 3 users for chatID: 2
+2025/01/06 13:09:09 Successfully retrieved details for chatID: 2
+2025/01/06 13:09:33 Received request: OPTIONS /api/send
+2025/01/06 13:09:33 Received request: POST /api/send
+2025/01/06 13:09:33 Received request to add a message
+2025/01/06 13:09:33 Message added successfully to chatID: 3 by userID: 3
+2025/01/06 13:09:33 Received request: OPTIONS /chat
+2025/01/06 13:09:33 Received request: GET /chat
+2025/01/06 13:09:33 Fetching messages for chatID: 3
+2025/01/06 13:09:33 Fetching message with ID: 18
+2025/01/06 13:09:33 Fetching message with ID: 17
+2025/01/06 13:09:33 Fetching message with ID: 16
+2025/01/06 13:09:33 Fetching message with ID: 15
+2025/01/06 13:09:33 Fetching message with ID: 14
+2025/01/06 13:09:33 Fetching message with ID: 13
+2025/01/06 13:09:33 Fetching message with ID: 12
+2025/01/06 13:09:33 Fetching message with ID: 11
+2025/01/06 13:09:33 Fetching message with ID: 10
+2025/01/06 13:09:33 Fetching message with ID: 9
+2025/01/06 13:09:33 Fetching message with ID: 8
+2025/01/06 13:09:33 Fetching message with ID: 6
+2025/01/06 13:09:33 Fetching message with ID: 5
+2025/01/06 13:09:33 Fetching message with ID: 4
+2025/01/06 13:09:33 Fetching message with ID: 3
+2025/01/06 13:09:33 Message chain completed for starting message ID: 3
+2025/01/06 13:09:33 Successfully fetched 15 messages for chatID: 3
+2025/01/06 13:09:33 Fetching users for chatID: 3
+2025/01/06 13:09:33 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:09:33 Successfully retrieved details for chatID: 3
+2025/01/06 13:10:01 Received request: OPTIONS /chat
+2025/01/06 13:10:01 Received request: GET /chat
+2025/01/06 13:10:01 Fetching messages for chatID: 1
+2025/01/06 13:10:01 Fetching message with ID: 7
+2025/01/06 13:10:01 Fetching message with ID: 1
+2025/01/06 13:10:01 Message chain completed for starting message ID: 1
+2025/01/06 13:10:01 Successfully fetched 2 messages for chatID: 1
+2025/01/06 13:10:01 Fetching users for chatID: 1
+2025/01/06 13:10:01 Successfully retrieved 3 users for chatID: 1
+2025/01/06 13:10:01 Successfully retrieved details for chatID: 1
+2025/01/06 13:10:02 Received request: OPTIONS /chat
+2025/01/06 13:10:02 Received request: GET /chat
+2025/01/06 13:10:02 Fetching messages for chatID: 2
+2025/01/06 13:10:02 Fetching message with ID: 2
+2025/01/06 13:10:02 Message chain completed for starting message ID: 2
+2025/01/06 13:10:02 Successfully fetched 1 messages for chatID: 2
+2025/01/06 13:10:02 Fetching users for chatID: 2
+2025/01/06 13:10:02 Successfully retrieved 3 users for chatID: 2
+2025/01/06 13:10:02 Successfully retrieved details for chatID: 2
+2025/01/06 13:10:24 Received request: OPTIONS /api/send
+2025/01/06 13:10:24 Received request: POST /api/send
+2025/01/06 13:10:24 Received request to add a message
+2025/01/06 13:10:24 Message added successfully to chatID: 3 by userID: 4
+2025/01/06 13:10:24 Received request: OPTIONS /chat
+2025/01/06 13:10:24 Received request: GET /chat
+2025/01/06 13:10:24 Fetching messages for chatID: 3
+2025/01/06 13:10:24 Fetching message with ID: 19
+2025/01/06 13:10:24 Fetching message with ID: 18
+2025/01/06 13:10:24 Fetching message with ID: 17
+2025/01/06 13:10:24 Fetching message with ID: 16
+2025/01/06 13:10:24 Fetching message with ID: 15
+2025/01/06 13:10:24 Fetching message with ID: 14
+2025/01/06 13:10:24 Fetching message with ID: 13
+2025/01/06 13:10:24 Fetching message with ID: 12
+2025/01/06 13:10:24 Fetching message with ID: 11
+2025/01/06 13:10:24 Fetching message with ID: 10
+2025/01/06 13:10:24 Fetching message with ID: 9
+2025/01/06 13:10:24 Fetching message with ID: 8
+2025/01/06 13:10:24 Fetching message with ID: 6
+2025/01/06 13:10:24 Fetching message with ID: 5
+2025/01/06 13:10:24 Fetching message with ID: 4
+2025/01/06 13:10:24 Fetching message with ID: 3
+2025/01/06 13:10:24 Message chain completed for starting message ID: 3
+2025/01/06 13:10:24 Successfully fetched 16 messages for chatID: 3
+2025/01/06 13:10:24 Fetching users for chatID: 3
+2025/01/06 13:10:24 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:10:24 Successfully retrieved details for chatID: 3
+2025/01/06 13:10:27 Received request: POST /api/send
+2025/01/06 13:10:27 Received request to add a message
+2025/01/06 13:10:27 Message added successfully to chatID: 3 by userID: 4
+2025/01/06 13:10:27 Received request: GET /chat
+2025/01/06 13:10:27 Fetching messages for chatID: 3
+2025/01/06 13:10:27 Fetching message with ID: 20
+2025/01/06 13:10:27 Fetching message with ID: 19
+2025/01/06 13:10:27 Fetching message with ID: 18
+2025/01/06 13:10:27 Fetching message with ID: 17
+2025/01/06 13:10:27 Fetching message with ID: 16
+2025/01/06 13:10:27 Fetching message with ID: 15
+2025/01/06 13:10:27 Fetching message with ID: 14
+2025/01/06 13:10:27 Fetching message with ID: 13
+2025/01/06 13:10:27 Fetching message with ID: 12
+2025/01/06 13:10:27 Fetching message with ID: 11
+2025/01/06 13:10:27 Fetching message with ID: 10
+2025/01/06 13:10:27 Fetching message with ID: 9
+2025/01/06 13:10:27 Fetching message with ID: 8
+2025/01/06 13:10:27 Fetching message with ID: 6
+2025/01/06 13:10:27 Fetching message with ID: 5
+2025/01/06 13:10:27 Fetching message with ID: 4
+2025/01/06 13:10:27 Fetching message with ID: 3
+2025/01/06 13:10:27 Message chain completed for starting message ID: 3
+2025/01/06 13:10:27 Successfully fetched 17 messages for chatID: 3
+2025/01/06 13:10:27 Fetching users for chatID: 3
+2025/01/06 13:10:27 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:10:27 Successfully retrieved details for chatID: 3
+2025/01/06 13:11:58 Received request: OPTIONS /chat
+2025/01/06 13:11:58 Received request: GET /chat
+2025/01/06 13:11:58 Fetching messages for chatID: 1
+2025/01/06 13:11:58 Fetching message with ID: 7
+2025/01/06 13:11:58 Fetching message with ID: 1
+2025/01/06 13:11:58 Message chain completed for starting message ID: 1
+2025/01/06 13:11:58 Successfully fetched 2 messages for chatID: 1
+2025/01/06 13:11:58 Fetching users for chatID: 1
+2025/01/06 13:11:58 Successfully retrieved 3 users for chatID: 1
+2025/01/06 13:11:58 Successfully retrieved details for chatID: 1
+2025/01/06 13:11:59 Received request: OPTIONS /chat
+2025/01/06 13:11:59 Received request: GET /chat
+2025/01/06 13:11:59 Fetching messages for chatID: 2
+2025/01/06 13:11:59 Fetching message with ID: 2
+2025/01/06 13:11:59 Message chain completed for starting message ID: 2
+2025/01/06 13:11:59 Successfully fetched 1 messages for chatID: 2
+2025/01/06 13:11:59 Fetching users for chatID: 2
+2025/01/06 13:11:59 Successfully retrieved 3 users for chatID: 2
+2025/01/06 13:11:59 Successfully retrieved details for chatID: 2
+2025/01/06 13:14:26 Received request: OPTIONS /api/validate-token
+2025/01/06 13:14:26 Received request: POST /api/validate-token
+2025/01/06 13:14:26 Token validated successfully for user ID=3
+2025/01/06 13:14:26 Received request: OPTIONS /chats
+2025/01/06 13:14:26 Received request: OPTIONS /chat
+2025/01/06 13:14:26 Received request: GET /chats
+2025/01/06 13:14:26 Successfully retrieved 3 chats for userID: 3
+2025/01/06 13:14:26 Received request: GET /chat
+2025/01/06 13:14:26 Fetching messages for chatID: 3
+2025/01/06 13:14:26 Fetching message with ID: 20
+2025/01/06 13:14:26 Fetching message with ID: 19
+2025/01/06 13:14:26 Fetching message with ID: 18
+2025/01/06 13:14:26 Fetching message with ID: 17
+2025/01/06 13:14:26 Fetching message with ID: 16
+2025/01/06 13:14:26 Fetching message with ID: 15
+2025/01/06 13:14:26 Fetching message with ID: 14
+2025/01/06 13:14:26 Fetching message with ID: 13
+2025/01/06 13:14:26 Fetching message with ID: 12
+2025/01/06 13:14:26 Fetching message with ID: 11
+2025/01/06 13:14:26 Fetching message with ID: 10
+2025/01/06 13:14:26 Fetching message with ID: 9
+2025/01/06 13:14:26 Fetching message with ID: 8
+2025/01/06 13:14:26 Fetching message with ID: 6
+2025/01/06 13:14:26 Fetching message with ID: 5
+2025/01/06 13:14:26 Fetching message with ID: 4
+2025/01/06 13:14:26 Fetching message with ID: 3
+2025/01/06 13:14:26 Message chain completed for starting message ID: 3
+2025/01/06 13:14:26 Successfully fetched 17 messages for chatID: 3
+2025/01/06 13:14:26 Fetching users for chatID: 3
+2025/01/06 13:14:26 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:14:26 Successfully retrieved details for chatID: 3
+2025/01/06 13:14:30 Received request: POST /api/validate-token
+2025/01/06 13:14:30 Token validated successfully for user ID=3
+2025/01/06 13:14:31 Received request: GET /chats
+2025/01/06 13:14:31 Received request: GET /chat
+2025/01/06 13:14:31 Successfully retrieved 3 chats for userID: 3
+2025/01/06 13:14:31 Fetching messages for chatID: 3
+2025/01/06 13:14:31 Fetching message with ID: 20
+2025/01/06 13:14:31 Fetching message with ID: 19
+2025/01/06 13:14:31 Fetching message with ID: 18
+2025/01/06 13:14:31 Fetching message with ID: 17
+2025/01/06 13:14:31 Fetching message with ID: 16
+2025/01/06 13:14:31 Fetching message with ID: 15
+2025/01/06 13:14:31 Fetching message with ID: 14
+2025/01/06 13:14:31 Fetching message with ID: 13
+2025/01/06 13:14:31 Fetching message with ID: 12
+2025/01/06 13:14:31 Fetching message with ID: 11
+2025/01/06 13:14:31 Fetching message with ID: 10
+2025/01/06 13:14:31 Fetching message with ID: 9
+2025/01/06 13:14:31 Fetching message with ID: 8
+2025/01/06 13:14:31 Fetching message with ID: 6
+2025/01/06 13:14:31 Fetching message with ID: 5
+2025/01/06 13:14:31 Fetching message with ID: 4
+2025/01/06 13:14:31 Fetching message with ID: 3
+2025/01/06 13:14:31 Message chain completed for starting message ID: 3
+2025/01/06 13:14:31 Successfully fetched 17 messages for chatID: 3
+2025/01/06 13:14:31 Fetching users for chatID: 3
+2025/01/06 13:14:31 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:14:31 Successfully retrieved details for chatID: 3
+2025/01/06 13:14:57 Received request: OPTIONS /chat
+2025/01/06 13:14:57 Received request: GET /chat
+2025/01/06 13:14:57 Fetching messages for chatID: 1
+2025/01/06 13:14:57 Fetching message with ID: 7
+2025/01/06 13:14:57 Fetching message with ID: 1
+2025/01/06 13:14:57 Message chain completed for starting message ID: 1
+2025/01/06 13:14:57 Successfully fetched 2 messages for chatID: 1
+2025/01/06 13:14:57 Fetching users for chatID: 1
+2025/01/06 13:14:57 Successfully retrieved 3 users for chatID: 1
+2025/01/06 13:14:57 Successfully retrieved details for chatID: 1
+2025/01/06 13:14:57 Received request: OPTIONS /chat
+2025/01/06 13:14:57 Received request: GET /chat
+2025/01/06 13:14:57 Fetching messages for chatID: 2
+2025/01/06 13:14:57 Fetching message with ID: 2
+2025/01/06 13:14:57 Message chain completed for starting message ID: 2
+2025/01/06 13:14:57 Successfully fetched 1 messages for chatID: 2
+2025/01/06 13:14:57 Fetching users for chatID: 2
+2025/01/06 13:14:57 Successfully retrieved 3 users for chatID: 2
+2025/01/06 13:14:57 Successfully retrieved details for chatID: 2
+2025/01/06 13:54:28 Received request: OPTIONS /api/validate-token
+2025/01/06 13:54:28 Received request: POST /api/validate-token
+2025/01/06 13:54:28 Token validated successfully for user ID=3
+2025/01/06 13:54:28 Received request: OPTIONS /chats
+2025/01/06 13:54:28 Received request: OPTIONS /chat
+2025/01/06 13:54:28 Received request: GET /chats
+2025/01/06 13:54:28 Successfully retrieved 3 chats for userID: 3
+2025/01/06 13:54:28 Received request: GET /chat
+2025/01/06 13:54:28 Fetching messages for chatID: 3
+2025/01/06 13:54:28 Fetching message with ID: 20
+2025/01/06 13:54:28 Fetching message with ID: 19
+2025/01/06 13:54:28 Fetching message with ID: 18
+2025/01/06 13:54:28 Fetching message with ID: 17
+2025/01/06 13:54:28 Fetching message with ID: 16
+2025/01/06 13:54:28 Fetching message with ID: 15
+2025/01/06 13:54:28 Fetching message with ID: 14
+2025/01/06 13:54:28 Fetching message with ID: 13
+2025/01/06 13:54:28 Fetching message with ID: 12
+2025/01/06 13:54:28 Fetching message with ID: 11
+2025/01/06 13:54:28 Fetching message with ID: 10
+2025/01/06 13:54:28 Fetching message with ID: 9
+2025/01/06 13:54:28 Fetching message with ID: 8
+2025/01/06 13:54:28 Fetching message with ID: 6
+2025/01/06 13:54:28 Fetching message with ID: 5
+2025/01/06 13:54:28 Fetching message with ID: 4
+2025/01/06 13:54:28 Fetching message with ID: 3
+2025/01/06 13:54:28 Message chain completed for starting message ID: 3
+2025/01/06 13:54:28 Successfully fetched 17 messages for chatID: 3
+2025/01/06 13:54:28 Fetching users for chatID: 3
+2025/01/06 13:54:28 Successfully retrieved 3 users for chatID: 3
+2025/01/06 13:54:28 Successfully retrieved details for chatID: 3
+2025/01/06 14:11:09 Received request: OPTIONS /api/validate-token
+2025/01/06 14:11:09 Received request: POST /api/validate-token
+2025/01/06 14:11:09 Token validated successfully for user ID=3
+2025/01/06 14:11:10 Received request: OPTIONS /chats
+2025/01/06 14:11:10 Received request: OPTIONS /chat
+2025/01/06 14:11:10 Received request: GET /chats
+2025/01/06 14:11:10 Received request: GET /chat
+2025/01/06 14:11:10 Fetching messages for chatID: 3
+2025/01/06 14:11:10 Fetching message with ID: 20
+2025/01/06 14:11:10 Successfully retrieved 3 chats for userID: 3
+2025/01/06 14:11:10 Fetching message with ID: 19
+2025/01/06 14:11:10 Fetching message with ID: 18
+2025/01/06 14:11:10 Fetching message with ID: 17
+2025/01/06 14:11:10 Fetching message with ID: 16
+2025/01/06 14:11:10 Fetching message with ID: 15
+2025/01/06 14:11:10 Fetching message with ID: 14
+2025/01/06 14:11:10 Fetching message with ID: 13
+2025/01/06 14:11:10 Fetching message with ID: 12
+2025/01/06 14:11:10 Fetching message with ID: 11
+2025/01/06 14:11:10 Fetching message with ID: 10
+2025/01/06 14:11:10 Fetching message with ID: 9
+2025/01/06 14:11:10 Fetching message with ID: 8
+2025/01/06 14:11:10 Fetching message with ID: 6
+2025/01/06 14:11:10 Fetching message with ID: 5
+2025/01/06 14:11:10 Fetching message with ID: 4
+2025/01/06 14:11:10 Fetching message with ID: 3
+2025/01/06 14:11:10 Message chain completed for starting message ID: 3
+2025/01/06 14:11:10 Successfully fetched 17 messages for chatID: 3
+2025/01/06 14:11:10 Fetching users for chatID: 3
+2025/01/06 14:11:10 Successfully retrieved 3 users for chatID: 3
+2025/01/06 14:11:10 Successfully retrieved details for chatID: 3
+2025/01/06 14:12:29 Received request: OPTIONS /chat
+2025/01/06 14:12:29 Received request: GET /chat
+2025/01/06 14:12:29 Fetching messages for chatID: 1
+2025/01/06 14:12:29 Fetching message with ID: 7
+2025/01/06 14:12:29 Fetching message with ID: 1
+2025/01/06 14:12:29 Message chain completed for starting message ID: 1
+2025/01/06 14:12:29 Successfully fetched 2 messages for chatID: 1
+2025/01/06 14:12:29 Fetching users for chatID: 1
+2025/01/06 14:12:29 Successfully retrieved 3 users for chatID: 1
+2025/01/06 14:12:29 Successfully retrieved details for chatID: 1
+2025/01/06 14:12:30 Received request: OPTIONS /chat
+2025/01/06 14:12:30 Received request: GET /chat
+2025/01/06 14:12:30 Fetching messages for chatID: 2
+2025/01/06 14:12:30 Fetching message with ID: 2
+2025/01/06 14:12:30 Message chain completed for starting message ID: 2
+2025/01/06 14:12:30 Successfully fetched 1 messages for chatID: 2
+2025/01/06 14:12:30 Fetching users for chatID: 2
+2025/01/06 14:12:30 Successfully retrieved 3 users for chatID: 2
+2025/01/06 14:12:30 Successfully retrieved details for chatID: 2
+2025/01/06 14:23:38 Received request: OPTIONS /api/validate-token
+2025/01/06 14:23:38 Received request: POST /api/validate-token
+2025/01/06 14:23:38 Token validated successfully for user ID=3
+2025/01/06 14:23:38 Received request: OPTIONS /chats
+2025/01/06 14:23:38 Received request: OPTIONS /chat
+2025/01/06 14:23:38 Received request: GET /chats
+2025/01/06 14:23:38 Successfully retrieved 3 chats for userID: 3
+2025/01/06 14:23:38 Received request: GET /chat
+2025/01/06 14:23:38 Fetching messages for chatID: 3
+2025/01/06 14:23:38 Fetching message with ID: 20
+2025/01/06 14:23:38 Fetching message with ID: 19
+2025/01/06 14:23:38 Fetching message with ID: 18
+2025/01/06 14:23:38 Fetching message with ID: 17
+2025/01/06 14:23:38 Fetching message with ID: 16
+2025/01/06 14:23:38 Fetching message with ID: 15
+2025/01/06 14:23:38 Fetching message with ID: 14
+2025/01/06 14:23:38 Fetching message with ID: 13
+2025/01/06 14:23:38 Fetching message with ID: 12
+2025/01/06 14:23:38 Fetching message with ID: 11
+2025/01/06 14:23:38 Fetching message with ID: 10
+2025/01/06 14:23:38 Fetching message with ID: 9
+2025/01/06 14:23:38 Fetching message with ID: 8
+2025/01/06 14:23:38 Fetching message with ID: 6
+2025/01/06 14:23:38 Fetching message with ID: 5
+2025/01/06 14:23:38 Fetching message with ID: 4
+2025/01/06 14:23:38 Fetching message with ID: 3
+2025/01/06 14:23:38 Message chain completed for starting message ID: 3
+2025/01/06 14:23:38 Successfully fetched 17 messages for chatID: 3
+2025/01/06 14:23:38 Fetching users for chatID: 3
+2025/01/06 14:23:38 Successfully retrieved 3 users for chatID: 3
+2025/01/06 14:23:38 Successfully retrieved details for chatID: 3
+2025/01/06 14:48:34 Received request: OPTIONS /api/validate-token
+2025/01/06 14:48:34 Received request: POST /api/validate-token
+2025/01/06 14:48:34 Token validated successfully for user ID=3
+2025/01/06 14:48:34 Received request: OPTIONS /chats
+2025/01/06 14:48:34 Received request: OPTIONS /chat
+2025/01/06 14:48:34 Received request: GET /chats
+2025/01/06 14:48:34 Received request: GET /chat
+2025/01/06 14:48:34 Fetching messages for chatID: 3
+2025/01/06 14:48:34 Fetching message with ID: 20
+2025/01/06 14:48:34 Successfully retrieved 3 chats for userID: 3
+2025/01/06 14:48:34 Fetching message with ID: 19
+2025/01/06 14:48:34 Fetching message with ID: 18
+2025/01/06 14:48:34 Fetching message with ID: 17
+2025/01/06 14:48:34 Fetching message with ID: 16
+2025/01/06 14:48:34 Fetching message with ID: 15
+2025/01/06 14:48:34 Fetching message with ID: 14
+2025/01/06 14:48:34 Fetching message with ID: 13
+2025/01/06 14:48:34 Fetching message with ID: 12
+2025/01/06 14:48:34 Fetching message with ID: 11
+2025/01/06 14:48:34 Fetching message with ID: 10
+2025/01/06 14:48:34 Fetching message with ID: 9
+2025/01/06 14:48:34 Fetching message with ID: 8
+2025/01/06 14:48:34 Fetching message with ID: 6
+2025/01/06 14:48:34 Fetching message with ID: 5
+2025/01/06 14:48:34 Fetching message with ID: 4
+2025/01/06 14:48:34 Fetching message with ID: 3
+2025/01/06 14:48:34 Message chain completed for starting message ID: 3
+2025/01/06 14:48:34 Successfully fetched 17 messages for chatID: 3
+2025/01/06 14:48:34 Fetching users for chatID: 3
+2025/01/06 14:48:34 Successfully retrieved 3 users for chatID: 3
+2025/01/06 14:48:34 Successfully retrieved details for chatID: 3
+2025/01/06 14:57:00 Received request: GET /
+2025/01/06 14:57:00 Received request: GET /login
+2025/01/06 15:13:52 Received request: OPTIONS /api/validate-token
+2025/01/06 15:13:52 Received request: POST /api/validate-token
+2025/01/06 15:13:52 Token validated successfully for user ID=3
+2025/01/06 15:13:52 Received request: OPTIONS /chats
+2025/01/06 15:13:52 Received request: OPTIONS /chat
+2025/01/06 15:13:52 Received request: GET /chat
+2025/01/06 15:13:52 Received request: GET /chats
+2025/01/06 15:13:52 Successfully retrieved 3 chats for userID: 3
+2025/01/06 15:13:52 Fetching messages for chatID: 3
+2025/01/06 15:13:52 Fetching message with ID: 20
+2025/01/06 15:13:52 Fetching message with ID: 19
+2025/01/06 15:13:52 Fetching message with ID: 18
+2025/01/06 15:13:52 Fetching message with ID: 17
+2025/01/06 15:13:52 Fetching message with ID: 16
+2025/01/06 15:13:52 Fetching message with ID: 15
+2025/01/06 15:13:52 Fetching message with ID: 14
+2025/01/06 15:13:52 Fetching message with ID: 13
+2025/01/06 15:13:52 Fetching message with ID: 12
+2025/01/06 15:13:52 Fetching message with ID: 11
+2025/01/06 15:13:52 Fetching message with ID: 10
+2025/01/06 15:13:52 Fetching message with ID: 9
+2025/01/06 15:13:52 Fetching message with ID: 8
+2025/01/06 15:13:52 Fetching message with ID: 6
+2025/01/06 15:13:52 Fetching message with ID: 5
+2025/01/06 15:13:52 Fetching message with ID: 4
+2025/01/06 15:13:52 Fetching message with ID: 3
+2025/01/06 15:13:52 Message chain completed for starting message ID: 3
+2025/01/06 15:13:52 Successfully fetched 17 messages for chatID: 3
+2025/01/06 15:13:52 Fetching users for chatID: 3
+2025/01/06 15:13:52 Successfully retrieved 3 users for chatID: 3
+2025/01/06 15:13:52 Successfully retrieved details for chatID: 3
+2025/01/06 16:03:41 Received request: OPTIONS /api/validate-token
+2025/01/06 16:03:42 Received request: POST /api/validate-token
+2025/01/06 16:03:42 Token validated successfully for user ID=2
+2025/01/06 16:03:42 Received request: OPTIONS /chats
+2025/01/06 16:03:42 Received request: OPTIONS /chat
+2025/01/06 16:03:42 Received request: GET /chats
+2025/01/06 16:03:42 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:03:42 Received request: GET /chat
+2025/01/06 16:03:42 Fetching messages for chatID: 3
+2025/01/06 16:03:42 Fetching message with ID: 20
+2025/01/06 16:03:42 Fetching message with ID: 19
+2025/01/06 16:03:42 Fetching message with ID: 18
+2025/01/06 16:03:42 Fetching message with ID: 17
+2025/01/06 16:03:42 Fetching message with ID: 16
+2025/01/06 16:03:42 Fetching message with ID: 15
+2025/01/06 16:03:42 Fetching message with ID: 14
+2025/01/06 16:03:42 Fetching message with ID: 13
+2025/01/06 16:03:42 Fetching message with ID: 12
+2025/01/06 16:03:42 Fetching message with ID: 11
+2025/01/06 16:03:42 Fetching message with ID: 10
+2025/01/06 16:03:42 Fetching message with ID: 9
+2025/01/06 16:03:42 Fetching message with ID: 8
+2025/01/06 16:03:42 Fetching message with ID: 6
+2025/01/06 16:03:42 Fetching message with ID: 5
+2025/01/06 16:03:42 Fetching message with ID: 4
+2025/01/06 16:03:42 Fetching message with ID: 3
+2025/01/06 16:03:42 Message chain completed for starting message ID: 3
+2025/01/06 16:03:42 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:03:42 Fetching users for chatID: 3
+2025/01/06 16:03:42 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:03:42 Successfully retrieved details for chatID: 3
+2025/01/06 16:05:20 Received request: OPTIONS /api/validate-token
+2025/01/06 16:05:20 Received request: POST /api/validate-token
+2025/01/06 16:05:20 Token validated successfully for user ID=3
+2025/01/06 16:05:20 Received request: OPTIONS /chats
+2025/01/06 16:05:20 Received request: OPTIONS /chat
+2025/01/06 16:05:20 Received request: GET /chat
+2025/01/06 16:05:20 Received request: GET /chats
+2025/01/06 16:05:20 Fetching messages for chatID: 3
+2025/01/06 16:05:20 Fetching message with ID: 20
+2025/01/06 16:05:20 Successfully retrieved 3 chats for userID: 3
+2025/01/06 16:05:20 Fetching message with ID: 19
+2025/01/06 16:05:20 Fetching message with ID: 18
+2025/01/06 16:05:20 Fetching message with ID: 17
+2025/01/06 16:05:20 Fetching message with ID: 16
+2025/01/06 16:05:20 Fetching message with ID: 15
+2025/01/06 16:05:20 Fetching message with ID: 14
+2025/01/06 16:05:20 Fetching message with ID: 13
+2025/01/06 16:05:20 Fetching message with ID: 12
+2025/01/06 16:05:20 Fetching message with ID: 11
+2025/01/06 16:05:20 Fetching message with ID: 10
+2025/01/06 16:05:20 Fetching message with ID: 9
+2025/01/06 16:05:20 Fetching message with ID: 8
+2025/01/06 16:05:20 Fetching message with ID: 6
+2025/01/06 16:05:20 Fetching message with ID: 5
+2025/01/06 16:05:20 Fetching message with ID: 4
+2025/01/06 16:05:20 Fetching message with ID: 3
+2025/01/06 16:05:20 Message chain completed for starting message ID: 3
+2025/01/06 16:05:20 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:05:20 Fetching users for chatID: 3
+2025/01/06 16:05:20 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:05:20 Successfully retrieved details for chatID: 3
+2025/01/06 16:05:22 Received request: POST /api/validate-token
+2025/01/06 16:05:22 Token validated successfully for user ID=3
+2025/01/06 16:05:22 Received request: GET /chats
+2025/01/06 16:05:22 Received request: GET /chat
+2025/01/06 16:05:22 Successfully retrieved 3 chats for userID: 3
+2025/01/06 16:05:22 Fetching messages for chatID: 3
+2025/01/06 16:05:22 Fetching message with ID: 20
+2025/01/06 16:05:22 Fetching message with ID: 19
+2025/01/06 16:05:22 Fetching message with ID: 18
+2025/01/06 16:05:22 Fetching message with ID: 17
+2025/01/06 16:05:22 Fetching message with ID: 16
+2025/01/06 16:05:22 Fetching message with ID: 15
+2025/01/06 16:05:22 Fetching message with ID: 14
+2025/01/06 16:05:22 Fetching message with ID: 13
+2025/01/06 16:05:22 Fetching message with ID: 12
+2025/01/06 16:05:22 Fetching message with ID: 11
+2025/01/06 16:05:22 Fetching message with ID: 10
+2025/01/06 16:05:22 Fetching message with ID: 9
+2025/01/06 16:05:22 Fetching message with ID: 8
+2025/01/06 16:05:22 Fetching message with ID: 6
+2025/01/06 16:05:22 Fetching message with ID: 5
+2025/01/06 16:05:22 Fetching message with ID: 4
+2025/01/06 16:05:22 Fetching message with ID: 3
+2025/01/06 16:05:22 Message chain completed for starting message ID: 3
+2025/01/06 16:05:22 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:05:22 Fetching users for chatID: 3
+2025/01/06 16:05:22 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:05:22 Successfully retrieved details for chatID: 3
+2025/01/06 16:07:13 Received request: OPTIONS /chat
+2025/01/06 16:07:13 Received request: GET /chat
+2025/01/06 16:07:13 Fetching messages for chatID: 1
+2025/01/06 16:07:13 Fetching message with ID: 7
+2025/01/06 16:07:13 Fetching message with ID: 1
+2025/01/06 16:07:13 Message chain completed for starting message ID: 1
+2025/01/06 16:07:13 Successfully fetched 2 messages for chatID: 1
+2025/01/06 16:07:13 Fetching users for chatID: 1
+2025/01/06 16:07:13 Successfully retrieved 3 users for chatID: 1
+2025/01/06 16:07:13 Successfully retrieved details for chatID: 1
+2025/01/06 16:07:17 Received request: OPTIONS /api/send
+2025/01/06 16:07:17 Received request: POST /api/send
+2025/01/06 16:07:17 Received request to add a message
+2025/01/06 16:07:17 Message added successfully to chatID: 1 by userID: 2
+2025/01/06 16:07:17 Received request: GET /chat
+2025/01/06 16:07:17 Fetching messages for chatID: 1
+2025/01/06 16:07:17 Fetching message with ID: 21
+2025/01/06 16:07:17 Fetching message with ID: 7
+2025/01/06 16:07:17 Fetching message with ID: 1
+2025/01/06 16:07:17 Message chain completed for starting message ID: 1
+2025/01/06 16:07:17 Successfully fetched 3 messages for chatID: 1
+2025/01/06 16:07:17 Fetching users for chatID: 1
+2025/01/06 16:07:17 Successfully retrieved 3 users for chatID: 1
+2025/01/06 16:07:17 Successfully retrieved details for chatID: 1
+2025/01/06 16:07:19 Received request: OPTIONS /chat
+2025/01/06 16:07:19 Received request: GET /chat
+2025/01/06 16:07:19 Fetching messages for chatID: 2
+2025/01/06 16:07:19 Fetching message with ID: 2
+2025/01/06 16:07:19 Message chain completed for starting message ID: 2
+2025/01/06 16:07:19 Successfully fetched 1 messages for chatID: 2
+2025/01/06 16:07:19 Fetching users for chatID: 2
+2025/01/06 16:07:19 Successfully retrieved 3 users for chatID: 2
+2025/01/06 16:07:19 Successfully retrieved details for chatID: 2
+2025/01/06 16:07:25 Received request: OPTIONS /api/validate-token
+2025/01/06 16:07:25 Received request: POST /api/validate-token
+2025/01/06 16:07:25 Token validated successfully for user ID=2
+2025/01/06 16:07:25 Received request: OPTIONS /chats
+2025/01/06 16:07:25 Received request: OPTIONS /chat
+2025/01/06 16:07:25 Received request: GET /chat
+2025/01/06 16:07:25 Fetching messages for chatID: 1
+2025/01/06 16:07:25 Fetching message with ID: 21
+2025/01/06 16:07:25 Fetching message with ID: 7
+2025/01/06 16:07:25 Fetching message with ID: 1
+2025/01/06 16:07:25 Message chain completed for starting message ID: 1
+2025/01/06 16:07:25 Successfully fetched 3 messages for chatID: 1
+2025/01/06 16:07:25 Fetching users for chatID: 1
+2025/01/06 16:07:25 Successfully retrieved 3 users for chatID: 1
+2025/01/06 16:07:25 Successfully retrieved details for chatID: 1
+2025/01/06 16:07:25 Received request: GET /chats
+2025/01/06 16:07:25 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:07:29 Received request: OPTIONS /chat
+2025/01/06 16:07:29 Received request: GET /chat
+2025/01/06 16:07:29 Fetching messages for chatID: 3
+2025/01/06 16:07:29 Fetching message with ID: 20
+2025/01/06 16:07:29 Fetching message with ID: 19
+2025/01/06 16:07:29 Fetching message with ID: 18
+2025/01/06 16:07:29 Fetching message with ID: 17
+2025/01/06 16:07:29 Fetching message with ID: 16
+2025/01/06 16:07:29 Fetching message with ID: 15
+2025/01/06 16:07:29 Fetching message with ID: 14
+2025/01/06 16:07:29 Fetching message with ID: 13
+2025/01/06 16:07:29 Fetching message with ID: 12
+2025/01/06 16:07:29 Fetching message with ID: 11
+2025/01/06 16:07:29 Fetching message with ID: 10
+2025/01/06 16:07:29 Fetching message with ID: 9
+2025/01/06 16:07:29 Fetching message with ID: 8
+2025/01/06 16:07:29 Fetching message with ID: 6
+2025/01/06 16:07:29 Fetching message with ID: 5
+2025/01/06 16:07:29 Fetching message with ID: 4
+2025/01/06 16:07:29 Fetching message with ID: 3
+2025/01/06 16:07:29 Message chain completed for starting message ID: 3
+2025/01/06 16:07:29 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:07:29 Fetching users for chatID: 3
+2025/01/06 16:07:29 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:07:29 Successfully retrieved details for chatID: 3
+2025/01/06 16:07:48 Received request: OPTIONS /api/validate-token
+2025/01/06 16:07:49 Received request: POST /api/validate-token
+2025/01/06 16:07:49 Token validated successfully for user ID=2
+2025/01/06 16:07:49 Received request: OPTIONS /chats
+2025/01/06 16:07:49 Received request: OPTIONS /chat
+2025/01/06 16:07:49 Received request: GET /chats
+2025/01/06 16:07:49 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:07:49 Received request: GET /chat
+2025/01/06 16:07:49 Fetching messages for chatID: 3
+2025/01/06 16:07:49 Fetching message with ID: 20
+2025/01/06 16:07:49 Fetching message with ID: 19
+2025/01/06 16:07:49 Fetching message with ID: 18
+2025/01/06 16:07:49 Fetching message with ID: 17
+2025/01/06 16:07:49 Fetching message with ID: 16
+2025/01/06 16:07:49 Fetching message with ID: 15
+2025/01/06 16:07:49 Fetching message with ID: 14
+2025/01/06 16:07:49 Fetching message with ID: 13
+2025/01/06 16:07:49 Fetching message with ID: 12
+2025/01/06 16:07:49 Fetching message with ID: 11
+2025/01/06 16:07:49 Fetching message with ID: 10
+2025/01/06 16:07:49 Fetching message with ID: 9
+2025/01/06 16:07:49 Fetching message with ID: 8
+2025/01/06 16:07:49 Fetching message with ID: 6
+2025/01/06 16:07:49 Fetching message with ID: 5
+2025/01/06 16:07:49 Fetching message with ID: 4
+2025/01/06 16:07:49 Fetching message with ID: 3
+2025/01/06 16:07:49 Message chain completed for starting message ID: 3
+2025/01/06 16:07:49 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:07:49 Fetching users for chatID: 3
+2025/01/06 16:07:49 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:07:49 Successfully retrieved details for chatID: 3
+2025/01/06 16:07:51 Received request: POST /api/validate-token
+2025/01/06 16:07:51 Token validated successfully for user ID=2
+2025/01/06 16:07:51 Received request: GET /chat
+2025/01/06 16:07:51 Received request: GET /chats
+2025/01/06 16:07:51 Fetching messages for chatID: 3
+2025/01/06 16:07:51 Fetching message with ID: 20
+2025/01/06 16:07:51 Fetching message with ID: 19
+2025/01/06 16:07:51 Fetching message with ID: 18
+2025/01/06 16:07:51 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:07:51 Fetching message with ID: 17
+2025/01/06 16:07:51 Fetching message with ID: 16
+2025/01/06 16:07:51 Fetching message with ID: 15
+2025/01/06 16:07:51 Fetching message with ID: 14
+2025/01/06 16:07:51 Fetching message with ID: 13
+2025/01/06 16:07:51 Fetching message with ID: 12
+2025/01/06 16:07:51 Fetching message with ID: 11
+2025/01/06 16:07:51 Fetching message with ID: 10
+2025/01/06 16:07:51 Fetching message with ID: 9
+2025/01/06 16:07:51 Fetching message with ID: 8
+2025/01/06 16:07:51 Fetching message with ID: 6
+2025/01/06 16:07:51 Fetching message with ID: 5
+2025/01/06 16:07:51 Fetching message with ID: 4
+2025/01/06 16:07:51 Fetching message with ID: 3
+2025/01/06 16:07:51 Message chain completed for starting message ID: 3
+2025/01/06 16:07:51 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:07:51 Fetching users for chatID: 3
+2025/01/06 16:07:51 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:07:51 Successfully retrieved details for chatID: 3
+2025/01/06 16:12:42 Received request: OPTIONS /api/validate-token
+2025/01/06 16:12:43 Received request: POST /api/validate-token
+2025/01/06 16:12:43 Token validated successfully for user ID=2
+2025/01/06 16:12:43 Received request: OPTIONS /chats
+2025/01/06 16:12:43 Received request: OPTIONS /chat
+2025/01/06 16:12:43 Received request: GET /chat
+2025/01/06 16:12:43 Received request: GET /chats
+2025/01/06 16:12:43 Fetching messages for chatID: 3
+2025/01/06 16:12:43 Fetching message with ID: 20
+2025/01/06 16:12:43 Fetching message with ID: 19
+2025/01/06 16:12:43 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:12:43 Fetching message with ID: 18
+2025/01/06 16:12:43 Fetching message with ID: 17
+2025/01/06 16:12:43 Fetching message with ID: 16
+2025/01/06 16:12:43 Fetching message with ID: 15
+2025/01/06 16:12:43 Fetching message with ID: 14
+2025/01/06 16:12:43 Fetching message with ID: 13
+2025/01/06 16:12:43 Fetching message with ID: 12
+2025/01/06 16:12:43 Fetching message with ID: 11
+2025/01/06 16:12:43 Fetching message with ID: 10
+2025/01/06 16:12:43 Fetching message with ID: 9
+2025/01/06 16:12:43 Fetching message with ID: 8
+2025/01/06 16:12:43 Fetching message with ID: 6
+2025/01/06 16:12:43 Fetching message with ID: 5
+2025/01/06 16:12:43 Fetching message with ID: 4
+2025/01/06 16:12:43 Fetching message with ID: 3
+2025/01/06 16:12:43 Message chain completed for starting message ID: 3
+2025/01/06 16:12:43 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:12:43 Fetching users for chatID: 3
+2025/01/06 16:12:43 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:12:43 Successfully retrieved details for chatID: 3
+2025/01/06 16:19:03 Received request: OPTIONS /api/login
+2025/01/06 16:19:16 Received request: OPTIONS /api/validate-token
+2025/01/06 16:19:16 Received request: POST /api/validate-token
+2025/01/06 16:19:16 Token validated successfully for user ID=2
+2025/01/06 16:19:16 Received request: OPTIONS /chat
+2025/01/06 16:19:16 Received request: OPTIONS /chats
+2025/01/06 16:19:17 Received request: GET /chats
+2025/01/06 16:19:17 Received request: GET /chat
+2025/01/06 16:19:17 Successfully retrieved 3 chats for userID: 2
+2025/01/06 16:19:17 Fetching messages for chatID: 3
+2025/01/06 16:19:17 Fetching message with ID: 20
+2025/01/06 16:19:17 Fetching message with ID: 19
+2025/01/06 16:19:17 Fetching message with ID: 18
+2025/01/06 16:19:17 Fetching message with ID: 17
+2025/01/06 16:19:17 Fetching message with ID: 16
+2025/01/06 16:19:17 Fetching message with ID: 15
+2025/01/06 16:19:17 Fetching message with ID: 14
+2025/01/06 16:19:17 Fetching message with ID: 13
+2025/01/06 16:19:17 Fetching message with ID: 12
+2025/01/06 16:19:17 Fetching message with ID: 11
+2025/01/06 16:19:17 Fetching message with ID: 10
+2025/01/06 16:19:17 Fetching message with ID: 9
+2025/01/06 16:19:17 Fetching message with ID: 8
+2025/01/06 16:19:17 Fetching message with ID: 6
+2025/01/06 16:19:17 Fetching message with ID: 5
+2025/01/06 16:19:17 Fetching message with ID: 4
+2025/01/06 16:19:17 Fetching message with ID: 3
+2025/01/06 16:19:17 Message chain completed for starting message ID: 3
+2025/01/06 16:19:17 Successfully fetched 17 messages for chatID: 3
+2025/01/06 16:19:17 Fetching users for chatID: 3
+2025/01/06 16:19:17 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:19:17 Successfully retrieved details for chatID: 3
+2025/01/06 16:19:36 Received request: OPTIONS /api/send
+2025/01/06 16:19:36 Received request: POST /api/send
+2025/01/06 16:19:36 Received request to add a message
+2025/01/06 16:19:36 Message added successfully to chatID: 3 by userID: 2
+2025/01/06 16:19:36 Received request: OPTIONS /chat
+2025/01/06 16:19:36 Received request: GET /chat
+2025/01/06 16:19:36 Fetching messages for chatID: 3
+2025/01/06 16:19:36 Fetching message with ID: 22
+2025/01/06 16:19:36 Fetching message with ID: 20
+2025/01/06 16:19:36 Fetching message with ID: 19
+2025/01/06 16:19:36 Fetching message with ID: 18
+2025/01/06 16:19:36 Fetching message with ID: 17
+2025/01/06 16:19:36 Fetching message with ID: 16
+2025/01/06 16:19:36 Fetching message with ID: 15
+2025/01/06 16:19:36 Fetching message with ID: 14
+2025/01/06 16:19:36 Fetching message with ID: 13
+2025/01/06 16:19:36 Fetching message with ID: 12
+2025/01/06 16:19:36 Fetching message with ID: 11
+2025/01/06 16:19:36 Fetching message with ID: 10
+2025/01/06 16:19:36 Fetching message with ID: 9
+2025/01/06 16:19:36 Fetching message with ID: 8
+2025/01/06 16:19:36 Fetching message with ID: 6
+2025/01/06 16:19:36 Fetching message with ID: 5
+2025/01/06 16:19:36 Fetching message with ID: 4
+2025/01/06 16:19:36 Fetching message with ID: 3
+2025/01/06 16:19:36 Message chain completed for starting message ID: 3
+2025/01/06 16:19:36 Successfully fetched 18 messages for chatID: 3
+2025/01/06 16:19:36 Fetching users for chatID: 3
+2025/01/06 16:19:36 Successfully retrieved 3 users for chatID: 3
+2025/01/06 16:19:36 Successfully retrieved details for chatID: 3

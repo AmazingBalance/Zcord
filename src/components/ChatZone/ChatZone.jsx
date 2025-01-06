@@ -48,7 +48,7 @@ export default function ChatZone({ chat_tag }) {
         try {
             const token = localStorage.getItem("token");
 
-            const response = await fetch(`http://localhost:8000/api/send`, {
+            const response = await fetch(`http://89.169.172.0:8000/api/send`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
