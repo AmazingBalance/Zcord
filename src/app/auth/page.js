@@ -27,8 +27,8 @@ function AuthContent() {
     const handleSubmit = async () => {
         const url =
             authMode === "login"
-                ? "http://89.169.172.0:8000/api/login"
-                : "http://89.169.172.0:8000/api/register";
+                ? "http://localhost:8000/api/login"
+                : "http://localhost:8000/api/register";
         const body =
             authMode === "login"
                 ? { email: formData.email, password: formData.password }
@@ -56,9 +56,11 @@ function AuthContent() {
                 setUser({
                     id: data.id,
                     name: data.name,
-                    tag: data.tag || null,
-                    imageSrc: null,
-                    description: null,
+                    email: data.email,
+                    phone: data.phone,
+                    tag: data.tag,
+                    imageSrc: data.avatar || null,
+                    description: data.description || null,
                     token: data.token, // Сохраняем токен в Redux
                 })
             );

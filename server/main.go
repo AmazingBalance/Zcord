@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/dgrijalva/jwt-go"
 )
@@ -11,7 +12,7 @@ import (
 // enableCORS добавляет необходимые заголовки для CORS
 func enableCORS(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "http://89.169.172.0:3000") // Указываем, что разрешаем доступ с фронтенда
+		w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000") // Указываем, что разрешаем доступ с фронтенда
 		w.Header().Set("Access-Control-Allow-Methods", "GET, OPTIONS, POST")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization") // Разрешаем заголовок Authorization
 		w.Header().Set("Access-Control-Allow-Credentials", "true") // Позволяет куки
@@ -65,12 +66,23 @@ func authenticate(next http.HandlerFunc) http.HandlerFunc {
 
 // Главная функция
 func main() {
+	uploadDir := "./uploads"
+
+	// Проверяем, существует ли папка uploads
+	if _, err := os.Stat(uploadDir); os.IsNotExist(err) {
+		log.Fatalf("Папка %s не существует. Создайте её.", uploadDir)
+	}
+
+	// Роут для отдачи файлов из папки uploads
+	http.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir(uploadDir))))
 	// Защищённые маршруты
 	http.HandleFunc("/chats", authenticate(GetChats))
 	http.HandleFunc("/chat", authenticate(GetChatByTag))
 
 	// Защищённый маршрут для добавления сообщений
 	http.HandleFunc("/api/send", authenticate(AddMessage)) // Добавляем защиту на отправку сообщения
+
+	http.HandleFunc("/api/user/update", authenticate(UpdateUserData))
 
 	// Аутентификация
 	http.HandleFunc("/api/register", Register)

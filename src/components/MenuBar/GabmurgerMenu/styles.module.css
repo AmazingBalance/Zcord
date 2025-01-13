@@ -1,5 +1,163 @@
+.GamburgerMenuContainer {
+    width: 40px;
+    height: 39px;
+
+    position: relative;
+}
+
 .GamburgerMenu {
     width: 40px;
-    height: 40px;
+    height: 39px;
+
+    padding: 5px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.GamburgerMenu > div {
+    width: 40px;
+    height: 2px;
     background-color: #a85400;
+
+    transition: all 0.3s;
+
+    left: 0;
+}
+
+.GamburgerMenu > div:first-child {
+    transform-origin: left center;
+}
+
+.GamburgerMenu > div:last-child {
+    transform-origin: left center;
+}
+
+.GamburgerMenuShown > div {
+    width: 42px;
+}
+
+.GamburgerMenuShown > div:first-child {
+    transform: rotate(45deg);
+
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.GamburgerMenuShown > div:nth-child(2) {
+    opacity: 0;
+    position: absolute;
+    top: 19px;
+    left: 0;
+}
+
+.GamburgerMenuShown > div:last-child {
+    transform: rotate(-45deg);
+
+    position: absolute;
+    top: 32px;
+    left: 0;
+}
+
+.GamburgerMenu_MenuList {
+    position: absolute;
+    top: 50px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    width: 320px;
+
+    background-color: #161616;
+    border-radius: 16px;
+    border: 2px solid #161616;
+
+    transition: all 0.2s;
+
+    overflow: hidden;
+}
+
+.GamburgerMenu_MenuList:hover {
+    border-color: #a85400;
+}
+
+.GamburgerMenuShown ~ .GamburgerMenu_MenuList {
+    opacity: 1;
+    visibility: visible;
+}
+
+.Menu_ProfileItem {
+    width: 100%;
+    height: 70px;
+    border-bottom: 2px solid #242424;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    cursor: pointer;
+}
+
+.Menu_ProfileItem:hover {
+    background-color: #242424;
+}
+
+.Menu_ProfileItem_InfoBlock {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Menu_ProfileItem_Avatar {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.Menu_ProfileItem_InfoBlock > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Menu_ProfileItem_InfoBlock h3 {
+    width: 150px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: lightgrey;
+}
+
+.Menu_ProfileItem_InfoBlock p {
+    width: 120px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: grey;
+}
+
+.Menu_ProfileItem_DecorationArrow {
+    padding-top: 5px;
+}
+
+.Menu_ProfileItem_DecorationArrow svg {
+    transform: rotate(-45deg);
 }

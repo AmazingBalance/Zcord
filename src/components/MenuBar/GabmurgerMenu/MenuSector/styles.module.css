@@ -1,0 +1,16 @@
+.MenuSector {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 12px 16px;
+}
+
+.MenuSector:hover {
+    background-color: #242424;
+}
+
+.MenuSector p {
+    color: lightgrey;
+    font-size: 16px;
+}

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const chatsApi = createApi({
     reducerPath: "chatsApi",
     baseQuery: fetchBaseQuery({
-        baseUrl: "http://89.169.172.0:8000/", // Базовый URL для запросов
+        baseUrl: "http://localhost:8000/", // Базовый URL для запросов
         prepareHeaders: (headers) => {
             // Устанавливаем Content-Type
             headers.set("Content-Type", "application/json");

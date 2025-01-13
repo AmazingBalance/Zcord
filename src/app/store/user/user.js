@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     id: null,
     name: null,
+    email: null,
+    phone: null,
     tag: null,
     imageSrc: null,
     description: null,
@@ -17,6 +19,8 @@ export const userSlice = createSlice({
         setUser(state, action) {
             state.id = action.payload.id;
             state.name = action.payload.name;
+            state.email = action.payload.email;
+            state.phone = action.payload.phone;
             state.tag = action.payload.tag;
             state.imageSrc = action.payload.imageSrc;
             state.description = action.payload.description;
@@ -26,6 +30,8 @@ export const userSlice = createSlice({
         clearUser(state) {
             state.id = null;
             state.name = null;
+            state.email = null;
+            state.phone = null;
             state.tag = null;
             state.imageSrc = null;
             state.description = null;

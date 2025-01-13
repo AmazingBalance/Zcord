@@ -10,7 +10,7 @@ export default async function Chat({ params }) {
     const chat_tag = (await params).chat_tag;
     return (
         <div className={styles.chat}>
-            <MenuBar />
+            <MenuBar is_friends_visible={true} />
             <main className={styles.chatMain}>
                 <ChatList active_chat_tag={chat_tag} />
                 <ChatZone chat_tag={chat_tag} />

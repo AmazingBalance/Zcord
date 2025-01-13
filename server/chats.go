@@ -53,7 +53,7 @@ type ChatDetail struct {
 func GetChats(w http.ResponseWriter, r *http.Request) {
 	userID := r.Context().Value("userId").(string)
 
-	db, err := sql.Open("postgres", "host=localhost port=5432 user=postgres dbname=zcord password=technocraft2000 sslmode=disable")
+	db, err := sql.Open("postgres", "host=localhost port=5435 user=nikdimer dbname=zcord password=technocraft2000 sslmode=disable")
 	if err != nil {
 		log.Println("Error connecting to database:", err)
 		http.Error(w, "Error connecting to database", http.StatusInternalServerError)
@@ -140,7 +140,7 @@ func GetChatByTag(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := sql.Open("postgres", "host=localhost port=5432 user=postgres dbname=zcord password=technocraft2000 sslmode=disable")
+	db, err := sql.Open("postgres", "host=localhost port=5435 user=nikdimer dbname=zcord password=technocraft2000 sslmode=disable")
 	if err != nil {
 		log.Println("Error connecting to database:", err)
 		http.Error(w, "Error connecting to database", http.StatusInternalServerError)
@@ -329,7 +329,7 @@ func AddMessage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	db, err := sql.Open("postgres", "host=localhost port=5432 user=postgres dbname=zcord password=technocraft2000 sslmode=disable")
+	db, err := sql.Open("postgres", "host=localhost port=5435 user=nikdimer dbname=zcord password=technocraft2000 sslmode=disable")
 	if err != nil {
 		log.Println("Error connecting to database:", err)
 		http.Error(w, "Error connecting to database", http.StatusInternalServerError)

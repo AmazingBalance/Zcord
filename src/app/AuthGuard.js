@@ -19,7 +19,7 @@ const AuthGuard = ({ children }) => {
             if (token && !isAuthenticated) {
                 try {
                     const res = await fetch(
-                        "http://89.169.172.0:8000/api/validate-token",
+                        "http://localhost:8000/api/validate-token",
                         {
                             method: "POST",
                             headers: {
@@ -40,9 +40,11 @@ const AuthGuard = ({ children }) => {
                         setUser({
                             id: data.userId,
                             name: data.name,
+                            email: data.email,
+                            phone: data.phone,
                             tag: data.tag,
-                            imageSrc: null,
-                            description: null,
+                            imageSrc: "http://localhost:8000/" + data.avatar,
+                            description: data.description,
                             token: token,
                         })
                     );
