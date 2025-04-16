@@ -1,0 +1,163 @@
+.ChatUsersList {
+    width: 480px;
+    height: 82%;
+    padding: 20px;
+
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #161616;
+    border: 2px solid #161616;
+    border-radius: 24px;
+
+    transition: all 0.2s;
+}
+
+.ChatUsersList:hover {
+    border-color: #a85400;
+}
+
+.ChatUsersList_ChatInfo {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 32px;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.ChatUsersList_ChatInfo img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ChatUsersList_ChatInfo_TextBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+.ChatUsersList_ChatInfo_TextBlock h2 {
+    font-size: 24px;
+    color: lightgray;
+}
+
+.ChatUsersList_ChatInfo_TextBlock p {
+    font-size: 16px;
+    color: gray;
+}
+
+.ChatUsersList_ChatInfo_Additional {
+    width: 100%;
+}
+
+.ChatUsersList_ChatInfo_InviteLink {
+    padding: 10px;
+    margin-bottom: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+}
+
+.ChatUsersList_ChatInfo_InviteLink p {
+    font-size: 18px;
+    color: gray;
+}
+
+.ChatUsersList_ChatInfo_Additional > h3 {
+    text-align: center;
+
+    color: lightgray;
+    font-size: 20px;
+    font-weight: 400;
+
+    margin-bottom: 16px;
+}
+
+.ChatUsersList_ChatInfo_Additional > p {
+    font-size: 16px;
+    color: lightgray;
+
+    text-align: start;
+
+    word-wrap: break-word;
+
+    /*-webkit-line-clamp: 3;
+    line-clamp: 3;
+    position: relative;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;*/
+
+    margin-bottom: 16px;
+    padding: 0 10px;
+}
+
+.ChatUsersList_ChatInfo_Additional_Invite {
+    padding: 20px;
+
+    background-color: #282828;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 32px;
+}
+
+.ChatUsersList_ChatInfo_Additional_Invite > p {
+    font-size: 16px;
+}
+
+.ChatUsersList_UsersList {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.ChatUsersList_UsersList a {
+    width: 100%;
+}
+
+.ChatUsersList_UsersListItem {
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    background-color: #161616;
+
+    cursor: pointer;
+}
+
+.ChatUsersList_UsersListItem:hover {
+    background-color: #3a3a3a;
+
+    border-radius: 12px;
+}
+
+.ChatUsersList_UsersListItem img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ChatUsersList_UsersListItem p {
+    font-size: 18px;
+    color: lightgray;
+}

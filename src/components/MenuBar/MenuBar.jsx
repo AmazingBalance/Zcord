@@ -7,13 +7,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clearUser } from "@/app/store/user/user";
 
 import contacts from "@/../public/friends.svg";
 
 export default function MenuBar({ is_friends_visible }) {
     const [showMenu, setShowMenu] = useState(false);
     const user = useSelector((state) => state.user);
+    const dispatch = useDispatch();
 
     return (
         <header className={styles.MenuBar}>
@@ -23,6 +25,7 @@ export default function MenuBar({ is_friends_visible }) {
                 userName={user.name}
                 userTag={user.tag}
                 userAvatar={user.imageSrc}
+                onLogout={() => dispatch(clearUser())}
             />
             {is_friends_visible ? (
                 <Link href="/friends">

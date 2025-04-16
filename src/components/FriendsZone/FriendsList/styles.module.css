@@ -1,0 +1,98 @@
+.FriendsList {
+    width: 100%;
+    height: calc(100vh - 80px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    overflow-y: auto;
+}
+
+.FriendsZone_FriendsList_Title {
+    text-align: center;
+
+    margin: 40px;
+    margin-bottom: 30px;
+
+    align-self: center;
+}
+
+.FriendsZone_FriendsList_SectionsMenu {
+    display: flex;
+    gap: 30px;
+
+    align-self: center;
+
+    margin-bottom: 40px;
+}
+
+.FriendsZone_FriendsList_SectionsMenu div {
+    width: 120px;
+    padding: 6px 10px;
+
+    border: 2px solid gray;
+    border-radius: 20px;
+
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+
+    cursor: pointer;
+}
+
+.FriendsZone_FriendsList_SectionsMenu_Item__Active {
+    border-color: #a85400 !important;
+    color: #a85400 !important;
+}
+
+.FriendsList a {
+    width: 100%;
+}
+
+.FriendsList_Item {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    padding: 12px 30px;
+    padding-right: 20px;
+
+    background-color: transparent;
+}
+
+.FriendsList_Item:hover {
+    background-color: #3a3a3a;
+}
+
+.FriendsList_Item_UserInfo,
+.FriendsList_Item_IconsList {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.FriendsList_Item_IconsList {
+    gap: 4px;
+}
+
+.FriendsList_Item_Avatar {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.FriendsList_Item_Name {
+    font-size: 18px;
+    color: white;
+
+    cursor: default;
+}
+
+.FriendsList_Item_IconContainer {
+    padding: 10px;
+    cursor: pointer;
+}

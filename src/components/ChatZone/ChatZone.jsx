@@ -11,7 +11,7 @@ import Image from "next/image";
 import styles from "./styles.module.css";
 import send_button from "@/../public/send_button.svg";
 
-export default function ChatZone({ chat_tag }) {
+export default function ChatZone({ chat_tag, setShowPopup }) {
     const [messageInput, setMessageInput] = useState("");
     const messagesBlockRef = useRef(null); // Реф для блока с сообщениями
 
@@ -90,7 +90,10 @@ export default function ChatZone({ chat_tag }) {
 
     return (
         <div className={styles.ChatZone}>
-            <header className={styles.ChatZone_Header}>
+            <header
+                className={styles.ChatZone_Header}
+                onClick={() => setShowPopup(true)}
+            >
                 <Image
                     width={50}
                     height={50}
@@ -122,7 +125,7 @@ export default function ChatZone({ chat_tag }) {
                         }
                         imageSrc={message.imageSrc}
                         text={message.text}
-                        active={user.id === message.userId}
+                        active={user.id.toString() === message.userId}
                     />
                 ))}
             </div>

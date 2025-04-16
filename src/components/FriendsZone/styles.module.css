@@ -1,0 +1,27 @@
+.FriendsZone {
+    width: 100%;
+
+    display: flex;
+
+    background-color: #161616;
+}
+
+.FriendsZone_FriendsListContainer {
+    width: 60%;
+}
+
+.FriendsZone_AddFriendContainer {
+    width: 40%;
+    border-left: 2px solid black;
+}
+
+.FriendsZone_AddFriendContainer {
+    background-color: #242424;
+}
+
+.FriendsZone_FriendsList_Title,
+.FriendsZone_AddFriend_Title {
+    text-align: center;
+
+    margin: 40px;
+}

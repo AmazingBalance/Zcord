@@ -11,3 +11,63 @@
     height: 100%;
     grid-template-columns: 400px 1fr;
 }
+
+.deleteConfirm {
+    width: 450px;
+
+    background-color: #161616;
+    border-radius: 20px;
+    border: 2px solid #161616;
+
+    padding: 40px 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: border 0.2s;
+}
+
+.deleteConfirm:hover {
+    border-color: #a85400;
+}
+
+.deleteConfirm p {
+    font-size: 18px;
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.deleteConfirm_Name {
+    color: #a85400;
+    display: inline-block;
+}
+
+.deleteConfirm div {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.deleteConfirm_Button,
+.deleteConfirm_Button__Presumably {
+    font-size: 14px;
+    color: gray;
+
+    padding: 12px 20px;
+
+    border: 2px solid gray;
+    border-radius: 30px;
+    background-color: transparent;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.deleteConfirm_Button__Presumably {
+    color: #a85400;
+    border-color: #a85400;
+}

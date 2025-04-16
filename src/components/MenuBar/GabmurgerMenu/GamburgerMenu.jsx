@@ -13,6 +13,7 @@ import settings_icon from "@/../public/settings_icon.svg";
 import chat_icon from "@/../public/chat_icon.svg";
 import channel_icon from "@/../public/channel_icon.svg";
 import news_icon from "@/../public/news_icon.svg";
+import exit_icon from "@/../public/exit.svg";
 
 export default function GamburgerMenu({
     showMenu,
@@ -20,6 +21,7 @@ export default function GamburgerMenu({
     userName,
     userTag,
     userAvatar,
+    onLogout,
 }) {
     const ref = useRef();
     useEffect(() => {
@@ -78,7 +80,7 @@ export default function GamburgerMenu({
                                     x2="50"
                                     y2="50"
                                     stroke="lightgrey"
-                                    stroke-width="8"
+                                    strokeWidth="8"
                                 />
                                 <line
                                     x1="50"
@@ -86,7 +88,7 @@ export default function GamburgerMenu({
                                     x2="50"
                                     y2="10"
                                     stroke="lightgrey"
-                                    stroke-width="8"
+                                    strokeWidth="8"
                                 />
                             </svg>
                         </div>
@@ -111,6 +113,17 @@ export default function GamburgerMenu({
                     text="Новости"
                     imageSrc={news_icon}
                     linkHref={"/"}
+                />
+                <MenuSector
+                    text="Выход"
+                    imageSrc={exit_icon}
+                    type="function"
+                    imageReverse={true}
+                    linkHref={"/"}
+                    handleClick={() => {
+                        onLogout();
+                        localStorage.removeItem("token");
+                    }}
                 />
             </div>
         </div>

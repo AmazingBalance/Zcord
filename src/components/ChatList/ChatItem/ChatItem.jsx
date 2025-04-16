@@ -12,9 +12,10 @@ export default function ChatItem({
     lastMessage,
     lastUserName,
     active,
+    type,
 }) {
     return (
-        <Link href={"/" + chat_tag}>
+        <Link href={(type === "ls" ? "/ls/" : "/chat/") + chat_tag}>
             <div
                 className={classNames(
                     styles.ChatItem,

@@ -24,6 +24,7 @@ export default function ChatList({ active_chat_tag }) {
                 <ChatItem
                     active={chat.tag === active_chat_tag}
                     chat_tag={chat.tag}
+                    type={chat.type}
                     key={chat.id}
                     name={chat.name}
                     imageSrc={chat.imageSrc}

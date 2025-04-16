@@ -21,10 +21,61 @@ function AuthContent() {
     const redirectTo = searchParams.get("redirectTo") || "/"; // Получаем redirectTo или "/" по умолчанию
 
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+        let val = e.target.value;
+        if (
+            e.target.name === "password" ||
+            e.target.name === "confirmPassword" ||
+            e.target.name === "email"
+        ) {
+            val = val.replace(/\s+/g, "");
+        }
+        setFormData({ ...formData, [e.target.name]: val });
     };
 
     const handleSubmit = async () => {
+        if (authMode === "login") {
+            if (formData.email === "" || !formData.email) {
+                alert("Необходимо ввести почту");
+                return;
+            }
+            if (formData.password === "" || !formData.password) {
+                alert("Необходимо ввести пароль");
+                return;
+            }
+        }
+        if (authMode === "register") {
+            if (formData.name === "" || !formData.name) {
+                alert("Необходимо ввести никнейм");
+                return;
+            }
+            if (formData.email === "" || !formData.email) {
+                alert("Необходимо ввести почту");
+                return;
+            }
+            if (formData.password === "" || !formData.password) {
+                alert("Необходимо ввести пароль");
+                return;
+            }
+            if (formData.confirmPassword === "" || !formData.confirmPassword) {
+                alert("Необходимо ввести повтор пароля");
+                return;
+            }
+        }
+        if (
+            !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                formData.email
+            )
+        ) {
+            alert("Введена некоректная почта");
+            return;
+        }
+        if (
+            authMode === "register" &&
+            formData.password !== formData.confirmPassword
+        ) {
+            alert("Пароли не совпадают");
+            return;
+        }
         const url =
             authMode === "login"
                 ? "http://localhost:8000/api/login"
@@ -95,6 +146,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Email"
                             type="text"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <input
                             className={styles.FormItem}
@@ -103,6 +159,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Пароль"
                             type="password"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <button
                             className={styles.FormSubmit}
@@ -124,6 +185,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Никнейм"
                             type="text"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <input
                             className={styles.FormItem}
@@ -132,6 +198,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Email"
                             type="text"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <input
                             className={styles.FormItem}
@@ -140,6 +211,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Пароль"
                             type="password"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <input
                             className={styles.FormItem}
@@ -148,6 +224,11 @@ function AuthContent() {
                             onChange={handleChange}
                             placeholder="Повтор пароля"
                             type="password"
+                            readOnly
+                            onFocus={(e) =>
+                                e.target.removeAttribute("readOnly")
+                            }
+                            autoComplete="off"
                         />
                         <button
                             className={styles.FormSubmit}
@@ -163,7 +244,7 @@ function AuthContent() {
                     style={{
                         width: "100%",
                         height: "1px",
-                        backgroundColor: "lightgrey",
+                        backgroundColor: "gray",
                     }}
                 ></div>
                 <p

@@ -9,6 +9,17 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
+type User struct {
+	ID          string  `json:"id"`
+	Name        string  `json:"name"`
+	ImageSrc    *string `json:"imageSrc,omitempty"`
+	Tag         string  `json:"tag"`
+	Description string  `json:"description"`
+	FriendsList   string  `json:"friends_list"`
+    FriendsListIn string  `json:"friends_list_in"`
+    FriendsListOut string `json:"friends_list_out"`
+}
+
 // enableCORS добавляет необходимые заголовки для CORS
 func enableCORS(h http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -88,6 +99,8 @@ func main() {
 	http.HandleFunc("/api/register", Register)
 	http.HandleFunc("/api/login", Login)
 	http.HandleFunc("/api/validate-token", ValidateToken)
+
+	RegisterFriendRoutes()
 
 	log.Println("Сервер запущен на порту 8000...")
 	log.Fatal(http.ListenAndServe(":8000", enableCORS(http.DefaultServeMux)))

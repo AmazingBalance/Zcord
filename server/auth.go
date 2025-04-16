@@ -11,6 +11,7 @@ import (
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/joho/godotenv"
+	"github.com/lib/pq"
 	_ "github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -202,9 +203,7 @@ func ValidateToken(w http.ResponseWriter, r *http.Request) {
 	cookie, err := r.Cookie("token")
 	if err != nil {
 		log.Printf("No token provided: %v", err)
-		writeJSONResponse(w, http.StatusUnauthorized, map[string]interface{}{
-			"error": "Token required",
-		})
+		writeJSONResponse(w, http.StatusUnauthorized, map[string]interface{}{"error": "Token required"})
 		return
 	}
 
@@ -215,61 +214,77 @@ func ValidateToken(w http.ResponseWriter, r *http.Request) {
 	})
 	if err != nil || !token.Valid {
 		log.Printf("Invalid token: %v", err)
-		writeJSONResponse(w, http.StatusUnauthorized, map[string]interface{}{
-			"error": "Invalid token",
-		})
+		writeJSONResponse(w, http.StatusUnauthorized, map[string]interface{}{"error": "Invalid token"})
 		return
 	}
 
-	// Запрос данных пользователя по его ID, включая phone и email
 	var id int
 	var name, tag string
-	var email, phone, description, avatar sql.NullString // Используем sql.NullString для обработки NULL
+	var email, phone, description, avatar sql.NullString
+	var friendsList, friendsListIn, friendsListOut pq.Int64Array
 
 	err = db.QueryRow(
-		"SELECT id, name, email, phone, tag, description, avatar FROM users WHERE id = $1",
+		`SELECT id, name, email, phone, tag, description, avatar, friends_list, friends_list_in, friends_list_out 
+		 FROM users WHERE id = $1`,
 		claims.UserID,
-	).Scan(&id, &name, &email, &phone, &tag, &description, &avatar)
+	).Scan(&id, &name, &email, &phone, &tag, &description, &avatar, &friendsList, &friendsListIn, &friendsListOut)
 	if err != nil {
 		log.Printf("Error querying user by ID: %v", err)
-		writeJSONResponse(w, http.StatusInternalServerError, map[string]interface{}{
-			"error": "User not found",
-		})
+		writeJSONResponse(w, http.StatusInternalServerError, map[string]interface{}{"error": "User not found"})
 		return
 	}
 
-	log.Printf("Token validated successfully for user ID=%s", claims.UserID)
+	formatUserList := func(ids []int64) []map[string]string {
+		if len(ids) == 0 {
+			return []map[string]string{}
+		}
 
-	// Обработка NULL для description, avatar, email и phone
-	emailVal := ""
-	if email.Valid {
-		emailVal = email.String
-	}
-	phoneVal := ""
-	if phone.Valid {
-		phoneVal = phone.String
-	}
-	desc := ""
-	if description.Valid {
-		desc = description.String
-	}
-	av := ""
-	if avatar.Valid {
-		av = avatar.String
+		rows, err := db.Query(`SELECT id, name, tag, avatar FROM users WHERE id = ANY($1)`, pq.Array(ids))
+		if err != nil {
+			log.Printf("Error fetching friends: %v", err)
+			return []map[string]string{}
+		}
+		defer rows.Close()
+
+		var friends []map[string]string
+		for rows.Next() {
+			var fid, fname, ftag string
+			var favatar sql.NullString
+			if err := rows.Scan(&fid, &fname, &ftag, &favatar); err != nil {
+				log.Printf("Error scanning friend row: %v", err)
+				continue
+			}
+			friend := map[string]string{
+				"id": fid,
+				"name":  fname,
+				"tag":   ftag,
+				"avatar": "",
+			}
+			if favatar.Valid {
+				friend["avatar"] = favatar.String
+			}
+			friends = append(friends, friend)
+		}
+		return friends
 	}
 
-	// Возврат расширенного JSON-ответа
-	writeJSONResponse(w, http.StatusOK, map[string]interface{}{
+	response := map[string]interface{}{
 		"userId":      id,
 		"name":        name,
-		"email":       emailVal,    // Проверка на NULL
-		"phone":       phoneVal,    // Проверка на NULL
-		"tag":         tag,         // Поле обязательно
-		"description": desc,        // Проверка на NULL
-		"avatar":      av,          // Проверка на NULL
+		"email":       email.String,
+		"phone":       phone.String,
+		"tag":         tag,
+		"description": description.String,
+		"avatar":      avatar.String,
+		"friends_list":     formatUserList(friendsList),
+		"friends_list_in":  formatUserList(friendsListIn),
+		"friends_list_out": formatUserList(friendsListOut),
 		"status":      "Token is valid",
-	})
+	}
+
+	writeJSONResponse(w, http.StatusOK, response)
 }
+
 
 func UpdateUserData(w http.ResponseWriter, r *http.Request) {
 	// Проверка авторизации

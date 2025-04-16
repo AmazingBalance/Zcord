@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation"; // Используем useRouter из next/navigation
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, clearUser } from "@/app/store/user/user";
+import FriendsList from "@/components/FriendsZone/FriendsList/FriendsList";
 
 const AuthGuard = ({ children }) => {
     const router = useRouter();
@@ -43,9 +44,16 @@ const AuthGuard = ({ children }) => {
                             email: data.email,
                             phone: data.phone,
                             tag: data.tag,
-                            imageSrc: "http://localhost:8000/" + data.avatar,
+                            imageSrc:
+                                data.avatar.substring(0, 7) !== "http://" &&
+                                data.avatar.substring(0, 8) !== "https://"
+                                    ? "http://localhost:8000/" + data.avatar
+                                    : data.avatar,
                             description: data.description,
                             token: token,
+                            friends_list: data.friends_list,
+                            friends_list_out: data.friends_list_out,
+                            friends_list_in: data.friends_list_in,
                         })
                     );
                 } catch (err) {

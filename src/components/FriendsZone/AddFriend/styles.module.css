@@ -1,0 +1,119 @@
+.AddFriend {
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.AddFriend_SearchInput_Container {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.AddFriend_SearchInput_Container button {
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    transform: translateY(-50%);
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AddFriend_SearchInput {
+    width: 100%;
+    padding: 12px 24px;
+
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 20px;
+
+    background-color: #161616;
+
+    font-size: 16px;
+
+    color: white;
+}
+
+.AddFriend_SearchInput::placeholder {
+    color: gray;
+}
+
+.AddFriend_SearchResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+}
+
+.AddFriend_SearchResults_Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 30px;
+
+    background-color: #161616;
+    border: 2px solid #161616;
+    border-radius: 20px;
+
+    transition: border 0.2s;
+}
+
+.AddFriend_SearchResults_Item:hover {
+    border-color: #a85400;
+}
+
+.AddFriend_SearchResults_Item_Avatar {
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+}
+
+.AddFriend_SearchResults_Item_Name {
+    font-size: 24px;
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+}
+
+.AddFriend_SearchResults_Item_Button {
+    padding: 10px;
+    background-color: #a85400;
+
+    border-radius: 12px;
+
+    outline: none;
+    border: none;
+
+    font-size: 14px;
+    color: white;
+
+    cursor: pointer;
+}
+
+.AddFriend_SearchResults_Item_Button__Sent {
+    background-color: #242424;
+    color: lightgray;
+}
+
+.AddFriend_SearchResults_NotFound {
+    font-size: 16px;
+    color: white;
+}

@@ -33,14 +33,6 @@ type RequestMessage struct {
 	Type   string `json:"type"`
 }
 
-type User struct {
-	ID          string  `json:"id"`
-	Name        string  `json:"name"`
-	ImageSrc    *string `json:"imageSrc,omitempty"`
-	Tag         string  `json:"tag"`
-	Description string  `json:"description"`
-}
-
 type ChatDetail struct {
 	ID          string    `json:"id"`
 	Name        string    `json:"name"`
