@@ -1,0 +1,286 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  padding: 0 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.stepWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  min-width: 100px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.step.clickable {
+  cursor: pointer;
+}
+
+.step.clickable:hover {
+  background-color: rgba(205, 103, 0, 0.1);
+}
+
+.stepNumber {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: 2px solid;
+}
+
+.stepTitle {
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+}
+
+/* Состояния этапов */
+.step.upcoming .stepNumber {
+  background-color: transparent;
+  border-color: #555;
+  color: #888;
+}
+
+.step.upcoming .stepTitle {
+  color: #888;
+}
+
+.step.current .stepNumber {
+  background-color: #cd6700;
+  border-color: #cd6700;
+  color: white;
+  animation: pulse 2s infinite;
+}
+
+.step.current .stepTitle {
+  color: #cd6700;
+  font-weight: 600;
+}
+
+.step.completed .stepNumber {
+  background-color: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.step.completed .stepTitle {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.checkmark {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Соединительные линии */
+.connector {
+  width: 40px;
+  height: 2px;
+  background-color: #555;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.connector.completed {
+  background-color: #4caf50;
+}
+
+.connector::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.5s ease;
+  width: 0;
+}
+
+.connector.completed::after {
+  width: 100%;
+}
+
+/* Анимации */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(205, 103, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(205, 103, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(205, 103, 0, 0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 8px;
+    margin: 12px 0;
+    justify-content: flex-start;
+  }
+
+  .step {
+    min-width: 80px;
+    padding: 6px;
+    gap: 4px;
+  }
+
+  .stepNumber {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .stepTitle {
+    font-size: 10px;
+    max-width: 70px;
+  }
+
+  .connector {
+    width: 30px;
+    margin: 0 4px;
+  }
+
+  .checkmark {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 4px;
+    margin: 10px 0;
+  }
+
+  .step {
+    min-width: 70px;
+    padding: 4px;
+    gap: 3px;
+  }
+
+  .stepNumber {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .stepTitle {
+    font-size: 9px;
+    max-width: 60px;
+  }
+
+  .connector {
+    width: 25px;
+    margin: 0 2px;
+  }
+
+  .checkmark {
+    font-size: 10px;
+  }
+}
+
+/* Дополнительные эффекты */
+.step.completed .stepNumber {
+  animation: completedBounce 0.6s ease;
+}
+
+@keyframes completedBounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Hover эффекты для кликабельных этапов */
+.step.clickable:hover .stepNumber {
+  transform: scale(1.1);
+}
+
+.step.clickable:hover .stepTitle {
+  color: #cd6700;
+}
+
+.step.upcoming.clickable:hover .stepNumber {
+  border-color: #cd6700;
+  color: #cd6700;
+}
+
+.step.completed.clickable:hover .stepNumber {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+/* Дополнительная адаптивность для очень маленьких экранов */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 2px;
+    margin: 8px 0;
+  }
+
+  .step {
+    min-width: 60px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .stepNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .stepTitle {
+    font-size: 8px;
+    max-width: 50px;
+  }
+
+  .connector {
+    width: 20px;
+    margin: 0 1px;
+  }
+
+  .checkmark {
+    font-size: 9px;
+  }
+}

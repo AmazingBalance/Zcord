@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // ErrorResponse представляет структуру для ошибок в формате JSON
@@ -84,6 +85,16 @@ func FindUserByTag(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	senderID := r.Context().Value("userId").(string)
+
+	// Получаем ID текущего пользователя
+	// Преобразуем userID в int
+	userID, err := strconv.Atoi(senderID)
+	if err != nil {
+		sendError(w, "Invalid user ID format", http.StatusUnauthorized)
+		return
+	}
+
 	var user User
 	query := `SELECT id, name, avatar, friends_list, friends_list_out, friends_list_in FROM users WHERE tag = $1`
 	err = db.QueryRow(query, req.Tag).Scan(&user.ID, &user.Name, &user.ImageSrc, &user.FriendsList, &user.FriendsListOut, &user.FriendsListIn)
@@ -95,13 +106,15 @@ func FindUserByTag(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	senderID := r.Context().Value("userId").(string)
-
-	// Получаем ID текущего пользователя
-	// Преобразуем userID в int
-	userID, err := strconv.Atoi(senderID)
+	// Проверяем, не ищет ли пользователь самого себя
+	foundUserID, err := strconv.Atoi(user.ID)
 	if err != nil {
-		sendError(w, "Invalid user ID format", http.StatusUnauthorized)
+		sendError(w, "Invalid found user ID format", http.StatusInternalServerError)
+		return
+	}
+
+	if userID == foundUserID {
+		sendError(w, "User not found", http.StatusNotFound)
 		return
 	}
 
@@ -111,8 +124,8 @@ func FindUserByTag(w http.ResponseWriter, r *http.Request) {
 
 	// Проверяем, есть ли найденный пользователь в друзьях
 	isFriend := contains(parseFriendsList(user.FriendsList), userID)
-	requestSent := contains(parseFriendsList(user.FriendsListIn), userID)  // Если текущий юзер отправил запрос
-	requestReceived := contains(parseFriendsList(user.FriendsListOut), userID)
+	requestSent := contains(parseFriendsList(user.FriendsListOut), userID)    // Если текущий юзер отправил запрос
+	requestReceived := contains(parseFriendsList(user.FriendsListIn), userID) // Если текущий юзер получил запрос
 
 	// Отправляем JSON с информацией о пользователе и статусами дружбы
 	response := struct {
@@ -166,6 +179,57 @@ func SendFriendRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Проверяем, не пытается ли пользователь отправить запрос самому себе
+	if userID == targetID {
+		sendError(w, "Cannot send friend request to yourself", http.StatusBadRequest)
+		return
+	}
+
+	// Проверяем, не являются ли пользователи уже друзьями
+	var isFriend bool
+	err = db.QueryRow(`
+		SELECT EXISTS (
+			SELECT 1 FROM users WHERE id = $1 AND $2 = ANY(friends_list)
+		)`, userID, targetID).Scan(&isFriend)
+	if err != nil {
+		sendError(w, "Database error", http.StatusInternalServerError)
+		return
+	}
+	if isFriend {
+		sendError(w, "Users are already friends", http.StatusBadRequest)
+		return
+	}
+
+	// Проверяем, не отправлена ли уже заявка
+	var requestExists bool
+	err = db.QueryRow(`
+		SELECT EXISTS (
+			SELECT 1 FROM users WHERE id = $1 AND $2 = ANY(friends_list_out)
+		)`, userID, targetID).Scan(&requestExists)
+	if err != nil {
+		sendError(w, "Database error", http.StatusInternalServerError)
+		return
+	}
+	if requestExists {
+		sendError(w, "Friend request already sent", http.StatusBadRequest)
+		return
+	}
+
+	// Проверяем, не получена ли уже заявка от этого пользователя
+	var requestReceived bool
+	err = db.QueryRow(`
+		SELECT EXISTS (
+			SELECT 1 FROM users WHERE id = $1 AND $2 = ANY(friends_list_in)
+		)`, userID, targetID).Scan(&requestReceived)
+	if err != nil {
+		sendError(w, "Database error", http.StatusInternalServerError)
+		return
+	}
+	if requestReceived {
+		sendError(w, "Friend request already received from this user", http.StatusBadRequest)
+		return
+	}
+
 	// Обновляем friends_list_out у отправителя и friends_list_in у получателя
 	_, err1 := db.Exec(`UPDATE users SET friends_list_out = array_append(friends_list_out, $1) WHERE id = $2`, targetID, userID)
 	if err1 != nil {
@@ -177,6 +241,12 @@ func SendFriendRequest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		sendError(w, "Error adding to friends_list_in", http.StatusInternalServerError)
 		return
+	}
+
+	// Notify both users to refresh friends lists in real-time
+	if wsHub != nil {
+		wsHub.SendToUser(strconv.Itoa(userID), WSMessage{Type: MessageTypeFriendsUpdated})
+		wsHub.SendToUser(strconv.Itoa(targetID), WSMessage{Type: MessageTypeFriendsUpdated})
 	}
 
 	sendSuccess(w, nil)
@@ -269,6 +339,12 @@ func AcceptFriendRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// Notify both users to refresh friends state without page reload
+	if wsHub != nil {
+		wsHub.SendToUser(strconv.Itoa(userID), WSMessage{Type: MessageTypeFriendsUpdated})
+		wsHub.SendToUser(strconv.Itoa(senderID), WSMessage{Type: MessageTypeFriendsUpdated})
+	}
+
 	sendSuccess(w, nil)
 }
 
@@ -295,6 +371,60 @@ func RemoveFriend(w http.ResponseWriter, r *http.Request) {
 	if _, err := db.Exec(`UPDATE users SET friends_list = array_remove(friends_list, $1) WHERE id = $2`, userID, friendID); err != nil {
 		sendError(w, "Error removing friend", http.StatusInternalServerError)
 		return
+	}
+
+	// If LS chat exists, add a system message. Client will show the chat as read-only.
+	currentUserID, parseErr := strconv.Atoi(userID)
+	if parseErr == nil {
+		var currentUserName string
+		if err := db.QueryRow(`SELECT name FROM users WHERE id = $1`, currentUserID).Scan(&currentUserName); err == nil {
+			var lsChatID int
+			var lastMessageID sql.NullString
+			err := db.QueryRow(`
+				SELECT id, last_message_id
+				FROM chats
+				WHERE $1 = ANY(users) AND $2 = ANY(users)
+				AND array_length(users, 1) = 2
+				AND name = 'LS Chat'`, currentUserID, friendID).Scan(&lsChatID, &lastMessageID)
+			if err == nil {
+				var prevMessageID *string
+				if lastMessageID.Valid && lastMessageID.String != "" {
+					prevMessageID = &lastMessageID.String
+				}
+
+				systemText := currentUserName + " отменил дружбу, вы больше не можете писать сообщения"
+				var newMessageID string
+				if err := db.QueryRow(
+					`INSERT INTO messages (text, type, user_id, chat_id, prev_message_id)
+					VALUES ($1, 'system', NULL, $2, $3) RETURNING id`,
+					systemText, lsChatID, prevMessageID,
+				).Scan(&newMessageID); err == nil {
+					_, _ = db.Exec(`UPDATE chats SET last_message_id = $1, last_user_id = NULL WHERE id = $2`, newMessageID, lsChatID)
+
+					if wsHub != nil {
+						chatIDStr := strconv.Itoa(lsChatID)
+						wsHub.SendToChat(chatIDStr, WSMessage{
+							Type:   MessageTypeNewMessage,
+							ChatID: chatIDStr,
+							Data: MessageData{
+								ID:     newMessageID,
+								Text:   systemText,
+								ChatID: chatIDStr,
+								SentAt: time.Now().Unix(),
+							},
+						})
+						wsHub.SendToUser(strconv.Itoa(currentUserID), WSMessage{Type: MessageTypeChatUpdated, ChatID: chatIDStr})
+						wsHub.SendToUser(strconv.Itoa(friendID), WSMessage{Type: MessageTypeChatUpdated, ChatID: chatIDStr})
+					}
+				}
+			}
+		}
+	}
+
+	// Notify both users to refresh friends lists in real-time
+	if wsHub != nil {
+		wsHub.SendToUser(userID, WSMessage{Type: MessageTypeFriendsUpdated})
+		wsHub.SendToUser(strconv.Itoa(friendID), WSMessage{Type: MessageTypeFriendsUpdated})
 	}
 
 	sendSuccess(w, nil)
@@ -408,7 +538,7 @@ func GetFriendsList(userID int) ([]int, error) {
 		return nil, fmt.Errorf("database error: %v", err)
 	}
 	defer rows.Close()
-	
+
 	var friends []int
 	for rows.Next() {
 		var id int
@@ -440,7 +570,7 @@ func GetFriendsRequests(userID int, reqType string) ([]int, error) {
 		return nil, fmt.Errorf("database error: %v", err)
 	}
 	defer rows.Close()
-	
+
 	var requests []int
 	for rows.Next() {
 		var id int

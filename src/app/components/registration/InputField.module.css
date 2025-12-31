@@ -1,0 +1,367 @@
+.fieldContainer {
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.fieldContainer.focused {
+  transform: translateY(-2px);
+}
+
+.labelContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.label {
+  color: #c0c0c0;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.required {
+  color: #ff6b6b;
+  font-size: 16px;
+}
+
+.optional {
+  color: #888;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+.charCount {
+  color: #888;
+  font-size: 12px;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  position: absolute;
+  left: 16px;
+  color: #888;
+  font-size: 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.inputWithPrefix,
+.textareaWithPrefix {
+  padding-left: 40px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 70px;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #cd6700;
+  background-color: #222;
+  box-shadow: 0 0 0 3px rgba(205, 103, 0, 0.1);
+}
+
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #111;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.input:focus::placeholder,
+.textarea:focus::placeholder {
+  color: #888;
+}
+
+/* Состояния валидации */
+.input.error,
+.textarea.error {
+  border-color: #d32f2f;
+  background-color: #2d1b1b;
+}
+
+.input.error:focus,
+.textarea.error:focus {
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.input.success,
+.textarea.success {
+  border-color: #4caf50;
+  background-color: #1b2d1b;
+}
+
+.input.success:focus,
+.textarea.success:focus {
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.input.loading,
+.textarea.loading {
+  border-color: #cd6700;
+  background-color: #2d2419;
+}
+
+/* Кнопка показа/скрытия пароля */
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.passwordToggle:hover {
+  color: #c0c0c0;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.passwordToggle svg {
+  transition: all 0.2s ease;
+}
+
+.passwordToggle:active {
+  transform: scale(0.95);
+}
+
+/* Иконки статуса */
+.statusIcon {
+  position: absolute;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #444;
+  border-top: 2px solid #cd6700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.successIcon {
+  color: #4caf50;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Сообщения */
+.messageContainer {
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+.errorMessage,
+.statusMessage {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: slideInMessage 0.3s ease;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+}
+
+.statusMessage.success {
+  color: #4caf50;
+}
+
+.statusMessage.loading {
+  color: #cd6700;
+}
+
+.statusMessage.error {
+  color: #ff6b6b;
+}
+
+.errorIcon {
+  font-size: 14px;
+}
+
+.loadingIcon {
+  font-size: 14px;
+}
+
+@keyframes slideInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .fieldContainer {
+    margin-bottom: 14px;
+  }
+
+  .input,
+  .textarea {
+    padding: 10px 12px;
+    font-size: 16px; /* Предотвращает зум на iOS */
+    border-radius: 8px;
+  }
+
+  .textarea {
+    min-height: 60px;
+  }
+
+  .label {
+    font-size: 13px;
+  }
+
+  .charCount {
+    font-size: 11px;
+  }
+
+  .passwordToggle {
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .statusIcon {
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .spinner {
+    width: 12px;
+    height: 12px;
+  }
+
+  .successIcon {
+    font-size: 12px;
+  }
+
+  .messageContainer {
+    min-height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fieldContainer {
+    margin-bottom: 12px;
+  }
+
+  .labelContainer {
+    margin-bottom: 4px;
+  }
+
+  .input,
+  .textarea {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .textarea {
+    min-height: 50px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .errorMessage,
+  .statusMessage {
+    font-size: 11px;
+  }
+
+  .messageContainer {
+    margin-top: 3px;
+    min-height: 14px;
+  }
+}
+
+/* Специальные стили для автозаполнения */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #1a1a1a inset !important;
+  -webkit-text-fill-color: #e0e0e0 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Анимация фокуса */
+.input:focus,
+.textarea:focus {
+  animation: focusPulse 0.3s ease;
+}
+
+@keyframes focusPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

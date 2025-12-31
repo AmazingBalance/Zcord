@@ -1,0 +1,198 @@
+.UserPage {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #161616;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.UserPage_Main {
+  width: min-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 24px;
+}
+
+.UserPage_Main_BackContainer {
+  width: min-content;
+  align-self: flex-start;
+
+  padding: 20px;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.UserPage_Main_BackContainer:hover {
+  background-color: rgba(205, 102, 0, 0.1);
+}
+
+.UserPage_Main_BackContainer p {
+  color: #cd6600;
+
+  font-size: 20px;
+
+  white-space: nowrap;
+}
+
+.UserPage_Main_CloseContainer {
+  width: 48px;
+  height: 48px;
+
+  padding: 12px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.UserPage_Main_CloseContainer:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.UserPage_Main > h1 {
+  font-size: 28px;
+  color: lightgray;
+
+  white-space: nowrap;
+  margin: 0;
+}
+
+.UserPage_Main_UserTag {
+  font-size: 18px !important;
+  color: #888 !important;
+  text-align: center;
+  margin: -12px 0 0 0 !important;
+}
+
+.UserPage_Main > p {
+  font-size: 16px;
+  color: lightgray;
+
+  min-width: 400px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
+
+.UserPage_Main > button {
+  padding: 16px 32px;
+
+  background-color: #cd6600;
+  border-radius: 32px;
+
+  border: none;
+  outline: none;
+
+  white-space: nowrap;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  min-width: 200px;
+}
+
+.UserPage_Main > button:hover:not(:disabled) {
+  background-color: #b85a00;
+  transform: translateY(-1px);
+}
+
+.UserPage_Main > button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .UserPage_Main_BackContainer {
+    top: 10px;
+    left: 10px;
+    padding: 15px;
+  }
+
+  .UserPage_Main_CloseContainer {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+
+  .UserPage_Main > h1 {
+    font-size: 24px;
+  }
+
+  .UserPage_Main_UserTag {
+    font-size: 16px !important;
+  }
+
+  .UserPage_Main > p {
+    min-width: 300px;
+    font-size: 14px;
+  }
+
+  .UserPage_Main > button {
+    padding: 14px 28px;
+    font-size: 14px;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .UserPage_Main_BackContainer p {
+    font-size: 18px;
+  }
+
+  .UserPage_Main > h1 {
+    font-size: 22px;
+  }
+
+  .UserPage_Main_UserTag {
+    font-size: 14px !important;
+  }
+
+  .UserPage_Main > p {
+    min-width: 250px;
+    font-size: 13px;
+  }
+
+  .UserPage_Main > button {
+    padding: 12px 24px;
+    font-size: 13px;
+    min-width: 160px;
+  }
+}

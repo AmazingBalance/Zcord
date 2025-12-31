@@ -1,0 +1,23 @@
+
+> zcord@0.1.0 dev
+> next dev -p 3000
+
+   ▲ Next.js 15.0.4
+   - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 10.1s
+ ○ Compiling /ls/[chat_tag] ...
+ ✓ Compiled /ls/[chat_tag] in 11.8s (973 modules)
+[WebRTC] WebRTC adapter information: { browser: 'Not a browser.', version: null, adapter: 'not loaded' }
+[WebRTC] WebRTC adapter information: { browser: 'Not a browser.', version: null, adapter: 'not loaded' }
+ GET /ls/NUKE_DUMER 200 in 7194ms
+ GET /ls/rzunber 200 in 15019ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /auth in 4.4s (446 modules)
+ ✓ Compiled in 1579ms (458 modules)
+ GET /favicon.ico 200 in 6019ms
+ GET /favicon.ico 200 in 6479ms
+ GET /auth?redirectTo=%2Fls%2Frzunber 200 in 4234ms
+ GET /auth?redirectTo=%2Fls%2FNUKE_DUMER 200 in 3593ms
+[?25h

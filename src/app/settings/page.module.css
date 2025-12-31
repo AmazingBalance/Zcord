@@ -1,181 +1,472 @@
 .settings {
-    width: 100%;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    padding: 30px;
+  padding: 20px;
 
-    background-color: #242424;
+  background-color: #242424;
 }
 
 .settings_Profile {
-    width: 500px;
-    height: 557px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 557px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 
-    background-color: #161616;
-    border-radius: 20px;
+  background-color: #161616;
+  border-radius: 20px;
 
-    padding: 30px;
+  padding: 30px;
 
-    border: 2px solid #161616;
+  border: 2px solid #161616;
 
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .settings_Profile_Changing {
-    height: 645.5px;
+  min-height: 645.5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .settings {
+    padding: 15px;
+  }
+
+  .settings_Profile {
+    max-width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings {
+    padding: 10px;
+  }
+
+  .settings_Profile {
+    padding: 15px;
+    gap: 15px;
+  }
 }
 
 .settings_Profile:has(input:focus) {
-    border: 2px solid #cd670077;
+  border: 2px solid #cd670077;
 }
 
 .settings_ProfileTitle {
-    font-size: 32px;
-    color: lightgrey;
+  font-size: 32px;
+  color: lightgrey;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .settings_ProfileAvatarContainer {
-    position: relative;
-    border: 3px solid #161616;
-    border-radius: 50%;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #161616;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
 
-    transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .settings_ProfileAvatarContainer:hover {
-    border-color: #a85400;
+  border-color: #a85400;
 }
 
 .settings_ProfileAvatarContainer:hover > .settings_ProfileAvatar {
-    filter: blur(2px) brightness(0.6);
+  filter: blur(2px) brightness(0.6);
 }
 
 .settings_ProfileAvatar {
-    border-radius: 50%;
-    object-fit: cover;
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
 
-    transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.settings_ProfileAvatar_Initials {
+  background-color: #9ca3af;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.settings_ProfileAvatarContainer > .settings_ProfileAvatar {
+  position: absolute;
+  inset: 0;
 }
 
 .settings_ProfileAvatar_Input {
-    width: 0;
-    height: 0;
+  width: 0;
+  height: 0;
 }
 
 .settings_ProfileAvatar_Label {
-    width: 150px;
-    height: 150px;
+  width: 100%;
+  height: 100%;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    opacity: 0;
-    z-index: 100;
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .settings_ProfileAvatar_Label img {
-    opacity: 0;
-    transition: all 0.2s;
+  opacity: 0;
+  transition: all 0.2s;
 }
 
 .settings_ProfileAvatarContainer:hover > .settings_ProfileAvatar_Label {
-    opacity: 1;
+  opacity: 1;
 }
 
 .settings_ProfileAvatarContainer:hover > .settings_ProfileAvatar_Label > img {
-    opacity: 1;
+  opacity: 1;
 }
 
 .settings_Profile_Item {
-    width: 400px;
+  width: 100%;
+  max-width: 400px;
 
-    font-size: 24px;
-    color: gray;
+  font-size: 24px;
+  color: gray;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
 
-    transition: all 0.2s;
+  transition: all 0.2s;
 }
 
-.settings_Profile_Item input {
-    width: 260px;
-
-    color: gray;
-
-    font-size: 24px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-
-    border-bottom: 2px solid gray;
-    padding: 0 8px;
-    padding-bottom: 2px;
-
-    transition: all 0.2s;
+.settings_Profile_InputContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 260px;
 }
 
-.settings_Profile_Item input:focus {
-    color: #a85400;
-    border-color: #a85400;
+.settings_Profile_Item input,
+.settings_Profile_Item textarea {
+  width: 100%;
+
+  color: gray;
+
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  border-bottom: 2px solid gray;
+  padding: 0 8px;
+  padding-bottom: 2px;
+
+  transition: all 0.2s;
+  font-family: inherit;
+  resize: vertical;
 }
 
-.settings_Profile_Item:has(input:focus) {
-    color: #a85400;
+.settings_Profile_Item textarea {
+  min-height: 80px;
+  padding-top: 8px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.settings_Profile_Item input:focus,
+.settings_Profile_Item textarea:focus {
+  color: #a85400;
+  border-color: #a85400;
+}
+
+.settings_Profile_Item input::placeholder,
+.settings_Profile_Item textarea::placeholder {
+  color: #666;
+  font-size: 20px;
+}
+
+.settings_Profile_Input_Error {
+  border-color: #e74c3c !important;
+  color: #e74c3c !important;
+}
+
+.settings_Profile_Item:has(input:focus),
+.settings_Profile_Item:has(textarea:focus) {
+  color: #a85400;
+}
+
+.settings_CharacterCount {
+  font-size: 12px;
+  color: #666;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Description field styles */
+.settings_Profile_DescriptionContainer {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings_Profile_Description {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+
+  color: gray;
+  font-size: 18px;
+  font-family: inherit;
+
+  background-color: transparent;
+  border: 2px solid gray;
+  border-radius: 8px;
+  outline: none;
+
+  resize: none !important;
+
+  transition: all 0.2s;
+}
+
+.settings_Profile_Description:focus {
+  color: #a85400;
+  border-color: #a85400;
+}
+
+.settings_Profile_Description::placeholder {
+  color: #666;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .settings_Profile_DescriptionContainer {
+    max-width: 100%;
+  }
+
+  .settings_Profile_Description {
+    font-size: 16px;
+  }
+
+  .settings_Profile_Description::placeholder {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings_Profile_Description {
+    font-size: 14px;
+    min-height: 70px;
+  }
+
+  .settings_Profile_Description::placeholder {
+    font-size: 12px;
+  }
+}
+
+/* Responsive adjustments for form items */
+@media (max-width: 768px) {
+  .settings_Profile_Item {
+    font-size: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .settings_Profile_InputContainer {
+    max-width: none;
+  }
+
+  .settings_Profile_Item input {
+    font-size: 20px;
+  }
+
+  .settings_Profile_Item input::placeholder {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings_Profile_Item {
+    font-size: 18px;
+  }
+
+  .settings_Profile_Item input {
+    font-size: 18px;
+  }
+
+  .settings_Profile_Item input::placeholder {
+    font-size: 16px;
+  }
 }
 
 .settings_Profile_ButtonsContainer {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 
-    opacity: 0;
-    visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
-    transition: all 0.3s;
+  transition: all 0.3s;
 
-    position: relative;
-    bottom: 30px;
+  position: relative;
+  bottom: 30px;
 }
 
 .settings_Profile_ButtonsContainer_Changing {
-    opacity: 1;
-    visibility: visible;
-    bottom: 0;
+  opacity: 1;
+  visibility: visible;
+  bottom: 0;
 }
 
 .settings_Profile_Button {
-    background-color: #242424;
+  background-color: #242424;
 
-    margin-top: 12px;
+  margin-top: 12px;
 
-    padding: 12px 18px;
+  padding: 12px 18px;
 
-    border-radius: 20px;
+  border-radius: 20px;
 
-    font-size: 20px;
-    color: lightgrey;
+  font-size: 20px;
+  color: lightgrey;
 
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 
-    cursor: pointer;
+  cursor: pointer;
+
+  transition: all 0.2s;
+}
+
+.settings_Profile_Button:hover:not(:disabled) {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+.settings_Profile_Button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settings_Profile_Button_Save {
+  background-color: #a85400;
+}
+
+.settings_Profile_Button_Save:hover:not(:disabled) {
+  background-color: #b86400;
+}
+
+/* Error and success messages */
+.settings_ErrorMessage {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.settings_ErrorMessage_General {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 400px;
+
+  color: #e74c3c;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(231, 76, 60, 0.95);
+  border-radius: 8px;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.settings_SuccessMessage {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 400px;
+
+  color: #27ae60;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(39, 174, 96, 0.95);
+  border-radius: 8px;
+  border: 1px solid rgba(39, 174, 96, 0.3);
+
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Container for notifications to not affect layout */
+.settings_NotificationContainer {
+  position: relative;
+  height: 0;
+  overflow: visible;
+}
+
+/* Responsive adjustments for avatar */
+@media (max-width: 480px) {
+  .settings_ProfileAvatarContainer {
+    width: 120px;
+    height: 120px;
+  }
+
+  .settings_ProfileAvatar_Initials {
+    font-size: 48px;
+  }
+
+  .settings_ProfileTitle {
+    font-size: 28px;
+  }
+
+  .settings_Profile_ButtonsContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .settings_Profile_Button {
+    width: 100%;
+    font-size: 18px;
+  }
 }

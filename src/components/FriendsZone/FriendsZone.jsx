@@ -25,6 +25,8 @@ export default function FriendsZone({
                     friends_list={user.friends_list}
                     friends_list_out={user.friends_list_out}
                     friends_list_in={user.friends_list_in}
+                    friendsAcceptedNotification={user.friendsAcceptedNotification}
+                    friendsRemovedNotification={user.friendsRemovedNotification}
                     handleFriendAccept={handleFriendAccept}
                 />
             </div>

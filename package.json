@@ -4,19 +4,39 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "npm run clean:next && next dev",
+    "clean:next": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\"",
+    "dev:restart": "podman-compose -f podman-compose.dev.yml down && podman-compose -f podman-compose.dev.yml up -d",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "podman:dev": "podman-compose -f podman-compose.dev.yml down && podman-compose -f podman-compose.dev.yml up -d",
+    "podman:dev:logs": "echo 'Логи отдельных сервисов:' && echo 'Backend: podman logs -f zcord-backend-dev' && echo 'Frontend: podman logs -f zcord-frontend-dev' && echo 'PostgreSQL: podman logs -f zcord-postgres-dev'",
+    "podman:dev:logs:backend": "podman logs -f zcord-backend-dev",
+    "podman:dev:logs:frontend": "podman logs -f zcord-frontend-dev",
+    "podman:dev:logs:postgres": "podman logs -f zcord-postgres-dev",
+    "podman:dev:stop": "podman-compose -f podman-compose.dev.yml down",
+    "podman:prod": "podman-compose -f podman-compose.yml up -d",
+    "podman:prod:build": "podman-compose -f podman-compose.yml build",
+    "podman:prod:logs": "echo 'Логи отдельных сервисов:' && echo 'Backend: podman logs -f zcord-backend' && echo 'Frontend: podman logs -f zcord-frontend' && echo 'PostgreSQL: podman logs -f zcord-postgres'",
+    "podman:prod:logs:backend": "podman logs -f zcord-backend",
+    "podman:prod:logs:frontend": "podman logs -f zcord-frontend",
+    "podman:prod:logs:postgres": "podman logs -f zcord-postgres",
+    "podman:prod:stop": "podman-compose -f podman-compose.yml down",
+    "podman:init-db": "./init-database.sh"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",
     "bcryptjs": "^3.0.2",
     "classnames": "^2.5.1",
     "next": "15.0.4",
+    "peerjs": "^1.5.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
-    "redux-persist": "^6.0.0"
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
+    "webrtc-adapter": "^9.0.3"
   },
   "devDependencies": {
     "eslint": "^8",

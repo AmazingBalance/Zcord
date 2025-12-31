@@ -1,207 +1,827 @@
-.ChatCreationZone {
-    width: 720px;
-    height: 570px;
+.chatCreationZone {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: calc(100vh - 120px);
+  margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
 
-    background-color: #161616;
-    border-radius: 20px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #161616 100%);
+  border-radius: 24px;
+  border: 2px solid #333;
 
-    padding: 30px 122px;
+  padding: 24px;
 
-    border: 2px solid #161616;
-
-    transition: all 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-.ChatCreationZone:has(input:focus) {
-    border: 2px solid #cd670077;
+.chatCreationZone:focus-within {
+  border-color: #cd6700;
+  box-shadow: 0 8px 32px rgba(205, 103, 0, 0.2);
 }
 
-.ChatCreationZone_MainInfo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 60px;
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 16px;
 }
 
-/* Chat Logo */
-
-.ChatCreationZone_MainInfo_LogoContainer {
-    width: 156px;
-    height: 156px;
-
-    border-radius: 50%;
+.header h1 {
+  color: #e0e0e0;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
 }
 
-.ChatCreationZone_MainInfo_LogoContainer {
-    width: 100%;
-    height: 156px;
-    position: relative;
-    border: 3px solid #161616;
-    border-radius: 50%;
-
-    transition: all 0.2s;
+.stepIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 300px;
 }
 
-.ChatCreationZone_MainInfo_LogoContainer:hover {
-    border-color: #a85400;
+.stepText {
+  color: #a0a0a0;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.ChatCreationZone_MainInfo_LogoContainer:hover
-    > .ChatCreationZone_MainInfo_Logo {
-    filter: blur(2px) brightness(0.6);
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
-.ChatCreationZone_MainInfo_Logo {
-    border-radius: 50%;
-    object-fit: cover;
-
-    transition: all 0.2s;
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #cd6700, #e07400);
+  border-radius: 2px;
+  transition: width 0.3s ease;
 }
 
-.ChatCreationZone_MainInfo_Logo_Input {
-    width: 0;
-    height: 0;
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 0;
 }
 
-.ChatCreationZone_MainInfo_Logo_Label {
+.step {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  animation: slideIn 0.3s ease;
+  min-height: 0;
+}
+
+.stepTitle {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.stepTitle h2 {
+  color: #e0e0e0;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.stepTitle p {
+  color: #a0a0a0;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Form Layout */
+.formLayout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
+  align-items: start;
+}
+
+.avatarSection {
+  display: flex;
+  justify-content: center;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #161616;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.avatarContainer:hover {
+  border-color: #a85400;
+}
+
+.avatarContainer:hover .avatarImage {
+  filter: blur(2px) brightness(0.6);
+}
+
+.avatarImage {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+.avatarContainer > .avatarImage {
+  position: absolute;
+  inset: 0;
+}
+
+.avatarInitials {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #9ca3af;
+  color: #ffffff;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.hiddenInput {
+  width: 0;
+  height: 0;
+}
+
+.avatarLabel {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.avatarLabel img {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.avatarContainer:hover > .avatarLabel {
+  opacity: 1;
+}
+
+.avatarContainer:hover > .avatarLabel > img {
+  opacity: 1;
+}
+
+.avatarChangeIcon {
+  transition: all 0.2s;
+}
+
+.fieldsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Suggestions */
+.suggestions {
+  margin-top: 12px;
+  padding: 16px;
+  background-color: rgba(205, 103, 0, 0.05);
+  border: 1px solid rgba(205, 103, 0, 0.2);
+  border-radius: 12px;
+  animation: slideIn 0.3s ease;
+}
+
+.suggestionsLabel {
+  color: #a0a0a0;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.suggestionsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.suggestionButton {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #c0c0c0;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestionButton:hover {
+  background-color: #cd6700;
+  border-color: #cd6700;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Participants Section */
+.participantsSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  min-height: 0;
+}
+
+.noFriends {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: #888;
+}
+
+.noFriendsIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.noFriends p {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+  color: #a0a0a0;
+}
+
+.noFriends small {
+  font-size: 14px;
+  color: #666;
+}
+
+.friendsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 8px;
+  flex: 1;
+  min-height: 0;
+}
+
+.friendItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.friendItem:hover {
+  border-color: #cd6700;
+  background-color: rgba(205, 103, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.friendItem.selected {
+  border-color: #cd6700;
+  background-color: rgba(205, 103, 0, 0.1);
+}
+
+.friendInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.friendAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.friendAvatarInitials {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9ca3af;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  user-select: none;
+}
+
+.friendDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.friendName {
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.friendTag {
+  color: #888;
+  font-size: 12px;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #444;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.friendItem.selected .checkbox {
+  background-color: #cd6700;
+  border-color: #cd6700;
+}
+
+.checkmark {
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.selectedCount {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background-color: rgba(205, 103, 0, 0.1);
+  border: 1px solid rgba(205, 103, 0, 0.3);
+  border-radius: 8px;
+  color: #cd6700;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Invite Link Section */
+.inviteLinkSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  min-height: 0;
+}
+
+.inviteLinkContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.inviteLinkIcon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.inviteLinkContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.inviteLinkLabel {
+  color: #a0a0a0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.inviteLinkUrl {
+  color: #cd6700;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.copyButton {
+  padding: 10px 16px;
+  background-color: #cd6700;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.copyButton:hover {
+  background-color: #e07400;
+  transform: translateY(-1px);
+}
+
+.copyButton:active {
+  transform: translateY(0);
+}
+
+.inviteInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inviteInfoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background-color: rgba(205, 103, 0, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #cd6700;
+}
+
+.inviteInfoIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.inviteInfoText {
+  color: #a0a0a0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #333;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #cd6700, #e07400);
+  color: white;
+  flex: 1;
+  max-width: 200px;
+  margin-left: auto;
+}
+
+.primaryButton:hover:not(.disabled) {
+  background: linear-gradient(135deg, #e07400, #f08500);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(205, 103, 0, 0.3);
+}
+
+.primaryButton.disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  color: #a0a0a0;
+  border: 2px solid #444;
+}
+
+.secondaryButton:hover {
+  border-color: #cd6700;
+  color: #cd6700;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .chatCreationZone {
+    padding: 24px;
+    border-radius: 16px;
+    margin: 16px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .formLayout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .avatarUpload {
     width: 150px;
     height: 150px;
+  }
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    opacity: 0;
-    z-index: 100;
-}
-
-.ChatCreationZone_MainInfo_Logo_Label img {
-    opacity: 0;
-    transition: all 0.2s;
-}
-
-.ChatCreationZone_MainInfo_LogoContainer:hover
-    > .ChatCreationZone_MainInfo_Logo_Label {
-    opacity: 1;
-}
-
-.ChatCreationZone_MainInfo_LogoContainer:hover
-    > .ChatCreationZone_MainInfo_Logo_Label
-    > img {
-    opacity: 1;
-}
-
-/* Inputs */
-
-.ChatCreationZone_MainInfo_InputsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 40px;
-    align-items: center;
-}
-
-.ChatCreationZone_MainInfo_InputsContainer input {
-    width: 260px;
-
-    color: lightgray;
-
+  .stepTitle h2 {
     font-size: 20px;
-    background-color: transparent;
-    border: none;
-    outline: none;
+  }
 
-    border-bottom: 2px solid gray;
-    padding: 0 8px;
-    padding-bottom: 2px;
+  .friendsList {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
 
-    transition: all 0.2s;
-}
+  .actions {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
 
-.ChatCreationZone_MainInfo_InputsContainer input::placeholder {
-    color: gray;
-}
-
-.ChatCreationZone_MainInfo_InputsContainer input:focus {
-    color: #a85400;
-    border-color: #a85400;
-}
-
-.ChatCreationZone_MainInfo_Description {
+  .primaryButton,
+  .secondaryButton {
     width: 100%;
-    height: 200px;
-
-    border: none;
-    outline: none;
-
-    background-color: transparent;
-    border: 2px solid gray;
-    border-radius: 20px;
-
-    padding: 24px;
-
-    transition: all 0.2s;
-
-    resize: none;
-
-    font-family: sans-serif;
-    font-size: 16px;
-    color: lightgray;
+    max-width: none;
+  }
 }
 
-.ChatCreationZone_MainInfo_Description::placeholder {
-    color: gray;
+@media (max-width: 480px) {
+  .chatCreationZone {
+    padding: 16px;
+    margin: 8px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .stepTitle {
+    margin-bottom: 24px;
+  }
+
+  .stepTitle h2 {
+    font-size: 18px;
+  }
+
+  .stepTitle p {
+    font-size: 14px;
+  }
+
+  .avatarUpload {
+    width: 120px;
+    height: 120px;
+  }
+
+  .uploadIcon {
+    font-size: 24px;
+  }
+
+  .uploadText span {
+    font-size: 14px;
+  }
+
+  .uploadText small {
+    font-size: 12px;
+  }
+
+  .fieldsSection {
+    gap: 16px;
+  }
+
+  .suggestions {
+    padding: 12px;
+  }
+
+  .suggestionsList {
+    gap: 6px;
+  }
+
+  .suggestionButton {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .friendItem {
+    padding: 10px 12px;
+  }
+
+  .friendAvatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .friendAvatarInitials {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+
+  .friendName {
+    font-size: 13px;
+  }
+
+  .friendTag {
+    font-size: 11px;
+  }
+
+  .infoItem {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .infoIcon {
+    font-size: 14px;
+  }
+
+  .infoText {
+    font-size: 12px;
+  }
+
+  .actions {
+    margin-top: 24px;
+    padding-top: 16px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
 }
 
-.ChatCreationZone_MainInfo_Description:focus {
-    color: #a85400;
-    border-color: #a85400;
+/* Custom scrollbar for friends list */
+.friendsList::-webkit-scrollbar {
+  width: 6px;
 }
 
-.ChatCreationZone_Button {
-    padding: 12px 16px;
-
-    border: none;
-    outline: none;
-
-    background-color: transparent;
-    border: 2px solid gray;
-    border-radius: 24px;
-
-    font-family: sans-serif;
-    font-size: 20px;
-    color: gray;
-
-    cursor: default;
-
-    transition: all 0.2s;
+.friendsList::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 3px;
 }
 
-.ChatCreationZone:not(:has(input:placeholder-shown)):not(
-        :has(textarea:placeholder-shown)
-    )
-    .ChatCreationZone_Button {
-    color: lightgray;
-    border-color: lightgray;
-    cursor: pointer;
+.friendsList::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
 }
 
-.ChatCreationZone:not(:has(input:placeholder-shown)):not(
-        :has(textarea:placeholder-shown)
-    )
-    .ChatCreationZone_Button:hover {
-    color: #a85400;
-    border-color: #a85400;
+.friendsList::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Простые поля ввода для ChatCreationZone */
+.simpleInput,
+.simpleTextarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+
+  /* ТОЛЬКО цветовые переходы */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.simpleInput:focus,
+.simpleTextarea:focus {
+  border-color: #cd6700;
+  background-color: #222;
+}
+
+.simpleInput::placeholder,
+.simpleTextarea::placeholder {
+  color: #666;
+}
+
+.simpleTextarea {
+  resize: vertical;
+  min-height: 70px;
+  line-height: 1.4;
+}
+
+.simpleInput.error,
+.simpleTextarea.error {
+  border-color: #d32f2f;
+  background-color: #2d1b1b;
+}
+
+.simpleInput.success,
+.simpleTextarea.success {
+  border-color: #4caf50;
+  background-color: #1b2d1b;
+}
+
+.fieldLabel {
+  color: #c0c0c0;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.fieldError {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.fieldStatus {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.fieldStatus.loading {
+  color: #cd6700;
+}
+
+.fieldStatus.success {
+  color: #4caf50;
+}
+
+.fieldStatus.error {
+  color: #ff6b6b;
 }

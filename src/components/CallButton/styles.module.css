@@ -1,0 +1,56 @@
+.callButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #cd6600;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.callButton:hover {
+  background-color: #e67300;
+  transform: scale(1.05);
+}
+
+.callButton:active {
+  transform: scale(0.95);
+}
+
+.callButton.active {
+  background-color: #ff4444;
+  animation: pulse 2s infinite;
+}
+
+.callButton.active:hover {
+  background-color: #ff6666;
+}
+
+.callButton.disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.callButton.disabled:hover {
+  background-color: #666;
+  transform: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+  }
+}

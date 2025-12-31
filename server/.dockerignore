@@ -1,0 +1,33 @@
+# Binaries
+*.exe
+zcord.exe
+
+# Logs
+*.log
+golang.log
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Environment files (commented out for Docker build)
+# .env*
+
+# Test files
+*_test.go
+
+# Documentation
+README.md

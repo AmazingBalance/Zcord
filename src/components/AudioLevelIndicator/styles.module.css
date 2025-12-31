@@ -1,0 +1,84 @@
+.audioIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10;
+}
+
+.audioIndicator.local {
+  bottom: 10px;
+  left: 10px;
+}
+
+.audioIndicator.remote {
+  bottom: 10px;
+  right: 10px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 40px;
+}
+
+.bar {
+  width: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.1s ease;
+  min-height: 4px;
+}
+
+.bar.active {
+  box-shadow: 0 0 4px currentColor;
+}
+
+.label {
+  font-size: 16px;
+  color: white;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Animation for active bars */
+@keyframes pulse {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.bar.active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .audioIndicator {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .bars {
+    height: 30px;
+    gap: 1px;
+  }
+
+  .bar {
+    width: 3px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+}

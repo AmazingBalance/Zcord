@@ -1,0 +1,425 @@
+.container {
+  background-color: #161616;
+  border-radius: 20px;
+  border: 2px solid #282828;
+  padding: 32px;
+  width: 100%;
+  max-width: 700px;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.container:has(.input:focus) {
+  border-color: #cd670077;
+}
+
+.header {
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.title {
+  color: #e0e0e0;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.stepTitle {
+  color: #c0c0c0;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.errorContainer {
+  background-color: #2d1b1b;
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideIn 0.3s ease;
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 13px;
+  flex: 1;
+}
+
+.errorClose {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.errorClose:hover {
+  background-color: rgba(255, 107, 107, 0.1);
+}
+
+.stepContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.navigationRight {
+  margin-left: auto;
+}
+
+.prevButton,
+.nextButton,
+.submitButton {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  min-width: 120px;
+}
+
+.prevButton {
+  background-color: transparent;
+  color: #a0a0a0;
+  border: 2px solid #444;
+}
+
+.prevButton:hover:not(:disabled) {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #666;
+}
+
+.nextButton {
+  background-color: #cd6700;
+  color: white;
+  border: 2px solid #cd6700;
+}
+
+.nextButton:hover:not(:disabled) {
+  background-color: #e07400;
+  border-color: #e07400;
+  transform: translateY(-1px);
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #cd6700, #e07400);
+  color: white;
+  border: 2px solid #cd6700;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e07400, #f08200);
+  border-color: #e07400;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(205, 103, 0, 0.3);
+}
+
+.prevButton:disabled,
+.nextButton:disabled,
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.footer {
+  margin-top: 16px;
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #333;
+  flex-shrink: 0;
+}
+
+.switchText {
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.switchButton {
+  background: none;
+  border: none;
+  color: #cd6700;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.switchButton:hover:not(:disabled) {
+  color: #e07400;
+}
+
+.switchButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Успешная регистрация */
+.successContainer {
+  background-color: #161616;
+  border-radius: 20px;
+  border: 2px solid #4caf50;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  animation: successSlideIn 0.5s ease;
+}
+
+.successIcon {
+  font-size: 64px;
+  color: #4caf50;
+  margin-bottom: 20px;
+  display: block;
+  animation: successPulse 1s ease infinite alternate;
+}
+
+.successTitle {
+  color: #e0e0e0;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.successMessage {
+  color: #a0a0a0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Анимации */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes successSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes successPulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Адаптивность */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 800px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 20px;
+    margin: 15px;
+    max-width: calc(100vw - 30px);
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .stepTitle {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .navigation {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .navigationRight {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .prevButton,
+  .nextButton,
+  .submitButton {
+    width: 100%;
+    min-width: auto;
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .footer {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+
+  .successContainer {
+    padding: 30px 20px;
+    margin: 15px;
+    max-width: calc(100vw - 30px);
+  }
+
+  .successIcon {
+    font-size: 48px;
+  }
+
+  .successTitle {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 16px;
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .navigation {
+    margin-top: 12px;
+    padding-top: 10px;
+    gap: 8px;
+  }
+
+  .prevButton,
+  .nextButton,
+  .submitButton {
+    height: 40px;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .footer {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .successContainer {
+    padding: 25px 16px;
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .successIcon {
+    font-size: 40px;
+  }
+
+  .successTitle {
+    font-size: 18px;
+  }
+
+  .successMessage {
+    font-size: 14px;
+  }
+}
+
+/* Дополнительная адаптивность для очень маленьких экранов */
+@media (max-width: 360px) {
+  .container {
+    padding: 16px 12px;
+    margin: 8px;
+    max-width: calc(100vw - 16px);
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .stepTitle {
+    font-size: 14px;
+  }
+
+  .header {
+    margin-bottom: 10px;
+  }
+
+  .navigation {
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+
+  .footer {
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}

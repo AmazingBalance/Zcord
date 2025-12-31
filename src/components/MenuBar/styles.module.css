@@ -18,7 +18,20 @@
 
     border-right: 2px solid #161616;
 
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.MenuBar_NotificationDot {
+  position: absolute;
+  top: 0px;
+  right: 7px;
+
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  background-color: #ff3b30;
 }

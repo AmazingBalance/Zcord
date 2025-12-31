@@ -1,0 +1,16 @@
+
+> zcord@0.1.0 dev
+> next dev --port 3010
+
+   ▲ Next.js 15.0.4
+   - Local:        http://localhost:3010
+
+ ✓ Starting...
+ ✓ Ready in 3.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 5.7s (659 modules)
+ GET / 200 in 67ms
+ ○ Compiling /chat/[chat_tag] ...
+ ✓ Compiled /chat/[chat_tag] in 4.2s (953 modules)
+[WebRTC] WebRTC adapter information: { browser: 'Not a browser.', version: null, adapter: 'not loaded' }
+ GET /chat/test 200 in 5443ms

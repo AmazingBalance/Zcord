@@ -1,8 +1,8 @@
-31908
-C:/Dmitriy/~/my_postgres_data
-1744050979
-5435
-
-localhost
-
+1
+/var/lib/postgresql/data
+1754865552
+5432
+/var/run/postgresql
+*
+     1592         0
 ready   

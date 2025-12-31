@@ -1,1 +1,1 @@
-C:/Program Files/PostgreSQL/16/bin/postgres.exe "-D" "my_postgres_data" "-p" "5435"
+/usr/lib/postgresql/15/bin/postgres

@@ -1,9 +1,16 @@
 .SystemMessage {
     align-self: center;
+    width: fit-content;
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
 
     background-color: rgba(255, 255, 255, 0.2);
     padding: 8px 12px;
     border-radius: 8px;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .UserMessage {
@@ -13,12 +20,18 @@
 
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px;
+
     min-width: 200px;
     max-width: 40%;
 }
 
 .UserMessageCurrent {
-    align-self: self-end;
+    align-self: flex-end;
+    margin-left: auto;
     border-radius: 12px;
     border-bottom-right-radius: 0;
 }
@@ -61,10 +74,12 @@
 }
 
 .UserMessage_UserName {
+    color: white;
+
     font-size: 16px;
     font-weight: bold;
 
-    margin: 10px 6px;
+    margin: 0;
 }
 
 .UserMessage_Image {
@@ -74,8 +89,14 @@
 }
 
 .UserMessage_Text {
+    color: white;
+
     font-size: 14px;
     display: block;
 
-    margin: 10px;
+    margin: 0;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }

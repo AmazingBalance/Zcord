@@ -1,0 +1,62 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: zcord-postgres-dev
+    environment:
+      POSTGRES_DB: zcord
+      POSTGRES_USER: nikdimer
+      POSTGRES_PASSWORD: technocraft2000
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./my_postgres_data:/var/lib/postgresql/data
+    networks:
+      - zcord-network
+    restart: unless-stopped
+
+  # Go Backend Server (Development)
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: zcord-backend-dev
+    environment:
+      DATABASE_URL: postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app
+      - ./server/uploads:/root/uploads
+    depends_on:
+      - postgres
+    networks:
+      - zcord-network
+    restart: unless-stopped
+    command: ["go", "run", ".", "--watch"]
+
+  # Next.js Frontend (Development)
+  frontend:
+    image: node:18-alpine
+    container_name: zcord-frontend-dev
+    working_dir: /app
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+      - /app/.turbo
+    depends_on:
+      - backend
+    networks:
+      - zcord-network
+    restart: unless-stopped
+    command: ["npm", "run", "dev"]
+
+networks:
+  zcord-network:
+    driver: bridge

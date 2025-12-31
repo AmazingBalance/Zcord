@@ -1,0 +1,505 @@
+.callPanel {
+  display: flex;
+  flex-direction: column;
+  background-color: #242424;
+  border-bottom: 2px solid #000;
+}
+
+.callHeader {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.callInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.callTitle {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.callMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.callDuration {
+  color: #cd6600;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.callStatus {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.headerControls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.iconButton:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.iconButton:active {
+  transform: translateY(0);
+}
+
+.iconButton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.iconButtonOff {
+  background-color: rgba(255, 68, 68, 0.16);
+  border-color: rgba(255, 68, 68, 0.35);
+  color: rgba(255, 180, 180, 1);
+}
+
+.iconButtonActive {
+  background-color: rgba(205, 102, 0, 0.18);
+  border-color: rgba(205, 102, 0, 0.45);
+}
+
+.callBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px 16px 16px;
+  transition: max-height 0.2s ease, opacity 0.2s ease, padding 0.2s ease;
+}
+
+.thumbStrip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.thumbList {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.navButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+.navButton:active {
+  transform: translateY(0);
+}
+
+.navButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.participantCard {
+  position: relative;
+  flex: 0 0 clamp(160px, 22vw, 220px);
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.participantButton {
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  background-color: #000;
+}
+
+.selectedCard {
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.18);
+}
+
+.avatarTile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000;
+}
+
+.stage {
+  width: 100%;
+}
+
+.stageContent {
+  position: relative;
+  width: 100%;
+  height: min(48vh, 520px);
+  background-color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stageVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.stageAvatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stageAvatarOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.stageOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.stageTitle {
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stageClose {
+  pointer-events: auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.stageClose:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+.stageClose:active {
+  transform: translateY(0);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.videoLabel {
+  align-self: flex-start;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.audioMeter {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.audioMeterBar {
+  width: 0;
+  height: 100%;
+  background-color: #cd6600;
+  transition: width 0.1s linear;
+}
+
+.activeSpeaker {
+  border-color: rgba(205, 102, 0, 0.95);
+  box-shadow: 0 0 0 2px rgba(205, 102, 0, 0.35);
+}
+
+.inlineError {
+  margin: 0 16px 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: rgba(255, 68, 68, 0.15);
+  border: 1px solid rgba(255, 68, 68, 0.35);
+  color: rgba(255, 210, 210, 1);
+  font-size: 13px;
+}
+
+.audioSink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.collapsed .callBody {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 16px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .callBody {
+    padding: 0 12px 12px 12px;
+  }
+
+  .participantCard {
+    flex-basis: 180px;
+  }
+}
+
+/* Debug UI Styles */
+.debugButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1001;
+}
+
+.debugButton button {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #cd6600;
+  border: 1px solid #cd6600;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.debugButton button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ff8c00;
+  border-color: #ff8c00;
+}
+
+.debugPanel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 80%;
+  max-width: 800px;
+  height: 80%;
+  max-height: 600px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #cd6600;
+  border-radius: 8px;
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.debugHeader {
+  background-color: #242424;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cd6600;
+}
+
+.debugHeader h3 {
+  color: #cd6600;
+  margin: 0;
+  font-size: 16px;
+}
+
+.debugControls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.debugFilter {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.debugClose,
+.debugClear {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.debugClose:hover,
+.debugClear:hover {
+  background-color: #444;
+  border-color: #cd6600;
+}
+
+.debugContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #161616;
+}
+
+.logList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logItem {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #242424;
+  border-radius: 4px;
+  border-left: 3px solid #cd6600;
+}
+
+.timestamp {
+  display: block;
+  color: #888;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.message {
+  display: block;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.logArgs {
+  background-color: #333;
+  color: #cd6600;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 5px 0 0 0;
+  overflow-x: auto;
+  max-height: 200px;
+  overflow-y: auto;
+}

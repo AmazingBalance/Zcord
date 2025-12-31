@@ -3,270 +3,170 @@ import { useState, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/app/store/user/user";
 import { useRouter, useSearchParams } from "next/navigation";
+import MultiStepRegistration from "@/app/components/registration/MultiStepRegistration";
 import styles from "./page.module.css";
 import classNames from "classnames";
+import { apiUrl } from "@/services/apiConfig";
 
 function AuthContent() {
-    const [authMode, setAuthMode] = useState("login");
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-    });
+  const [authMode, setAuthMode] = useState("login");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
 
-    const dispatch = useDispatch();
-    const router = useRouter();
-    const searchParams = useSearchParams();
-    const redirectTo = searchParams.get("redirectTo") || "/"; // Получаем redirectTo или "/" по умолчанию
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const redirectTo = searchParams.get("redirectTo") || "/";
 
-    const handleChange = (e) => {
-        let val = e.target.value;
-        if (
-            e.target.name === "password" ||
-            e.target.name === "confirmPassword" ||
-            e.target.name === "email"
-        ) {
-            val = val.replace(/\s+/g, "");
-        }
-        setFormData({ ...formData, [e.target.name]: val });
-    };
+  const handleChange = (e) => {
+    let val = e.target.value;
+    if (e.target.name === "password" || e.target.name === "email") {
+      val = val.replace(/\s+/g, "");
+    }
+    setFormData({ ...formData, [e.target.name]: val });
+  };
 
-    const handleSubmit = async () => {
-        if (authMode === "login") {
-            if (formData.email === "" || !formData.email) {
-                alert("Необходимо ввести почту");
-                return;
-            }
-            if (formData.password === "" || !formData.password) {
-                alert("Необходимо ввести пароль");
-                return;
-            }
-        }
-        if (authMode === "register") {
-            if (formData.name === "" || !formData.name) {
-                alert("Необходимо ввести никнейм");
-                return;
-            }
-            if (formData.email === "" || !formData.email) {
-                alert("Необходимо ввести почту");
-                return;
-            }
-            if (formData.password === "" || !formData.password) {
-                alert("Необходимо ввести пароль");
-                return;
-            }
-            if (formData.confirmPassword === "" || !formData.confirmPassword) {
-                alert("Необходимо ввести повтор пароля");
-                return;
-            }
-        }
-        if (
-            !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                formData.email
-            )
-        ) {
-            alert("Введена некоректная почта");
-            return;
-        }
-        if (
-            authMode === "register" &&
-            formData.password !== formData.confirmPassword
-        ) {
-            alert("Пароли не совпадают");
-            return;
-        }
-        const url =
-            authMode === "login"
-                ? "http://localhost:8000/api/login"
-                : "http://localhost:8000/api/register";
-        const body =
-            authMode === "login"
-                ? { email: formData.email, password: formData.password }
-                : {
-                      name: formData.name,
-                      email: formData.email,
-                      password: formData.password,
-                  };
+  const handleLoginSubmit = async () => {
+    if (!formData.email || !formData.password) {
+      alert("Пожалуйста, заполните все поля");
+      return;
+    }
 
-        try {
-            const res = await fetch(url, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(body),
-                credentials: "include", // Отправка с куками
-            });
+    if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)
+    ) {
+      alert("Введите корректный email");
+      return;
+    }
 
-            if (!res.ok) throw new Error("Ошибка авторизации/регистрации");
+    setIsLoading(true);
 
-            const data = await res.json();
-            localStorage.setItem("token", data.token); // Сохраняем токен
-            dispatch(
-                setUser({
-                    id: data.id,
-                    name: data.name,
-                    email: data.email,
-                    phone: data.phone,
-                    tag: data.tag,
-                    imageSrc: data.avatar || null,
-                    description: data.description || null,
-                    token: data.token, // Сохраняем токен в Redux
-                })
-            );
-            alert(
-                authMode === "login"
-                    ? "Вы успешно вошли"
-                    : "Регистрация завершена успешно"
-            );
+    try {
+      const res = await fetch(apiUrl("/api/login"), {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+        credentials: "include",
+      });
 
-            router.push(redirectTo); // Перенаправление на указанную страницу
-        } catch (err) {
-            console.error(err.message);
-            alert("Ошибка: " + err.message);
-        }
-    };
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Ошибка авторизации");
+      }
 
-    return (
-        <div className={styles.auth}>
-            <div
-                className={classNames(
-                    styles.authForm,
-                    authMode === "register" ? styles.authFormRegister : ""
-                )}
-            >
-                {authMode === "login" ? (
-                    <div className={styles.authForm_Login}>
-                        <h1 style={{ color: "lightgrey" }}>Авторизация</h1>
-                        <input
-                            className={styles.FormItem}
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            type="text"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <input
-                            className={styles.FormItem}
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Пароль"
-                            type="password"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <button
-                            className={styles.FormSubmit}
-                            onClick={handleSubmit}
-                        >
-                            Войти
-                        </button>
-                    </div>
-                ) : (
-                    <></>
-                )}
-                {authMode === "register" ? (
-                    <div className={styles.authForm_Login}>
-                        <h1 style={{ color: "lightgrey" }}>Регистрация</h1>
-                        <input
-                            className={styles.FormItem}
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Никнейм"
-                            type="text"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <input
-                            className={styles.FormItem}
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Email"
-                            type="text"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <input
-                            className={styles.FormItem}
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Пароль"
-                            type="password"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <input
-                            className={styles.FormItem}
-                            name="confirmPassword"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            placeholder="Повтор пароля"
-                            type="password"
-                            readOnly
-                            onFocus={(e) =>
-                                e.target.removeAttribute("readOnly")
-                            }
-                            autoComplete="off"
-                        />
-                        <button
-                            className={styles.FormSubmit}
-                            onClick={handleSubmit}
-                        >
-                            Зарегаться
-                        </button>
-                    </div>
-                ) : (
-                    <></>
-                )}
-                <div
-                    style={{
-                        width: "100%",
-                        height: "1px",
-                        backgroundColor: "gray",
-                    }}
-                ></div>
-                <p
-                    className={classNames(
-                        styles.textButton,
-                        styles.textButtonSwitchMode
-                    )}
-                    onClick={() =>
-                        setAuthMode(authMode === "login" ? "register" : "login")
-                    }
-                >
-                    {authMode === "login" ? "Регистрация" : "Авторизация"}
-                </p>
+      const data = await res.json();
+      localStorage.setItem("token", data.token);
+
+      dispatch(
+        setUser({
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          tag: data.tag,
+          imageSrc: data.avatar || null,
+          description: data.description || null,
+          token: data.token,
+        })
+      );
+
+      router.push(redirectTo);
+    } catch (err) {
+      console.error(err.message);
+      alert("Ошибка: " + err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSwitchToRegister = () => {
+    setAuthMode("register");
+  };
+
+  const handleSwitchToLogin = () => {
+    setAuthMode("login");
+    setFormData({ email: "", password: "" });
+  };
+
+  return (
+    <div className={styles.auth}>
+      {authMode === "login" ? (
+        <div className={styles.authForm}>
+          <div className={styles.authForm_Login}>
+            <h1 className={styles.title}>Авторизация</h1>
+
+            <div className={styles.inputGroup}>
+              <input
+                className={styles.FormItem}
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+                type="email"
+                disabled={isLoading}
+                autoComplete="email"
+              />
+              <input
+                className={styles.FormItem}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Пароль"
+                type="password"
+                disabled={isLoading}
+                autoComplete="current-password"
+              />
             </div>
+
+            <button
+              className={styles.FormSubmit}
+              onClick={handleLoginSubmit}
+              disabled={isLoading}
+            >
+              {isLoading ? "Вход..." : "Войти"}
+            </button>
+          </div>
+
+          <div className={styles.divider}></div>
+
+          <p
+            className={classNames(
+              styles.textButton,
+              styles.textButtonSwitchMode
+            )}
+            onClick={handleSwitchToRegister}
+          >
+            Создать аккаунт
+          </p>
         </div>
-    );
+      ) : (
+        <MultiStepRegistration onSwitchToLogin={handleSwitchToLogin} />
+      )}
+    </div>
+  );
 }
 
 export default function Auth() {
-    return (
-        <Suspense fallback={<div>Загрузка...</div>}>
-            <AuthContent />
-        </Suspense>
-    );
+  return (
+    <Suspense
+      fallback={
+        <div className={styles.auth}>
+          <div className={styles.loading}>
+            <div className={styles.spinner}></div>
+            <p>Загрузка...</p>
+          </div>
+        </div>
+      }
+    >
+      <AuthContent />
+    </Suspense>
+  );
 }

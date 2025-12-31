@@ -1,128 +1,224 @@
 .auth {
-    background-color: #242424;
-
-    width: 100vw;
-    height: 100vh;
-
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: #242424;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 .authForm {
-    background-color: #161616;
-
-    width: 40%;
-    height: 65%;
-
-    z-index: 1000;
-
-    border-radius: 20px;
-    border: 2px solid #161616;
-
-    padding: 40px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-    transition: all 0.3s;
-}
-
-.authFormRegister {
-    height: 80%;
-}
-
-.authForm_Login {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-
-    padding-bottom: 15px;
-}
-
-.authForm p {
-    color: lightgrey;
-    opacity: 0.75;
-
-    transition: all 0.2s;
-}
-
-.textButton:hover {
-    opacity: 1;
-}
-
-.textButtonSwitchMode {
-    font-size: 18px;
-    display: block;
-    padding: 15px;
-}
-
-.textButton {
-    cursor: pointer;
-}
-
-.loginMode {
-    color: lightgrey;
-
-    transition: all 0.2s;
-}
-
-.loginMode:hover {
-    opacity: 1 !important;
-}
-
-.FormItem {
-    width: 100%;
-    height: 40px;
-
-    border: 2px solid gray;
-    border-radius: 15px;
-
-    color: lightgrey;
-    font-size: 18px;
-
-    padding: 0 20px;
-
-    outline: none;
-}
-
-.FormItem:focus {
-    border-color: lightgrey;
-}
-
-.FormSubmit {
-    width: 50%;
-    height: 40px;
-
-    background-color: transparent;
-    border: 2px solid gray;
-    border-radius: 15px;
-
-    color: gray;
-    font-size: 18px;
-
-    padding: 0 20px;
-
-    outline: none;
-
-    cursor: pointer;
-
-    transition: all 0.2s;
-}
-
-.FormSubmit:focus,
-.FormSubmit:hover {
-    border-color: lightgrey;
-    color: lightgrey;
+  background-color: #161616;
+  width: 100%;
+  max-width: 450px;
+  z-index: 1000;
+  border-radius: 20px;
+  border: 2px solid #282828;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .authForm:has(.FormItem:focus) {
-    border: 2px solid #cd670077;
+  border-color: #cd670077;
+}
+
+.authForm_Login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  color: #e0e0e0;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.inputGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.FormItem {
+  width: 100%;
+  height: 48px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 16px;
+  padding: 0 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.FormItem:focus {
+  border-color: #cd6700;
+  background-color: #222;
+  box-shadow: 0 0 0 3px rgba(205, 103, 0, 0.1);
+}
+
+.FormItem:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #111;
+}
+
+.FormItem::placeholder {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.FormItem:focus::placeholder {
+  color: #888;
+}
+
+.FormSubmit {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, #cd6700, #e07400);
+  border: 2px solid #cd6700;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.FormSubmit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e07400, #f08200);
+  border-color: #e07400;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(205, 103, 0, 0.3);
+}
+
+.FormSubmit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  margin: 20px 0;
+}
+
+.textButton {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.textButtonSwitchMode {
+  color: #a0a0a0;
+  font-size: 16px;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.textButtonSwitchMode:hover {
+  color: #cd6700;
+  background-color: rgba(205, 103, 0, 0.1);
+}
+
+/* Загрузка */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #a0a0a0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #333;
+  border-top: 3px solid #cd6700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .auth {
+    padding: 15px;
+  }
+
+  .authForm {
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .FormItem {
+    height: 44px;
+    font-size: 16px; /* Предотвращает зум на iOS */
+  }
+
+  .FormSubmit {
+    height: 44px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth {
+    padding: 10px;
+  }
+
+  .authForm {
+    padding: 25px 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .FormItem {
+    height: 40px;
+    padding: 0 12px;
+  }
+
+  .FormSubmit {
+    height: 40px;
+  }
+
+  .textButtonSwitchMode {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

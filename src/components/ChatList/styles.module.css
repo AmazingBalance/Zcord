@@ -1,6 +1,45 @@
 .ChatList {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    border-right: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.loadingMessage {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+
+.errorMessage {
+  padding: 20px;
+  text-align: center;
+  color: #ff6b6b;
+}
+
+.errorMessage p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.errorMessage small {
+  color: #999;
+  font-size: 12px;
+}
+
+.emptyMessage {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+.emptyMessage p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.emptyMessage small {
+  color: #999;
+  font-size: 12px;
 }

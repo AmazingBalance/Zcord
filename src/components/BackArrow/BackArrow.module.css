@@ -1,0 +1,49 @@
+.backArrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+
+  width: 40px;
+  height: 40px;
+
+  background-color: transparent;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: gray;
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.backArrow:hover {
+  color: #a85400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .backArrow {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .backArrow {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .backArrow svg {
+    width: 18px;
+    height: 18px;
+  }
+}

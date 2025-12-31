@@ -1,0 +1,14 @@
+{
+	# Optional: set `CADDY_EMAIL` in env for Let's Encrypt account.
+	email {$CADDY_EMAIL}
+}
+
+{$ZCORD_DOMAIN} {
+	encode gzip
+
+	@backend path /api/* /chats /chat /channel /ls /ws /uploads/*
+	reverse_proxy @backend backend:8000
+
+	reverse_proxy frontend:3000
+}
+
