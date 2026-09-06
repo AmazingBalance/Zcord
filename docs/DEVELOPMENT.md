@@ -67,7 +67,7 @@ cp server/.env.example server/.env
 
 ```env
 JWT_SECRET=development-jwt-secret-key
-DATABASE_URL=postgres://nikdimer:technocraft2000@localhost:5435/zcord?sslmode=disable
+DATABASE_URL=postgres://zcord:<POSTGRES_PASSWORD>@localhost:5435/zcord?sslmode=disable
 APP_ENV=development
 SERVER_PORT=8000
 CORS_ORIGIN=http://localhost:3000
@@ -105,13 +105,13 @@ go run .
 # 1. Запуск PostgreSQL
 podman run -d --name postgres-dev \
   -e POSTGRES_DB=zcord \
-  -e POSTGRES_USER=nikdimer \
-  -e POSTGRES_PASSWORD=technocraft2000 \
+  -e POSTGRES_USER=zcord \
+  -e POSTGRES_PASSWORD=<POSTGRES_PASSWORD> \
   -p 5435:5432 \
   postgres:15-alpine
 
 # 2. Инициализация БД
-podman exec -i postgres-dev psql -U nikdimer -d zcord < init.sql
+podman exec -i postgres-dev psql -U zcord -d zcord < init.sql
 
 # 3. Frontend (терминал 1)
 npm run dev
@@ -129,7 +129,7 @@ curl http://localhost:3000        # Frontend
 curl http://localhost:8000/api/register  # Backend API
 
 # Проверка базы данных
-podman-compose -f podman-compose.yml exec postgres psql -U nikdimer -d zcord -c "\dt"
+podman-compose -f podman-compose.yml exec postgres psql -U zcord -d zcord -c "\dt"
 ```
 
 ## 🏗️ Архитектура проекта

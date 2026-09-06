@@ -82,12 +82,12 @@ The following environment variables are configured in podman-compose.yml:
 ### Database
 
 - `POSTGRES_DB=zcord`
-- `POSTGRES_USER=nikdimer`
-- `POSTGRES_PASSWORD=technocraft2000`
+- `POSTGRES_USER=zcord`
+- `POSTGRES_PASSWORD=<POSTGRES_PASSWORD>`
 
 ### Backend
 
-- `DATABASE_URL=postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable`
+- `DATABASE_URL=postgres://zcord:<POSTGRES_PASSWORD>@postgres:5432/zcord?sslmode=disable`
 
 ### Frontend
 

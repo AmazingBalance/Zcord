@@ -244,7 +244,7 @@ podman load -i images.tar
 
 ```bash
 # Переход в директорию проекта
-cd /Users/nikdimer/Documents/Zcord-main
+cd ~/Documents/Zcord
 
 # Запуск в production режиме
 podman-compose -f podman-compose.yml up --build

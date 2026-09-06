@@ -164,7 +164,7 @@ backup() {
     DATE=$(date +%Y%m%d_%H%M%S)
     
     # Бэкап базы данных
-    podman-compose -f podman-compose.yml exec -T postgres pg_dump -U nikdimer zcord > "$BACKUP_DIR/zcord_backup_$DATE.sql"
+    podman-compose -f podman-compose.yml exec -T postgres pg_dump -U zcord zcord > "$BACKUP_DIR/zcord_backup_$DATE.sql"
     
     # Бэкап загруженных файлов
     tar -czf "$BACKUP_DIR/uploads_backup_$DATE.tar.gz" server/uploads/
@@ -188,7 +188,7 @@ restore() {
     fi
     
     # Восстановление базы данных
-    podman-compose -f podman-compose.yml exec -T postgres psql -U nikdimer zcord < "$1"
+    podman-compose -f podman-compose.yml exec -T postgres psql -U zcord zcord < "$1"
     
     print_success "Восстановление завершено"
 }

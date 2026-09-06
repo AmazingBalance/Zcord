@@ -4,9 +4,9 @@ services:
     image: postgres:15-alpine
     container_name: zcord-postgres-dev
     environment:
-      POSTGRES_DB: zcord
-      POSTGRES_USER: nikdimer
-      POSTGRES_PASSWORD: technocraft2000
+      POSTGRES_DB: ${POSTGRES_DB:-zcord}
+      POSTGRES_USER: ${POSTGRES_USER:-zcord}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
     ports:
       - "5435:5432"
     volumes:
@@ -25,9 +25,10 @@ services:
     container_name: zcord-backend-dev
     working_dir: /app
     environment:
-      DATABASE_URL: postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable
+      DATABASE_URL: postgres://${POSTGRES_USER:-zcord}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-zcord}?sslmode=disable
+      JWT_SECRET: ${JWT_SECRET:-}
     ports:
-      - "8000:8000"
+      - "${BACKEND_PORT:-8000}:8000"
     volumes:
       - ./server:/app:Z
       - ./server/uploads:/root/uploads:Z

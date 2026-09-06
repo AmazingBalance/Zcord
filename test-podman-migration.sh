@@ -194,7 +194,7 @@ test_development_environment() {
     
     # Проверка базы данных
     print_info "Проверка базы данных..."
-    if podman-compose -f podman-compose.dev.yml exec -T postgres psql -U nikdimer -d zcord -c "SELECT version();" > /dev/null 2>&1; then
+    if podman-compose -f podman-compose.dev.yml exec -T postgres psql -U zcord -d zcord -c "SELECT version();" > /dev/null 2>&1; then
         print_success "✓ База данных доступна"
     else
         print_warning "⚠ База данных недоступна"

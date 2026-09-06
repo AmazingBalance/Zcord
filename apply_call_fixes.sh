@@ -9,8 +9,8 @@ echo "Applying database fixes..."
 echo "Using Podman to connect to PostgreSQL..."
 
 # Set default values
-pguser="nikdimer"
-dbname="zcord"
+pguser="${POSTGRES_USER:-zcord}"
+dbname="${POSTGRES_DB:-zcord}"
 
 echo "Creating call tables..."
 podman exec zcord-postgres-temp psql -U $pguser -d $dbname -f /tmp/create_calls_table.sql

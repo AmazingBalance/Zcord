@@ -16,12 +16,12 @@ fi
 # Применение исправления к базе данных
 echo "Применение исправления к базе данных..."
 
-# Устанавливаем настройки базы данных из podman-compose.yml
+# Настройки базы данных берутся из переменных окружения (.env)
 DB_HOST=localhost
-DB_PORT=5435
-DB_NAME=zcord
-DB_USER=nikdimer
-DB_PASSWORD=technocraft2000
+DB_PORT="${POSTGRES_PORT:-5435}"
+DB_NAME="${POSTGRES_DB:-zcord}"
+DB_USER="${POSTGRES_USER:-zcord}"
+DB_PASSWORD="${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env or environment}"
 
 # Применяем SQL-скрипт к базе данных через Podman
 echo "Применение SQL-скрипта через Podman..."

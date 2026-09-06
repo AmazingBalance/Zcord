@@ -53,7 +53,7 @@
 1. **Очистить существующие звонки**:
 
    ```bash
-   podman exec zcord-postgres-temp psql -U nikdimer -d zcord -f /tmp/clean_all_calls.sql
+   podman exec zcord-postgres-temp psql -U zcord -d zcord -f /tmp/clean_all_calls.sql
    ```
 
 2. **Применить изменения в базе данных**:
@@ -90,7 +90,7 @@
 Если проблемы не устраняются, вы можете снова запустить скрипт очистки:
 
 ```bash
-podman exec zcord-postgres-temp psql -U nikdimer -d zcord -f /tmp/clean_all_calls.sql
+podman exec zcord-postgres-temp psql -U zcord -d zcord -f /tmp/clean_all_calls.sql
 ```
 
 ## План отката

@@ -52,7 +52,7 @@ func ensureBootstrap() {
 	rootID, err := ensureBootstrapUser(db, bootstrapUserSpec{
 		tag:         "root",
 		name:        "root",
-		email:       getEnvOrDefault("BOOTSTRAP_ROOT_EMAIL", "nikdm.gm@gmail.com"),
+		email:       getEnvOrDefault("BOOTSTRAP_ROOT_EMAIL", "root@example.invalid"),
 		passwordEnv: "BOOTSTRAP_ROOT_PASSWORD",
 	})
 	if err != nil {
@@ -62,7 +62,7 @@ func ensureBootstrap() {
 	nikdimerID, err := ensureBootstrapUser(db, bootstrapUserSpec{
 		tag:         "nikdimer",
 		name:        "nikdimer",
-		email:       getEnvOrDefault("BOOTSTRAP_NIKDIMER_EMAIL", "nikdimer@yandex.ru"),
+		email:       getEnvOrDefault("BOOTSTRAP_NIKDIMER_EMAIL", "nikdimer@example.invalid"),
 		passwordEnv: "BOOTSTRAP_NIKDIMER_PASSWORD",
 	})
 	if err != nil {

@@ -14,7 +14,7 @@ fi
 echo "📋 Создание таблиц..."
 
 # Создание основных таблиц
-podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U nikdimer -d zcord -c "
+podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U zcord -d zcord -c "
 -- Создание базы данных и таблиц для Zcord
 
 -- Таблица пользователей
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS chat_invites (
 echo "📊 Создание индексов..."
 
 # Создание индексов и функций
-podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U nikdimer -d zcord -c "
+podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U zcord -d zcord -c "
 -- Индексы для оптимизации
 CREATE INDEX IF NOT EXISTS idx_users_email ON users(email);
 CREATE INDEX IF NOT EXISTS idx_users_tag ON users(tag);
@@ -123,7 +123,7 @@ END;
 echo "📰 Создание канала новостей..."
 
 # Создание канала новостей
-podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U nikdimer -d zcord -c "
+podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U zcord -d zcord -c "
 -- Создание специального канала новостей с тегом
 INSERT INTO chats (id, name, tag, avatar, description, users)
 VALUES (1, 'Новости Zcord', 'news', '/news_icon.svg', 'Официальный канал новостей мессенджера Zcord', '{}')
@@ -141,12 +141,12 @@ echo "✅ База данных успешно инициализирована!
 
 # Проверка результата
 echo "📋 Проверка созданных таблиц:"
-podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U nikdimer -d zcord -c "
+podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U zcord -d zcord -c "
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;
 "
 
 echo "📰 Проверка канала новостей:"
-podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U nikdimer -d zcord -c "
+podman-compose -f podman-compose.dev.yml exec postgres psql -h localhost -U zcord -d zcord -c "
 SELECT id, name, tag, description FROM chats WHERE id = 1;
 "
 

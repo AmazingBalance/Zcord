@@ -7,8 +7,8 @@
 
 1) Создаётся канал `Новости Zcord` (`tag=news`) и сидятся текущие новости (все сообщения, которые есть сейчас локально).  
 2) Создаются аккаунты `root` и `nikdimer` (если их нет) с e-mail:
-   - `root` → `nikdm.gm@gmail.com`
-   - `nikdimer` → `nikdimer@yandex.ru`
+   - `root` → `<BOOTSTRAP_ROOT_EMAIL>`
+   - `nikdimer` → `<BOOTSTRAP_NIKDIMER_EMAIL>`
 3) Все новые пользователи автоматически добавляются в новостной канал.  
 4) Пользователи с тегами `root` и `nikdimer` могут писать в `news` (остальным канал read-only).
 
@@ -86,8 +86,8 @@ docker compose -f docker-compose.cloud.yml logs -f --tail=200 backend
 
 Войти можно под:
 
-- `root` (email `nikdm.gm@gmail.com`, пароль из `BOOTSTRAP_ROOT_PASSWORD`)
-- `nikdimer` (email `nikdimer@yandex.ru`, пароль из `BOOTSTRAP_NIKDIMER_PASSWORD`)
+- `root` (email `<BOOTSTRAP_ROOT_EMAIL>`, пароль из `BOOTSTRAP_ROOT_PASSWORD`)
+- `nikdimer` (email `<BOOTSTRAP_NIKDIMER_EMAIL>`, пароль из `BOOTSTRAP_NIKDIMER_PASSWORD`)
 
 Канал `Новости Zcord` появится у всех пользователей автоматически.
 

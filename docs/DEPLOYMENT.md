@@ -84,7 +84,7 @@ podman-compose -f podman-compose.yml ps
 JWT_SECRET=your-super-secret-jwt-key-change-in-production
 
 # URL подключения к базе данных
-DATABASE_URL=postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable
+DATABASE_URL=postgres://zcord:<POSTGRES_PASSWORD>@postgres:5432/zcord?sslmode=disable
 
 # Режим работы (development/production)
 APP_ENV=development
@@ -106,7 +106,7 @@ curl -I http://localhost:3000
 curl -I http://localhost:8000/api/register
 
 # Проверка базы данных
-podman-compose -f podman-compose.yml exec postgres psql -U nikdimer -d zcord -c "SELECT version();"
+podman-compose -f podman-compose.yml exec postgres psql -U zcord -d zcord -c "SELECT version();"
 ```
 
 ## 🌐 Production развёртывание

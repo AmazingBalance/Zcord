@@ -155,7 +155,7 @@ curl -I http://localhost:3000  # Frontend
 curl -I http://localhost:8000/api/register  # Backend API
 
 # Проверка базы данных
-podman-compose -f podman-compose.dev.yml exec postgres psql -U nikdimer -d zcord -c "SELECT version();"
+podman-compose -f podman-compose.dev.yml exec postgres psql -U zcord -d zcord -c "SELECT version();"
 
 # Остановка
 podman-compose -f podman-compose.dev.yml down
@@ -272,10 +272,10 @@ rm -rf test-volume/
 podman-compose -f podman-compose.yml up -d postgres
 
 # Проверка существующих данных
-podman-compose -f podman-compose.yml exec postgres psql -U nikdimer -d zcord -c "\dt"
+podman-compose -f podman-compose.yml exec postgres psql -U zcord -d zcord -c "\dt"
 
 # Проверка данных пользователей (если есть)
-podman-compose -f podman-compose.yml exec postgres psql -U nikdimer -d zcord -c "SELECT COUNT(*) FROM users;"
+podman-compose -f podman-compose.yml exec postgres psql -U zcord -d zcord -c "SELECT COUNT(*) FROM users;"
 
 # Остановка
 podman-compose -f podman-compose.yml down

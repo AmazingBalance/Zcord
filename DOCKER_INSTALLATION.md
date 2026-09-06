@@ -122,7 +122,7 @@ lsof -i :5435
 
 ```bash
 # Переход в директорию проекта
-cd /Users/nikdimer/Documents/Zcord-main
+cd ~/Documents/Zcord
 
 # Запуск в production режиме
 docker compose up --build

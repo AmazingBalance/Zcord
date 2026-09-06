@@ -209,7 +209,7 @@ ERROR: relation "users" does not exist
 
 ```bash
 # Подключение к базе данных
-docker compose exec postgres psql -U nikdimer -d zcord
+docker compose exec postgres psql -U zcord -d zcord
 
 # Проверка существующих таблиц
 \dt
@@ -234,7 +234,7 @@ docker compose up -d
 
 ```bash
 # Выполнение init.sql
-docker compose exec -T postgres psql -U nikdimer -d zcord < init.sql
+docker compose exec -T postgres psql -U zcord -d zcord < init.sql
 ```
 
 ### Проблема: Подключение к базе данных отклонено
@@ -262,7 +262,7 @@ docker compose exec backend ping postgres
 
 ```bash
 # В server/.env
-DATABASE_URL=postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable
+DATABASE_URL=postgres://zcord:<POSTGRES_PASSWORD>@postgres:5432/zcord?sslmode=disable
 ```
 
 2. **Ожидание готовности базы данных:**
@@ -271,7 +271,7 @@ DATABASE_URL=postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=dis
 # В docker-compose.yml добавить healthcheck
 postgres:
   healthcheck:
-    test: ["CMD-SHELL", "pg_isready -U nikdimer -d zcord"]
+    test: ["CMD-SHELL", "pg_isready -U zcord -d zcord"]
     interval: 30s
     timeout: 10s
     retries: 3
@@ -334,7 +334,7 @@ main.init.0()
 # Создание server/.env
 cat > server/.env << EOF
 JWT_SECRET=your-super-secret-jwt-key-change-in-production
-DATABASE_URL=postgres://nikdimer:technocraft2000@postgres:5432/zcord?sslmode=disable
+DATABASE_URL=postgres://zcord:<POSTGRES_PASSWORD>@postgres:5432/zcord?sslmode=disable
 EOF
 ```
 
@@ -770,7 +770,7 @@ curl http://localhost:8000/metrics
 ```bash
 # Запуск shell в контейнере
 docker compose exec backend sh
-docker compose exec postgres psql -U nikdimer -d zcord
+docker compose exec postgres psql -U zcord -d zcord
 
 # Выполнение команд в контейнере
 docker compose exec backend ls -la /root/

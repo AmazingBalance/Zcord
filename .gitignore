@@ -29,8 +29,27 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# env files (can opt-in for committing if needed)
+# env files (templates stay tracked, real .env never)
 .env*
+!.env.example
+
+# local database data — never commit
+/my_postgres_data/
+
+# compiled backend binaries
+/server/zcord
+/server/zcord-server
+/server/zcord.exe
+
+# logs
+*.log
+/server/logs/
+nohup.out
+devserver-*.log
+
+# user uploads (runtime data)
+/server/uploads/*
+!/server/uploads/.gitkeep
 
 # vercel
 .vercel
@@ -38,3 +57,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+temp_kinopoisk.html

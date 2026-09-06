@@ -5,8 +5,8 @@ services:
     container_name: zcord-postgres
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-zcord}
-      POSTGRES_USER: ${POSTGRES_USER:-nikdimer}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-technocraft2000}
+      POSTGRES_USER: ${POSTGRES_USER:-zcord}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
     ports:
       - "${POSTGRES_PORT:-5435}:5432"
     volumes:
@@ -26,14 +26,14 @@ services:
       dockerfile: Containerfile
     container_name: zcord-backend
     environment:
-      DATABASE_URL: postgres://${POSTGRES_USER:-nikdimer}:${POSTGRES_PASSWORD:-technocraft2000}@postgres:5432/${POSTGRES_DB:-zcord}?sslmode=disable
-      JWT_SECRET: ${JWT_SECRET:-your-super-secret-jwt-key-change-in-production}
+      DATABASE_URL: postgres://${POSTGRES_USER:-zcord}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}@postgres:5432/${POSTGRES_DB:-zcord}?sslmode=disable
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
       PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost:8000}
       PUBLIC_WEB_URL: ${PUBLIC_WEB_URL:-http://localhost:3000}
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-http://localhost:3000}
-      BOOTSTRAP_ROOT_EMAIL: ${BOOTSTRAP_ROOT_EMAIL:-nikdm.gm@gmail.com}
+      BOOTSTRAP_ROOT_EMAIL: ${BOOTSTRAP_ROOT_EMAIL:-}
       BOOTSTRAP_ROOT_PASSWORD: ${BOOTSTRAP_ROOT_PASSWORD:-}
-      BOOTSTRAP_NIKDIMER_EMAIL: ${BOOTSTRAP_NIKDIMER_EMAIL:-nikdimer@yandex.ru}
+      BOOTSTRAP_NIKDIMER_EMAIL: ${BOOTSTRAP_NIKDIMER_EMAIL:-}
       BOOTSTRAP_NIKDIMER_PASSWORD: ${BOOTSTRAP_NIKDIMER_PASSWORD:-}
     ports:
       - "${BACKEND_PORT:-8000}:8000"
